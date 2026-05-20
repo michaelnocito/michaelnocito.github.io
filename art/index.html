@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Michael Nocito — Charcoal Portraits</title>
+<meta name="description" content="Hand-drawn charcoal portraits of the animals you love. Self-taught artist, one piece at a time. Based in Glassboro, NJ.">
+
+<!-- ============================================================
+     SWAP-IN GUIDE:
+     • [EMAIL] = inquiry email (Gmail placeholder, 3 spots)
+     • [IMG]   = gallery placeholders → replace <div class="ph">…</div>
+                 with <img src="your-photo.jpg" alt="...">
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    color-scheme: light only;
+    --bg:      #FBFBF9;   /* near-white, faintly warm */
+    --bg-2:    #F4F4F1;
+    --card:    #FFFFFF;
+    --ink:     #1A1A18;   /* headings */
+    --ink-2:   #3D3D39;   /* body */
+    --ink-3:   #76746D;   /* muted */
+    --line:    #E5E4DF;   /* hairlines */
+    --line-2:  #D4D3CC;
+    --accent:  #B5552F;   /* one quiet terracotta accent */
+    --maxw: 940px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth; background:var(--bg)}
+  body{
+    background:var(--bg); color:var(--ink-2);
+    font-family:"Inter",-apple-system,system-ui,sans-serif;
+    font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px}
+  a{color:inherit}
+
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif; font-weight:500; color:var(--ink); line-height:1.12; letter-spacing:-.01em}
+  .mono-label{font-family:"Inter"; font-size:13px; font-weight:600; letter-spacing:.02em; color:var(--ink-3)}
+
+  /* hairline rule like the dev site */
+  .hr{border:none; border-top:1px solid var(--line); margin:0}
+
+  /* ---------- header ---------- */
+  header{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+  .mn{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border:1.5px solid var(--ink); border-radius:8px; font-family:"Newsreader",serif; font-weight:600; font-size:16px; color:var(--ink); text-decoration:none; letter-spacing:.02em}
+  .nav-links{display:flex; gap:28px; align-items:center}
+  .nav-links a{font-size:15px; font-weight:500; text-decoration:none; color:var(--ink-2); transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; font-size:22px; color:var(--ink)}
+  @media(max-width:720px){
+    .nav-links{position:absolute; top:64px; left:0; right:0; flex-direction:column; gap:0; background:var(--bg); border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .35s ease}
+    .nav-links.open{max-height:340px}
+    .nav-links a{padding:14px 28px; width:100%; border-top:1px solid var(--line)}
+    .nav-toggle{display:block}
+  }
+
+  /* ---------- buttons (quiet, like dev-site links/pills) ---------- */
+  .btn{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600; text-decoration:none;
+    padding:11px 20px; border-radius:8px; border:1px solid var(--line-2); color:var(--ink); background:var(--card);
+    transition:border-color .2s, color .2s, background .2s}
+  .btn:hover{border-color:var(--ink); }
+  .btn-primary{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+  .btn-primary:hover{background:#000; color:#fff}
+  .btn-accent{color:var(--accent); border-color:color-mix(in srgb, var(--accent) 40%, var(--line-2))}
+  .btn-accent:hover{background:var(--accent); color:#fff; border-color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:80px 0 56px}
+  .hero .mono-label{margin-bottom:18px}
+  .hero h1{font-size:clamp(44px,8vw,84px); letter-spacing:-.025em; margin-bottom:22px}
+  .hero h1 .dot{color:var(--accent)}
+  .hero p{font-size:19px; color:var(--ink-2); max-width:54ch; margin-bottom:30px}
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap}
+
+  /* ---------- sections ---------- */
+  section{padding:60px 0}
+  .sec-label{font-family:"Newsreader",serif; font-size:15px; color:var(--ink-3); font-style:italic; margin-bottom:28px}
+  .sec-head h2{font-size:clamp(26px,4vw,38px); letter-spacing:-.02em}
+  .sec-head p{color:var(--ink-2); margin-top:10px; max-width:60ch}
+  .sec-head{margin-bottom:34px}
+
+  /* ---------- placeholders / images ---------- */
+  .ph{position:relative; width:100%; background:var(--bg-2); border:1px solid var(--line);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    color:var(--ink-3); padding:20px; border-radius:10px}
+  .ph .ph-ico{font-family:"Newsreader",serif; font-size:24px; color:var(--line-2); margin-bottom:6px}
+  .ph .ph-lbl{font-size:12px; letter-spacing:.02em}
+
+  /* ---------- gallery ---------- */
+  .gal{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
+  .card{display:flex; flex-direction:column; gap:12px}
+  .card .ph{aspect-ratio:1/1; transition:border-color .2s}
+  .card:hover .ph{border-color:var(--line-2)}
+  .card img{width:100%; aspect-ratio:1/1; object-fit:cover; border:1px solid var(--line); border-radius:10px; display:block}
+  .card .meta{display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+  .card .meta .name{font-family:"Newsreader",serif; font-size:18px; font-weight:600; color:var(--ink)}
+  .card .meta .yr{font-size:13px; color:var(--ink-3)}
+  .card .medium{font-size:13.5px; color:var(--ink-3)}
+  @media(max-width:780px){.gal{grid-template-columns:repeat(2,1fr); gap:20px}}
+  @media(max-width:480px){.gal{grid-template-columns:1fr}}
+
+  /* ---------- about ---------- */
+  .split{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start}
+  .split .ph{aspect-ratio:4/5}
+  @media(max-width:780px){.split{grid-template-columns:1fr; gap:30px}}
+  .prose p{margin-bottom:15px}
+  .prose strong{color:var(--ink); font-weight:600}
+  .prose em{font-style:italic; color:var(--ink)}
+  .inline-link{color:var(--accent); font-weight:600; text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 35%, transparent)}
+  .inline-link:hover{border-bottom-color:var(--accent)}
+
+  /* ---------- process ---------- */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:40px}
+  @media(max-width:780px){.cols{grid-template-columns:1fr; gap:30px}}
+  .cols h3{font-family:"Newsreader",serif; font-size:21px; margin-bottom:14px}
+  .checklist{list-style:none; display:flex; flex-direction:column; gap:13px}
+  .checklist li{display:flex; gap:12px; align-items:flex-start; font-size:15.5px}
+  .checklist li b{color:var(--ink); font-weight:600}
+  .num{flex:0 0 auto; width:23px; height:23px; margin-top:1px; border:1px solid var(--line-2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12.5px; font-weight:600; color:var(--ink-3)}
+  .note{font-size:14px; color:var(--ink-3); margin-top:18px; padding-left:14px; border-left:2px solid var(--accent)}
+
+  /* ---------- commissions ---------- */
+  .price-wrap{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start}
+  @media(max-width:780px){.price-wrap{grid-template-columns:1fr; gap:30px}}
+  .price-card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:30px}
+  .price-anchor{font-family:"Newsreader",serif; font-size:38px; font-weight:600; color:var(--ink); line-height:1}
+  .price-anchor span{font-size:15px; color:var(--ink-3); font-family:"Inter"; font-weight:400}
+  .terms{list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:12px}
+  .terms li{display:flex; gap:12px; font-size:15px}
+  .terms li .k{font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-3); flex:0 0 86px; padding-top:2px}
+  .status{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-2); border:1px solid var(--line-2); border-radius:100px; padding:6px 14px; margin-bottom:18px}
+  .dot-live{width:8px; height:8px; border-radius:50%; background:#5a8a4f}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  @media(max-width:720px){.quotes{grid-template-columns:1fr}}
+  .quote{border:1px solid var(--line); border-radius:12px; padding:24px; background:var(--card)}
+  .quote p{font-family:"Newsreader",serif; font-size:18px; line-height:1.5; color:var(--ink); margin-bottom:12px}
+  .quote .who{font-size:13px; color:var(--ink-3)}
+
+  /* ---------- contact ---------- */
+  .contact{padding:72px 0}
+  .contact h2{font-size:clamp(28px,4.5vw,44px); letter-spacing:-.02em; margin-bottom:14px}
+  .contact p{color:var(--ink-2); max-width:50ch; margin-bottom:28px}
+
+  /* ---------- footer ---------- */
+  footer{padding:40px 0; border-top:1px solid var(--line)}
+  .foot{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; font-size:14.5px; color:var(--ink-3)}
+  .foot a{text-decoration:none; color:var(--ink-2); transition:color .2s}
+  .foot a:hover{color:var(--accent)}
+  .foot-links{display:flex; gap:22px; flex-wrap:wrap}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="mn" href="#top">MN</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="nav">
+      <a href="#work" onclick="closeNav()">Work</a>
+      <a href="#about" onclick="closeNav()">About</a>
+      <a href="#process" onclick="closeNav()">Process</a>
+      <a href="#commissions" onclick="closeNav()">Commissions</a>
+      <a href="#contact" onclick="closeNav()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <p class="mono-label reveal">Charcoal Artist · Glassboro, NJ</p>
+    <h1 class="reveal">Charcoal portraits of the<br>animals you love<span class="dot">.</span></h1>
+    <p class="reveal">Hand-drawn from a single photograph, one piece at a time. Self-taught, ten years in, mostly dogs — occasionally whoever else you love.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#commissions">Commission a portrait</a>
+      <a class="btn" href="#work">See the work</a>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== WORK ===================== -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Selected work</p>
+      <h2>The gallery</h2>
+      <p>Mostly dogs and cats, occasionally other animals — each drawn in charcoal, sometimes with a touch of colored pencil or chalk.</p>
+    </div>
+    <div class="gal">
+      <!-- [IMG] replace each .ph with <img src="..." alt="..."> -->
+      <div class="card reveal"><img src="02_lionel_frankie_2024.jpg" alt="Lionel and Frankie — Two French bulldogs"><div class="meta"><span class="name">Lionel &amp; Frankie</span><span class="yr">2024</span></div><span class="medium">Charcoal &amp; colored pencil</span></div>
+      <div class="card reveal"><img src="03_violet_2025.jpg" alt="Violet — Cat surrounded by hanging plants"><div class="meta"><span class="name">Violet</span><span class="yr">2025</span></div><span class="medium">Charcoal &amp; pastel</span></div>
+      <div class="card reveal"><img src="05_girl_dog_2020.jpg" alt="A Girl and Her Dog — Back view with blonde hair"><div class="meta"><span class="name">A Girl &amp; Her Dog</span><span class="yr">2022</span></div><span class="medium">Charcoal on grey, colored chalk · commission</span></div>
+      <div class="card reveal"><img src="04_jake_2018.jpg" alt="Jake — Boxer dog portrait"><div class="meta"><span class="name">Jake</span><span class="yr">2018</span></div><span class="medium">Charcoal</span></div>
+      <div class="card reveal"><img src="01_oscar_2023.jpg" alt="Oscar — Curly-haired black dog with bow tie"><div class="meta"><span class="name">Oscar</span><span class="yr">2023</span></div><span class="medium">Charcoal &amp; colored pencil</span></div>
+      <div class="card reveal"><img src="06_old_friend_2017.jpg" alt="Old Friend — Chocolate lab on tan paper"><div class="meta"><span class="name">Old Friend</span><span class="yr">2017</span></div><span class="medium">Charcoal on tan</span></div>
+      <div class="card reveal"><img src="10_boxer_one_sitting_2020.jpg" alt="Boxer portrait"><div class="meta"><span class="name">Monkcito</span><span class="yr">2019</span></div><span class="medium">Charcoal &amp; pencil</span></div>
+      <div class="card reveal"><img src="07_cooper_2023.jpg" alt="Cooper"><div class="meta"><span class="name">Untitled</span><span class="yr">—</span></div><span class="medium">Charcoal</span></div>
+      <div class="card reveal"><img src="09_dog_grey_2017.jpg" alt="Dog portrait"><div class="meta"><span class="name">Untitled</span><span class="yr">—</span></div><span class="medium">Charcoal &amp; colored pencil</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="sec-label">About</p>
+      <h2 style="margin-bottom:20px">Draw what you see</h2>
+      <div class="prose">
+        <p>My father could do almost anything — paintings, carvings, things built by hand. Clearly the creative gene was in there somewhere, lying low.</p>
+        <p>I didn't pick one up myself until about fifteen years ago. I was home during a rough patch with a lot of time on my hands when I came across a photo of a Labrador and thought, <em>I'd love to be able to draw that.</em> I had no business thinking that. I tried anyway.</p>
+        <p>Here's what flipped it for me: a drawing is really just a pile of shapes, and regardless of the color in front of you, it's all a play of light and dark tones. Once I started seeing <em>that</em>, the whole thing went from something I didn't know I could do to a mystery I was certain I could solve. That became my mantra — <strong>draw what you see</strong> — and I still mutter it whenever I get lost halfway through someone's fur.</p>
+        <p>I've never trained formally. I pick up the odd technique here and there, but mostly I just dive in. I rarely know how I'll pull off the hair or some tricky texture; I only know that I will, eventually, probably. That same stubborn instinct now has me teaching myself software.</p>
+        <p style="font-size:15px"><a class="inline-link" href="https://michaelnocito.github.io/">See what I'm building on the data side →</a></p>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- [IMG] photo of you / studio / hand at work -->
+      <img src="01_oscar_2023.jpg" alt="Oscar — Charcoal portrait of a curly-haired black dog" style="width:100%; aspect-ratio:4/5; object-fit:cover; border:1px solid var(--line); border-radius:10px; display:block">
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">How it works</p>
+      <h2>Your photo is everything</h2>
+    </div>
+    <div class="cols">
+      <div class="reveal">
+        <h3>The way I work</h3>
+        <div class="prose">
+          <p>I draw from a <strong>single source photo, exactly as it's captured.</strong> I don't combine photos, swap backgrounds, or quietly delete the ugly couch behind your dog. Each piece comes out the way it comes out.</p>
+          <p>The background in your photo is the background I'll draw — so <strong>your photo is the single biggest factor in how the portrait turns out.</strong></p>
+          <p>I work in 9×12. Charcoal has its own resolution: I can push real detail into the eyes and fur, but it's an interpretation in one medium — not a photocopy with extra steps. A sharp, well-lit photo lets me take that detail much further.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3>Choosing a great reference photo</h3>
+        <ul class="checklist">
+          <li><span class="num">1</span><span><b>Shoot at eye level.</b> Get down to your pet's height — looking down gives them a giant head and a tiny body, which they will not thank you for.</span></li>
+          <li><span class="num">2</span><span><b>Natural light, no flash.</b> Outdoors or by a big window. Side-light gives the contrast charcoal lives for.</span></li>
+          <li><span class="num">3</span><span><b>Eyes in sharp focus.</b> They're the soul of the portrait — blurry eyes, blurry drawing.</span></li>
+          <li><span class="num">4</span><span><b>Fill the frame.</b> Step back and zoom rather than getting close, so detail stays crisp.</span></li>
+          <li><span class="num">5</span><span><b>Catch their real expression.</b> The look that's unmistakably <em>them</em> — that's what I'm drawing.</span></li>
+          <li><span class="num">6</span><span><b>Send the original file.</b> Email it at full size — never a screenshot or social send, which crush the detail I need.</span></li>
+        </ul>
+        <p class="note">Since I draw what's there, a clean background keeps the spotlight on your animal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== COMMISSIONS ===================== -->
+<section id="commissions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Commissions</p>
+      <h2>Have one made</h2>
+    </div>
+    <div class="price-wrap">
+      <div class="reveal prose">
+        <span class="status"><span class="dot-live"></span>Open · limited availability</span>
+        <p>I take <strong>one commission at a time</strong>, with at least a <strong>45-day window</strong> from when we agree to when I start. Not a fast turnaround — a careful one. Think slow food, but for art, and with more eraser smudges.</p>
+        <p>If that fits how you'd like your animal immortalized, I'd love to hear about them. Send your best photo and a little about your pet, and I'll reply with a quote and where you land in the queue.</p>
+        <p style="font-size:15px; color:var(--ink-3)">I also take the occasional commission of nature, landscapes, or still life. People are where I draw the line — pun fully intended.</p>
+      </div>
+      <div class="reveal price-card">
+        <div class="price-anchor">From $300 <span>/ 9×12</span></div>
+        <ul class="terms">
+          <li><span class="k">Medium</span><span>Charcoal, sometimes with a touch of colored pencil or chalk</span></li>
+          <li><span class="k">Size</span><span>9×12 standard; larger by quote</span></li>
+          <li><span class="k">Subjects</span><span>One animal; additional subjects quoted per piece</span></li>
+          <li><span class="k">Timeline</span><span>One at a time · 45-day minimum to start</span></li>
+          <li><span class="k">Quote</span><span>Confirmed per piece after I see your photo</span></li>
+        </ul>
+        <a class="btn btn-accent" href="#contact" style="margin-top:22px; width:100%; justify-content:center">Start an inquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="kind-words">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Kind words</p>
+      <h2>From people who have one</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal"><p>"I look at this every single day and love it more and more."</p><span class="who">— @lucifurrbean</span></div>
+      <div class="quote reveal"><p>"This is awesome!"</p><span class="who">— @chrissybelle951</span></div>
+      <div class="quote reveal"><p>"Bravo!"</p><span class="who">— @aesse_art</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <p class="sec-label">Get in touch</p>
+    <h2>Let's draw your animal.</h2>
+    <p>Tell me a little about your pet and attach your best photo. I read every message and reply personally — no bots, no auto-replies, just me.</p>
+    <div class="hero-cta">
+      <!-- [EMAIL] -->
+      <a class="btn btn-primary" href="mailto:hello.michaelnocito@gmail.com?subject=Portrait%20inquiry&amp;body=Pet's%20name%3A%0APet's%20breed%3A%0AA%20little%20about%20them%3A%0A%0A(Attach%20your%20best%20full-size%20photo%20%E2%80%94%20not%20a%20screenshot!)">Email an inquiry</a>
+      <a class="btn" href="#work">Browse the work</a>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--ink-3)">or write directly to hello.michaelnocito@gmail.com</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Michael Nocito · michaelnocito.github.io</span>
+    <div class="foot-links">
+      <!-- [EMAIL] -->
+      <a href="mailto:hello.michaelnocito@gmail.com">Email</a>
+      <a href="https://www.instagram.com/michaelnocito" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function closeNav(){document.getElementById('nav').classList.remove('open')}
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,4)*50)+'ms'; io.observe(el)});
+</script>
+</body>
+</html>
