@@ -227,9 +227,36 @@
   .project-card:hover { border-color: rgba(192,132,252,0.35); transform: translateX(4px); box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
   .project-card:hover::before { transform: scaleY(1); }
 
-  /* Alt accent for teal-tagged cards — keep blue for variety */
-  .project-card.alt::before { background: #58a6ff; }
-  .project-card.alt:hover { border-color: rgba(88,166,255,0.3); }
+  /* Per-card accent colors */
+  .project-card.c-purple::before { background: #c084fc; }
+  .project-card.c-purple:hover { border-color: rgba(192,132,252,0.35); }
+  .project-card.c-purple:hover .card-arrow { color: #c084fc; }
+
+  .project-card.c-teal::before { background: #58aaa2; }
+  .project-card.c-teal:hover { border-color: rgba(88,170,162,0.35); }
+  .project-card.c-teal:hover .card-arrow { color: #58aaa2; }
+
+  .project-card.c-amber::before { background: #f59e0b; }
+  .project-card.c-amber:hover { border-color: rgba(245,158,11,0.3); }
+  .project-card.c-amber:hover .card-arrow { color: #f59e0b; }
+
+  .project-card.c-green::before { background: #4ade80; }
+  .project-card.c-green:hover { border-color: rgba(74,222,128,0.25); }
+  .project-card.c-green:hover .card-arrow { color: #4ade80; }
+
+  /* Featured (Analyst Prep Kit) — teal glow, border always visible */
+  .project-card.featured {
+    border-color: rgba(88,170,162,0.35);
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(88,170,162,0.06) 100%);
+  }
+  .project-card.featured::before { transform: scaleY(1); }
+  .start-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    color: #58aaa2; letter-spacing: .15em; text-transform: uppercase;
+    background: rgba(88,170,162,0.12); border: 1px solid rgba(88,170,162,0.3);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+  }
 
   .card-top {
     display: flex;
@@ -397,7 +424,54 @@
       <div class="section-label">Projects</div>
       <div class="projects">
 
-        <a class="project-card" href="https://michaelnocito.github.io/nexus-sql-mystery/" target="_blank" rel="noopener">
+        <!-- ★ FEATURED — Analyst Prep Kit -->
+        <div class="project-card c-teal featured" style="cursor:default">
+          <div class="card-top">
+            <div>
+              <div class="start-badge">★ Start Here</div>
+              <span class="card-name">Analyst Prep Kit</span>
+            </div>
+            <span style="font-family:var(--mono);font-size:.75rem;color:#58aaa2;letter-spacing:.05em;flex-shrink:0;margin-top:6px">5 modules</span>
+          </div>
+          <p class="card-desc">
+            A complete browser-based prep suite for breaking into data analytics.
+            SQL → Excel → Python → Tableau → Statistics. Every module has 12 lessons
+            with read-it-aloud code breakdowns, 5 drill types, flashcards, a glossary,
+            and a skill readiness score. No install, no login, works offline.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0">
+            <a href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
+              <span style="font-size:.83rem;font-weight:600;color:var(--text)">SQL Kit</span>
+              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Live SQLite in-browser · 12 lessons ↗</span>
+            </a>
+            <a href="https://michaelnocito.github.io/excel-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
+              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Excel Kit</span>
+              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Pivot Lab drag-and-drop · 12 lessons ↗</span>
+            </a>
+            <a href="https://michaelnocito.github.io/python-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
+              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Python Kit</span>
+              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Live Pyodide terminal · 12 lessons ↗</span>
+            </a>
+            <a href="https://michaelnocito.github.io/tableau-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
+              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Tableau Kit</span>
+              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Drag-and-drop Viz Builder · 12 lessons ↗</span>
+            </a>
+            <a href="https://michaelnocito.github.io/stats-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
+              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Stats Kit</span>
+              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Distribution Lab · mean → A/B testing ↗</span>
+            </a>
+          </div>
+          <div class="card-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">Pyodide</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+
+        <!-- NEXUS -->
+        <a class="project-card c-purple" href="https://michaelnocito.github.io/nexus-sql-mystery/" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-name">NEXUS</span>
             <span class="card-arrow">↗</span>
@@ -417,48 +491,8 @@
           </div>
         </a>
 
-        <div class="project-card alt" style="cursor:default">
-          <div class="card-top">
-            <span class="card-name">Analyst Prep Kit</span>
-            <span class="card-arrow" style="font-size:.8rem;letter-spacing:.05em;font-family:var(--mono)">5 modules</span>
-          </div>
-          <p class="card-desc">
-            A suite of browser-based learning apps for breaking into data analytics.
-            Every module: 12 lessons with read-it-aloud code breakdowns, 5 drill types,
-            flashcards, glossary, and an honest skill readiness score. No install, no login.
-          </p>
-          <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0">
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='var(--border)'">
-              <span style="font-size:.82rem;font-weight:600;color:var(--text)">SQL Kit</span>
-              <span style="font-size:.75rem;color:var(--text-dim);font-family:var(--mono)">Live SQLite in-browser · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/excel-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='var(--border)'">
-              <span style="font-size:.82rem;font-weight:600;color:var(--text)">Excel Kit</span>
-              <span style="font-size:.75rem;color:var(--text-dim);font-family:var(--mono)">Pivot Lab drag-and-drop · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/python-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='var(--border)'">
-              <span style="font-size:.82rem;font-weight:600;color:var(--text)">Python Kit</span>
-              <span style="font-size:.75rem;color:var(--text-dim);font-family:var(--mono)">Live Pyodide terminal · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/tableau-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='var(--border)'">
-              <span style="font-size:.82rem;font-weight:600;color:var(--text)">Tableau Kit</span>
-              <span style="font-size:.75rem;color:var(--text-dim);font-family:var(--mono)">Drag-and-drop Viz Builder · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/stats-prep-kit/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='var(--border)'">
-              <span style="font-size:.82rem;font-weight:600;color:var(--text)">Stats Kit</span>
-              <span style="font-size:.75rem;color:var(--text-dim);font-family:var(--mono)">Distribution Lab · mean → A/B testing ↗</span>
-            </a>
-          </div>
-          <div class="card-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Python</span>
-            <span class="tag">Chart.js</span>
-            <span class="tag">Pyodide</span>
-            <span class="tag">Open Source</span>
-          </div>
-        </div>
-
-        <a class="project-card" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
+        <!-- RecordForge -->
+        <a class="project-card c-amber" href="https://github.com/michaelnocito/recordforge" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-name">RecordForge</span>
             <span class="card-arrow">↗</span>
@@ -477,7 +511,8 @@
           </div>
         </a>
 
-        <a class="project-card alt" href="https://github.com/michaelnocito/spreadsheet-cleaner" target="_blank" rel="noopener">
+        <!-- Spreadsheet Cleaner -->
+        <a class="project-card c-green" href="https://github.com/michaelnocito/spreadsheet-cleaner" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-name">Spreadsheet Cleaner</span>
             <span class="card-arrow">↗</span>
@@ -509,9 +544,10 @@
         background — I find the signal in messy data and explain it clearly.
       </p>
       <p>
-        I build real open-source tools using spec-driven development. Four shipped
-        projects on GitHub, all solving real data problems. I learn fast and I
-        ship working software.
+        I build real open-source tools using spec-driven development. Six shipped
+        projects on GitHub — a full analyst prep suite (SQL, Excel, Python, Tableau,
+        Stats), a data-gen tool, and a spreadsheet auditor. I learn fast and I ship
+        working software.
       </p>
     </section>
 
