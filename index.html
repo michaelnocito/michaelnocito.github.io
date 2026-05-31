@@ -5,22 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Michael Nocito — Data Analyst</title>
 <meta name="description" content="Michael Nocito — data analyst building open-source Python tools with SQL, pandas, and Tableau. Spec-driven development, real shipped software.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:        #0d1117;
-    --surface:   #161b22;
-    --surface2:  #21262d;
-    --border:    #30363d;
-    --accent:    #c084fc;
-    --accent-dk: #a855f7;
-    --accent-glow: rgba(192,132,252,0.12);
-    --text:      #e6edf3;
-    --text-dim:  #8b949e;
-    --text-muted:#57606a;
-    --mono:      'JetBrains Mono', monospace;
-    --sans:      'Inter', system-ui, sans-serif;
+    /* Surfaces */
+    --bg:         #eef1f5;
+    --panel:      #ffffff;
+    --line:       #d6dce4;
+    --shadow:     0 1px 2px rgba(20,30,50,.06), 0 6px 20px rgba(20,30,50,.06);
+
+    /* Text */
+    --ink:        #1f2328;
+    --dim:        #5b6470;
+
+    /* Accent */
+    --accent:     #2f6df0;
+    --accent-d:   #1f4fc4;
+
+    /* Semantic */
+    --good:       #1a7f37;
+    --good-bg:    #e7f6ec;
+    --bad:        #cf222e;
+    --bad-bg:     #fdecee;
+    --warm:       #9a6700;
+
+    /* Secondary phase (purple) */
+    --phase-2:    #6639ba;
+    --phase-2-bg: #f3eefb;
+    --phase-2-bd: #ddccf3;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,396 +39,234 @@
 
   body {
     background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.65;
+    color: var(--ink);
+    font: 15px/1.55 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
     min-height: 100vh;
-    overflow-x: hidden;
   }
+  code, .mono { font-family: "Consolas", ui-monospace, monospace; }
 
-  /* Subtle purple-tinted grid */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(192,132,252,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(192,132,252,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
+  /* ---- Top orientation bar (sticky) ---------------------------------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 10px 18px;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 5;
   }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo {
+    font-size: 22px; color: var(--accent);
+    background: linear-gradient(135deg, #eaf1ff, #dbe7ff);
+    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 9px;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .brand-text strong { font-size: 15px; color: var(--ink); }
+  .brand-text .sub { font-size: 12px; color: var(--dim); }
 
-  /* Soft purple glow in hero */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(140px);
-    pointer-events: none;
-    z-index: 0;
+  .orient { display: flex; align-items: center; gap: 16px; }
+  .phase-chip {
+    font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+    padding: 5px 10px; border-radius: 6px; white-space: nowrap;
+    background: #eaf3ee; color: #1a7f37; border: 1px solid #bfe5ca;
   }
-  .orb-1 { width: 600px; height: 600px; background: rgba(168,85,247,0.07); top: -150px; right: -150px; }
-  .orb-2 { width: 500px; height: 500px; background: rgba(192,132,252,0.04); bottom: 5%; left: -100px; }
-
-  /* Layout */
-  .wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  /* Nav */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(13,17,23,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 28px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: var(--mono);
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 28px; }
+  .nav-links { display: flex; gap: 20px; }
   .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-dim);
-    text-decoration: none;
-    transition: color .15s;
+    font-size: 13.5px; font-weight: 600; color: var(--dim);
+    text-decoration: none; transition: color .15s;
   }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover { color: var(--accent-d); }
 
-  /* Hero */
-  .hero {
-    padding: 100px 0 80px;
-    position: relative;
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 2px;
-    background: var(--accent);
-    display: inline-block;
-  }
+  /* ---- Layout -------------------------------------------------------- */
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 18px; }
 
-  h1 {
-    font-size: clamp(42px, 7vw, 72px);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-    color: var(--text);
+  /* ---- Hero / welcome card ------------------------------------------- */
+  .welcome { margin: 28px auto 14px; }
+  .welcome-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow); padding: 30px 34px;
   }
-  h1 span { color: var(--accent); }
+  .welcome-eyebrow {
+    font-size: 10.5px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--accent-d); margin-bottom: 10px;
+  }
+  .welcome-card h1 {
+    font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.12;
+    letter-spacing: -0.01em; color: var(--ink); margin-bottom: 14px;
+  }
+  .welcome-card h1 span { color: var(--accent); }
+  .welcome-sub {
+    font-size: 16px; color: var(--dim); line-height: 1.65; max-width: 560px;
+  }
+  .welcome-premise {
+    margin: 20px 0 0; padding: 16px 18px;
+    background: #f7faff; border: 1px solid #dde6f5; border-radius: 12px;
+    font-size: 14.5px; line-height: 1.6;
+  }
+  .welcome-premise strong { color: var(--ink); }
+  .welcome-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
 
-  .hero-sub {
-    font-size: 17px;
-    color: var(--text-dim);
-    line-height: 1.7;
-    max-width: 520px;
-    margin-bottom: 40px;
-    font-weight: 400;
+  .primary {
+    background: var(--accent); color: #fff; border: 0; border-radius: 10px;
+    padding: 11px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 2px 8px rgba(47,109,240,.35);
+    transition: background .15s, transform .05s;
   }
+  .primary:hover { background: var(--accent-d); }
+  .primary:active { transform: translateY(1px); }
+  .ghost-btn {
+    background: var(--panel); border: 1px solid var(--line); color: var(--dim);
+    padding: 10px 20px; border-radius: 10px; font-size: 14.5px; font-weight: 600;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .ghost-btn:hover { background: #f3f5f8; color: var(--ink); border-color: #c3ccd8; }
 
-  .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 22px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    transition: all .2s;
-    font-family: var(--mono);
-  }
-  .btn-primary {
-    background: var(--accent-dk);
-    color: #fff;
-    box-shadow: 0 2px 12px rgba(168,85,247,0.3);
-  }
-  .btn-primary:hover { background: #9333ea; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(168,85,247,0.4); }
-  .btn-ghost {
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    background: var(--surface);
-  }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-
-  /* Divider */
-  .section-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 60px 0;
-  }
-
-  /* Section label */
+  /* ---- Section label ------------------------------------------------- */
   .section-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--dim); margin: 36px 0 16px;
+    display: flex; align-items: center; gap: 12px;
   }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
-  /* Projects */
-  .projects { display: flex; flex-direction: column; gap: 16px; margin-bottom: 80px; }
-
+  /* ---- Project cards ------------------------------------------------- */
+  .projects { display: flex; flex-direction: column; gap: 16px; }
   .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    text-decoration: none;
-    display: block;
-    transition: all .25s;
-    position: relative;
-    overflow: hidden;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: var(--shadow); padding: 22px 24px;
+    border-left: 5px solid var(--accent);
+    text-decoration: none; display: block; color: inherit;
+    transition: border-color .18s, box-shadow .18s, transform .18s;
   }
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform .25s;
+  a.project-card:hover {
+    transform: translateX(3px);
+    box-shadow: 0 2px 4px rgba(20,30,50,.07), 0 10px 28px rgba(20,30,50,.10);
   }
-  .project-card:hover { border-color: rgba(192,132,252,0.35); transform: translateX(4px); box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
-  .project-card:hover::before { transform: scaleY(1); }
+  .project-card.c-accent { border-left-color: var(--accent); }
+  .project-card.c-purple { border-left-color: var(--phase-2); }
+  a.project-card.c-purple:hover { border-color: var(--phase-2-bd); }
+  .project-card.c-warm   { border-left-color: var(--warm); }
+  a.project-card.c-warm:hover { border-color: #e3d7a5; }
+  .project-card.c-green  { border-left-color: var(--good); }
+  a.project-card.c-green:hover { border-color: #bfe5ca; }
 
-  /* Per-card accent colors */
-  .project-card.c-purple::before { background: #c084fc; }
-  .project-card.c-purple:hover { border-color: rgba(192,132,252,0.35); }
-  .project-card.c-purple:hover .card-arrow { color: #c084fc; }
-
-  .project-card.c-teal::before { background: #58aaa2; }
-  .project-card.c-teal:hover { border-color: rgba(88,170,162,0.35); }
-  .project-card.c-teal:hover .card-arrow { color: #58aaa2; }
-
-  .project-card.c-amber::before { background: #f59e0b; }
-  .project-card.c-amber:hover { border-color: rgba(245,158,11,0.3); }
-  .project-card.c-amber:hover .card-arrow { color: #f59e0b; }
-
-  .project-card.c-green::before { background: #4ade80; }
-  .project-card.c-green:hover { border-color: rgba(74,222,128,0.25); }
-  .project-card.c-green:hover .card-arrow { color: #4ade80; }
-
-  /* Featured (Analyst Prep Kit) — teal glow, border always visible */
   .project-card.featured {
-    border-color: rgba(88,170,162,0.35);
-    background: linear-gradient(135deg, var(--surface) 0%, rgba(88,170,162,0.06) 100%);
+    background: linear-gradient(135deg, var(--panel) 0%, #f5f9ff 100%);
+    border-color: #cfdffa;
   }
-  .project-card.featured::before { transform: scaleY(1); }
   .start-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-family: var(--mono); font-size: 10px; font-weight: 700;
-    color: #58aaa2; letter-spacing: .15em; text-transform: uppercase;
-    background: rgba(88,170,162,0.12); border: 1px solid rgba(88,170,162,0.3);
-    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+    display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent-d);
+    background: #eef4ff; border: 1px solid #d4e1ff;
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
   }
-
   .card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 10px;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px; margin-bottom: 8px;
   }
-  .card-name {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.01em;
-  }
-  .card-arrow {
-    color: var(--text-muted);
-    font-size: 18px;
-    flex-shrink: 0;
-    transition: color .2s, transform .2s;
-  }
-  .project-card:hover .card-arrow { color: var(--accent); transform: translate(2px,-2px); }
-  .project-card.alt:hover .card-arrow { color: #58a6ff; }
+  .card-name { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+  .card-count { font-size: 12px; color: var(--accent-d); font-weight: 600; flex-shrink: 0; margin-top: 4px; }
+  .card-arrow { color: #9aa4b2; font-size: 18px; flex-shrink: 0; transition: color .18s, transform .18s; }
+  a.project-card:hover .card-arrow { color: var(--accent); transform: translate(2px,-2px); }
+  .card-desc { font-size: 14px; color: var(--dim); line-height: 1.6; margin-bottom: 14px; }
 
-  .card-desc {
-    font-size: 14px;
-    color: var(--text-dim);
-    line-height: 1.65;
-    margin-bottom: 16px;
-    font-weight: 400;
+  /* Prep-kit sub-links — syllabus item pattern */
+  .syl-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 14px 0; }
+  .syl-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px; padding: 9px 12px; border-radius: 8px;
+    background: #ffffff; border: 1px solid var(--line); color: var(--ink);
+    text-decoration: none; cursor: pointer;
+    transition: background .12s, border-color .12s;
   }
+  .syl-item:hover { background: #eef4ff; border-color: #b6c8ee; }
+  .syl-item .syl-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .syl-item .syl-icon { color: var(--good); }
+  .syl-item .syl-meta { font-size: 11.5px; color: var(--dim); font-family: "Consolas", ui-monospace, monospace; text-align: right; }
 
-  .card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 7px; }
   .tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--text-dim);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    padding: 3px 9px;
-    border-radius: 4px;
+    font-size: 11px; font-weight: 600; letter-spacing: .03em; color: var(--dim);
+    background: #f3f5f8; border: 1px solid var(--line);
+    padding: 3px 9px; border-radius: 999px;
   }
 
-  /* Writing / links */
-  .link-row { display: flex; flex-direction: column; gap: 12px; margin-bottom: 80px; }
-  .link-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 24px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all .2s;
+  /* ---- About --------------------------------------------------------- */
+  .about-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: var(--shadow); padding: 22px 24px;
   }
-  .link-item:hover { border-color: rgba(192,132,252,0.35); transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
-  .link-left { display: flex; align-items: center; gap: 14px; }
-  .link-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--surface2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .link-name { font-size: 15px; font-weight: 600; color: var(--text); }
-  .link-handle { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .link-arrow { color: var(--text-muted); font-size: 14px; }
+  .about-card p { font-size: 15px; color: var(--dim); line-height: 1.75; max-width: 640px; }
+  .about-card p + p { margin-top: 14px; }
+  .about-card strong { color: var(--ink); font-weight: 600; }
 
-  /* About */
-  .about { padding: 0 0 100px; }
-  .about p {
-    font-size: 16px;
-    color: var(--text-dim);
-    line-height: 1.8;
-    max-width: 600px;
-  }
-  .about p + p { margin-top: 14px; }
-  .about strong { color: var(--text); font-weight: 600; }
-
-  /* Footer */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 28px 0;
-    position: relative;
-    z-index: 1;
-  }
+  /* ---- Footer -------------------------------------------------------- */
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0; }
   .footer-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
+    max-width: 920px; margin: 0 auto; padding: 0 18px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 12.5px; color: var(--dim);
   }
-  .footer-left { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
-  .footer-right { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
-  .footer-right a { color: var(--text-muted); text-decoration: none; }
-  .footer-right a:hover { color: var(--accent); }
+  .footer-inner a { color: var(--dim); text-decoration: none; }
+  .footer-inner a:hover { color: var(--accent-d); }
 
-  /* Animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-eyebrow { animation: fadeUp .5s ease both; }
-  h1 { animation: fadeUp .5s .1s ease both; }
-  .hero-sub { animation: fadeUp .5s .2s ease both; }
-  .hero-links { animation: fadeUp .5s .3s ease both; }
-
-  /* Responsive */
-  @media (max-width: 600px) {
+  /* ---- Responsive ---------------------------------------------------- */
+  @media (max-width: 720px) {
     .nav-links { display: none; }
-    .hero { padding: 90px 0 60px; }
-    .project-card { padding: 22px 20px; }
-    .link-item { padding: 14px 18px; }
+    .welcome-card { padding: 24px 20px; }
+    .project-card { padding: 18px 18px; }
+    .syl-item { flex-direction: column; align-items: flex-start; gap: 3px; }
+    .syl-item .syl-meta { text-align: left; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-
-<nav>
-  <a class="nav-logo" href="#">MN</a>
-  <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
+<!-- ---- Top orientation bar ---- -->
+<header class="topbar">
+  <a class="brand" href="#">
+    <span class="logo">▦</span>
+    <span class="brand-text">
+      <strong>Michael Nocito</strong>
+      <span class="sub">Data Analyst</span>
+    </span>
+  </a>
+  <div class="orient">
+    <span class="phase-chip">Open to Work</span>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <main>
   <div class="wrap">
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-eyebrow">Data Analyst</div>
-      <h1>Michael<br><span>Nocito.</span></h1>
-      <p class="hero-sub">
-        Turning messy data into clear answers with Python, SQL, and Tableau.
-        I build real open-source tools and ship working software.
-      </p>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="https://github.com/michaelnocito" target="_blank" rel="noopener">
-          ⌥ GitHub
-        </a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
+    <!-- Hero / welcome card -->
+    <section class="welcome">
+      <div class="welcome-card">
+        <div class="welcome-eyebrow">Data Analyst · Python · SQL · Tableau</div>
+        <h1>Michael <span>Nocito.</span></h1>
+        <p class="welcome-sub">
+          Turning messy data into clear answers with Python, SQL, and Tableau.
+          I build real open-source tools and ship working software.
+        </p>
+        <div class="welcome-premise">
+          <p><strong>Early-career data analyst</strong> with a strong research and training
+          background — I find the signal in messy data and explain it clearly, then build the
+          tools to do it again faster. Everything below is live, open-source, and runs in your
+          browser with no install.</p>
+        </div>
+        <div class="welcome-cta">
+          <a class="primary" href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub →</a>
+          <a class="ghost-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </section>
-
-    <hr class="section-divider">
 
     <!-- Projects -->
     <section id="projects">
@@ -425,13 +274,13 @@
       <div class="projects">
 
         <!-- ★ FEATURED — Analyst Prep Kit -->
-        <div class="project-card c-teal featured" style="cursor:default">
+        <div class="project-card c-accent featured">
           <div class="card-top">
             <div>
               <div class="start-badge">★ Start Here</div>
               <span class="card-name">Analyst Prep Kit</span>
             </div>
-            <span style="font-family:var(--mono);font-size:.75rem;color:#58aaa2;letter-spacing:.05em;flex-shrink:0;margin-top:6px">9 modules</span>
+            <span class="card-count">9 modules</span>
           </div>
           <p class="card-desc">
             A complete browser-based prep suite for breaking into data analytics, sequenced
@@ -440,44 +289,35 @@
             Read-it-aloud code breakdowns, live in-browser practice environments, AI manager
             review on the simulator. No install, no login, no telemetry.
           </p>
-          <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0">
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/excel/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Excel Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Pivot Lab drag-and-drop · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/sql/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">SQL Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Live SQLite in-browser · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/python/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Python Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Live Pyodide terminal · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/tableau/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Tableau Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Drag-and-drop Viz Builder · 12 lessons ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/stats/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Stats Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Distribution Lab · mean → A/B testing ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/powerbi/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Power BI Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">DAX · Power Query · star schema ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/interview/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Interview Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">STAR · Answer Builder · behavioral drills ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/simulator/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Associate Data Analyst Simulator</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Week-1 sim · AI manager review ↗</span>
-            </a>
-            <a href="https://michaelnocito.github.io/analyst-prep-kit/final/" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:border-color .15s" onmouseover="this.style.borderColor='#58aaa2'" onmouseout="this.style.borderColor=''">
-              <span style="font-size:.83rem;font-weight:600;color:var(--text)">Final Exam Kit</span>
-              <span style="font-size:.74rem;color:var(--text-dim);font-family:var(--mono)">Study guide + 28-question test ↗</span>
-            </a>
-          </div>
+          <ul class="syl-list">
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/excel/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Excel Kit</span>
+              <span class="syl-meta">Pivot Lab drag-and-drop · 12 lessons ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/sql/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>SQL Kit</span>
+              <span class="syl-meta">Live SQLite in-browser · 12 lessons ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/python/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Python Kit</span>
+              <span class="syl-meta">Live Pyodide terminal · 12 lessons ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/tableau/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Tableau Kit</span>
+              <span class="syl-meta">Drag-and-drop Viz Builder · 12 lessons ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/stats/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Stats Kit</span>
+              <span class="syl-meta">Distribution Lab · mean → A/B testing ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/powerbi/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Power BI Kit</span>
+              <span class="syl-meta">DAX · Power Query · star schema ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/interview/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Interview Kit</span>
+              <span class="syl-meta">STAR · Answer Builder · behavioral drills ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/simulator/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Associate Data Analyst Simulator</span>
+              <span class="syl-meta">Week-1 sim · AI manager review ↗</span></a></li>
+            <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/final/" target="_blank" rel="noopener">
+              <span class="syl-name"><span class="syl-icon">✅</span>Final Exam Kit</span>
+              <span class="syl-meta">Study guide + 28-question test ↗</span></a></li>
+          </ul>
           <div class="card-tags">
             <span class="tag">JavaScript</span>
             <span class="tag">Python</span>
@@ -509,7 +349,7 @@
         </a>
 
         <!-- RecordForge -->
-        <a class="project-card c-amber" href="https://github.com/michaelnocito/recordforge" target="_blank" rel="noopener">
+        <a class="project-card c-warm" href="https://github.com/michaelnocito/recordforge" target="_blank" rel="noopener">
           <div class="card-top">
             <span class="card-name">RecordForge</span>
             <span class="card-arrow">↗</span>
@@ -550,23 +390,23 @@
       </div>
     </section>
 
-    <hr class="section-divider">
-
     <!-- About -->
-    <section id="about" class="about">
+    <section id="about">
       <div class="section-label">About</div>
-      <p>
-        <strong>Early-career data analyst</strong> pursuing Tableau certification
-        and building with Python, SQL, and pandas. Strong research and training
-        background — I find the signal in messy data and explain it clearly.
-      </p>
-      <p>
-        I build real open-source tools using spec-driven development. The Analyst Prep
-        Kit is a nine-module browser-based learning suite (Excel, SQL, Python, Tableau,
-        Stats, Power BI, Interview, a week-1 job simulator with AI manager review, and
-        a cross-subject final exam). Alongside it: a data-gen desktop tool and a
-        spreadsheet auditor. I learn fast and I ship working software.
-      </p>
+      <div class="about-card">
+        <p>
+          <strong>Early-career data analyst</strong> pursuing Tableau certification
+          and building with Python, SQL, and pandas. Strong research and training
+          background — I find the signal in messy data and explain it clearly.
+        </p>
+        <p>
+          I build real open-source tools using spec-driven development. The Analyst Prep
+          Kit is a nine-module browser-based learning suite (Excel, SQL, Python, Tableau,
+          Stats, Power BI, Interview, a week-1 job simulator with AI manager review, and
+          a cross-subject final exam). Alongside it: a data-gen desktop tool and a
+          spreadsheet auditor. I learn fast and I ship working software.
+        </p>
+      </div>
     </section>
 
   </div>
@@ -574,8 +414,8 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-left">Michael Nocito — michaelnocito.github.io</span>
-    <span class="footer-right">
+    <span class="mono">Michael Nocito — michaelnocito.github.io</span>
+    <span>
       <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
       &nbsp;·&nbsp;
       <a href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
