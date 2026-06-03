@@ -122,10 +122,21 @@
   }
   .ghost-btn:hover { background: #f3f5f8; color: var(--ink); border-color: #c3ccd8; }
 
+  /* In-page section jump buttons */
+  .cta-sep { width: 1px; align-self: stretch; background: var(--line); margin: 2px 2px; }
+  .jump-btn {
+    background: #eef4ff; border: 1px solid #d4e1ff; color: var(--accent-d);
+    padding: 10px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 600;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    transition: background .15s, border-color .15s;
+  }
+  .jump-btn:hover { background: #e2ecff; border-color: #b9cdf5; }
+  .jump-btn .ji { font-size: 12px; opacity: .8; }
+
   /* ---- Section label ------------------------------------------------- */
   .section-label {
     font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
-    color: var(--dim); margin: 36px 0 16px;
+    color: var(--dim); margin: 36px 0 16px; scroll-margin-top: 72px;
     display: flex; align-items: center; gap: 12px;
   }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
@@ -232,15 +243,6 @@
     padding: 3px 9px; border-radius: 999px;
   }
 
-  /* ---- About --------------------------------------------------------- */
-  .about-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
-    box-shadow: var(--shadow); padding: 22px 24px;
-  }
-  .about-card p { font-size: 15px; color: var(--dim); line-height: 1.75; max-width: 640px; }
-  .about-card p + p { margin-top: 14px; }
-  .about-card strong { color: var(--ink); font-weight: 600; }
-
   /* ---- Footer -------------------------------------------------------- */
   footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0; }
   .footer-inner {
@@ -279,8 +281,9 @@
   <div class="orient">
     <span class="phase-chip">Open to Work</span>
     <nav class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
+      <a href="#real-analysis">Analysis</a>
+      <a href="#learning-tools">Learning</a>
+      <a href="#tools-i-built">Tools</a>
     </nav>
   </div>
 </header>
@@ -299,14 +302,20 @@
           shipped as working software.
         </p>
         <div class="welcome-premise">
-          <p><strong>Data analyst</strong> with a research and training background,
-          pursuing Tableau certification. Below is a working portfolio: a real-dataset churn
-          analysis, a suite of browser-based tools and games that teach data skills, and desktop
-          utilities I built to do the work. Everything is live and linked.</p>
+          <p><strong>10+ years migrating data and documents</strong> across enterprise systems,
+          now focused on data analysis with Python, SQL, pandas, and Tableau (certification in
+          progress). A research and training background taught me the core of the job: find the
+          signal in messy data, explain it clearly, and make it easy to act on. Below is a working
+          portfolio — real analysis, learning tools, and the utilities I built to do the work.
+          Everything is live and linked.</p>
         </div>
         <div class="welcome-cta">
           <a class="primary" href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub →</a>
           <a class="ghost-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="cta-sep" aria-hidden="true"></span>
+          <a class="jump-btn" href="#real-analysis"><span class="ji">↓</span> Real Analysis</a>
+          <a class="jump-btn" href="#learning-tools"><span class="ji">↓</span> Learning Tools</a>
+          <a class="jump-btn" href="#tools-i-built"><span class="ji">↓</span> Tools I Built</a>
         </div>
       </div>
     </section>
@@ -315,7 +324,7 @@
     <section id="projects">
 
       <!-- ============ Section A — Real Analysis ============ -->
-      <div class="section-label">Real Analysis</div>
+      <div class="section-label" id="real-analysis">Real Analysis</div>
       <div class="projects">
 
         <!-- Telco Churn Analysis -->
@@ -349,7 +358,7 @@
       </div>
 
       <!-- ============ Section B — Learning Tools & Games ============ -->
-      <div class="section-label">Learning Tools &amp; Games</div>
+      <div class="section-label" id="learning-tools">Learning Tools &amp; Games</div>
       <div class="projects">
 
         <!-- ★ FEATURED — Analyst Prep Kit -->
@@ -513,7 +522,7 @@
       </div>
 
       <!-- ============ Section C — Tools I Built ============ -->
-      <div class="section-label">Tools I Built</div>
+      <div class="section-label" id="tools-i-built">Tools I Built</div>
       <div class="projects">
 
         <!-- RecordForge -->
@@ -592,27 +601,6 @@
           </button>
         </a>
 
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="section-label">About</div>
-      <div class="about-card">
-        <p>
-          <strong>Data analyst</strong> pursuing Tableau certification, working in
-          Python, SQL, pandas, and Tableau. I come from a research and training background, which
-          is where I learned the core of the job: find the signal in messy data, explain it
-          clearly, and make the result easy to act on.
-        </p>
-        <p>
-          My portfolio spans three kinds of work. Real analysis — an end-to-end churn study on a
-          live telecom dataset. Learning tools and games that teach data skills in the browser,
-          anchored by the nine-module Analyst Prep Kit (Excel, SQL, Python, Tableau, Stats,
-          Power BI, Interview, a week-1 job simulator, and a final exam). And utilities I built to
-          speed up the work itself, including a test-data generator, a spreadsheet auditor, and a
-          typing trainer for analyst syntax. I learn fast, and I ship working software.
-        </p>
       </div>
     </section>
 
