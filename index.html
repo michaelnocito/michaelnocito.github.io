@@ -5,33 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Michael Nocito — Data Analyst</title>
 <meta name="description" content="Michael Nocito — data analyst working in Python, SQL, pandas, and Tableau. A working portfolio: a real-dataset churn analysis, browser-based tools that teach data skills, and desktop utilities I built to do the work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ============================================================
+     GRAIN design system — clay/terracotta primary, honey amber
+     accent, warm stone neutrals on cream. Space Grotesk (display)
+     + IBM Plex (body/mono). Matches the Analyst Prep Kit suite.
+     ============================================================ */
   :root {
-    /* Surfaces */
-    --bg:         #eef1f5;
-    --panel:      #ffffff;
-    --line:       #d6dce4;
-    --shadow:     0 1px 2px rgba(20,30,50,.06), 0 6px 20px rgba(20,30,50,.06);
+    /* Stone (warm neutral) */
+    --stone-50:#FAF6EF; --stone-100:#F1E9DC; --stone-200:#E4D7C4; --stone-300:#CDBA9F;
+    --stone-400:#A8927A; --stone-500:#80705E; --stone-600:#5F5244; --stone-700:#463C31;
+    --stone-800:#2E2720; --stone-900:#1C1712;
+    /* Clay (primary) */
+    --clay-50:#FCEFE8; --clay-100:#F8D8C6; --clay-200:#F0B196; --clay-300:#E68A66;
+    --clay-400:#DA6A42; --clay-500:#C5511F; --clay-600:#A5411A; --clay-700:#813218;
+    /* Amber (accent) */
+    --amber-50:#FDF3E0; --amber-300:#EAAE3F; --amber-400:#DC9617; --amber-500:#BE7E0E; --amber-600:#97640C;
+    /* Leaf / Teal / Rust */
+    --leaf-50:#ECF2E2; --leaf-400:#6E9A45; --leaf-500:#557A30;
+    --teal-50:#DFEDEC; --teal-400:#3C8B8F; --teal-500:#2A6E72;
+    --rust-500:#BE3B22;
 
-    /* Text */
-    --ink:        #1f2328;
-    --dim:        #5b6470;
+    /* Fonts */
+    --font-display:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif;
+    --font-sans:'IBM Plex Sans',system-ui,-apple-system,Roboto,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 
-    /* Accent */
-    --accent:     #2f6df0;
-    --accent-d:   #1f4fc4;
+    /* Page semantic roles */
+    --bg:        var(--stone-50);
+    --panel:     #FFFDFA;
+    --sunken:    var(--stone-100);
+    --line:      var(--stone-200);
+    --line-bd:   var(--stone-300);
+    --shadow:    0 1px 2px rgba(70,40,20,.05), 0 8px 24px rgba(70,40,20,.07);
+    --shadow-lg: 0 4px 10px rgba(70,40,20,.10), 0 18px 44px rgba(70,40,20,.13);
 
-    /* Semantic */
-    --good:       #1a7f37;
-    --good-bg:    #e7f6ec;
-    --bad:        #cf222e;
-    --bad-bg:     #fdecee;
-    --warm:       #9a6700;
+    --ink:       var(--stone-900);
+    --dim:       var(--stone-600);
 
-    /* Secondary phase (purple) */
-    --phase-2:    #6639ba;
-    --phase-2-bg: #f3eefb;
-    --phase-2-bd: #ddccf3;
+    --accent:    var(--clay-500);
+    --accent-d:  var(--clay-600);
+    --accent-soft:var(--clay-50);
+    --accent-bd: var(--clay-200);
+
+    --amber:     var(--amber-600);
+    --good:      var(--leaf-500);
+    --teal:      var(--teal-500);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,11 +62,15 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font: 15px/1.55 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+    font: 400 15px/1.6 var(--font-sans);
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
-  code, .mono { font-family: "Consolas", ui-monospace, monospace; }
+  code, .mono { font-family: var(--font-mono); }
+  h1, h2, h3, .card-name { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+  /* Lucide icon sizing */
+  .lucide { width: 1em; height: 1em; stroke-width: 2; vertical-align: -0.14em; }
 
   /* ---- Top orientation bar (sticky) ---------------------------------- */
   .topbar {
@@ -55,26 +81,28 @@
   }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .logo {
-    font-size: 22px; color: var(--accent);
-    background: linear-gradient(135deg, #eaf1ff, #dbe7ff);
-    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 9px;
+    font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
+    color: var(--accent); background: var(--clay-50); border: 1px solid var(--clay-100);
+    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px;
   }
   .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-  .brand-text strong { font-size: 15px; color: var(--ink); }
+  .brand-text strong { font-family: var(--font-display); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; }
   .brand-text .sub { font-size: 12px; color: var(--dim); }
 
   .orient { display: flex; align-items: center; gap: 16px; }
   .phase-chip {
-    font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
-    padding: 5px 10px; border-radius: 6px; white-space: nowrap;
-    background: #eaf3ee; color: #1a7f37; border: 1px solid #bfe5ca;
+    font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+    background: var(--leaf-50); color: var(--leaf-500); border: 1px solid #cfe0b6;
+    display: inline-flex; align-items: center; gap: 6px;
   }
+  .phase-chip .lucide { width: 11px; height: 11px; }
   .nav-links { display: flex; gap: 20px; }
   .nav-links a {
     font-size: 13.5px; font-weight: 600; color: var(--dim);
     text-decoration: none; transition: color .15s;
   }
-  .nav-links a:hover { color: var(--accent-d); }
+  .nav-links a:hover { color: var(--accent); }
 
   /* ---- Layout -------------------------------------------------------- */
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 18px; }
@@ -82,63 +110,67 @@
   /* ---- Hero / welcome card ------------------------------------------- */
   .welcome { margin: 28px auto 14px; }
   .welcome-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
-    box-shadow: var(--shadow); padding: 30px 34px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 32px 34px;
   }
   .welcome-eyebrow {
-    font-size: 10.5px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
-    color: var(--accent-d); margin-bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
   }
   .welcome-card h1 {
-    font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.12;
-    letter-spacing: -0.01em; color: var(--ink); margin-bottom: 14px;
+    font-size: clamp(32px, 5vw, 46px); font-weight: 700; line-height: 1.1;
+    color: var(--ink); margin-bottom: 14px;
   }
   .welcome-card h1 span { color: var(--accent); }
   .welcome-sub {
-    font-size: 16px; color: var(--dim); line-height: 1.65; max-width: 560px;
+    font-size: 16px; color: var(--dim); line-height: 1.65; max-width: 580px;
   }
   .welcome-premise {
-    margin: 20px 0 0; padding: 16px 18px;
-    background: #f7faff; border: 1px solid #dde6f5; border-radius: 12px;
-    font-size: 14.5px; line-height: 1.6;
+    margin: 22px 0 0; padding: 16px 18px;
+    background: var(--accent-soft); border: 1px solid var(--clay-100); border-radius: 12px;
+    font-size: 14.5px; line-height: 1.65; color: var(--stone-700);
   }
   .welcome-premise strong { color: var(--ink); }
-  .welcome-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .welcome-cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
   .primary {
-    background: var(--accent); color: #fff; border: 0; border-radius: 10px;
-    padding: 11px 22px; font-size: 14.5px; font-weight: 700; cursor: pointer;
+    background: var(--accent); color: #FFF8F2; border: 0; border-radius: 10px;
+    padding: 11px 22px; font-size: 14.5px; font-weight: 600; font-family: var(--font-sans); cursor: pointer;
     text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    box-shadow: 0 2px 8px rgba(47,109,240,.35);
-    transition: background .15s, transform .05s;
+    box-shadow: 0 2px 10px rgba(197,81,31,.30);
+    transition: background .15s, transform .05s, box-shadow .15s;
   }
-  .primary:hover { background: var(--accent-d); }
+  .primary:hover { background: var(--accent-d); box-shadow: 0 4px 14px rgba(197,81,31,.38); }
   .primary:active { transform: translateY(1px); }
+  .primary .lucide, .ghost-btn .lucide { width: 16px; height: 16px; }
   .ghost-btn {
-    background: var(--panel); border: 1px solid var(--line); color: var(--dim);
+    background: var(--panel); border: 1px solid var(--line-bd); color: var(--dim);
     padding: 10px 20px; border-radius: 10px; font-size: 14.5px; font-weight: 600;
     text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
     transition: background .15s, color .15s, border-color .15s;
   }
-  .ghost-btn:hover { background: #f3f5f8; color: var(--ink); border-color: #c3ccd8; }
+  .ghost-btn:hover { background: var(--sunken); color: var(--ink); border-color: var(--clay-300); }
 
   /* In-page section jump buttons */
   .cta-sep { width: 1px; align-self: stretch; background: var(--line); margin: 2px 2px; }
   .jump-btn {
-    background: #eef4ff; border: 1px solid #d4e1ff; color: var(--accent-d);
+    background: var(--accent-soft); border: 1px solid var(--clay-100); color: var(--accent-d);
     padding: 10px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 600;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 7px;
     transition: background .15s, border-color .15s;
   }
-  .jump-btn:hover { background: #e2ecff; border-color: #b9cdf5; }
-  .jump-btn .ji { font-size: 12px; opacity: .8; }
+  .jump-btn:hover { background: var(--clay-100); border-color: var(--clay-200); }
+  .jump-btn .lucide { width: 14px; height: 14px; opacity: .85; }
 
   /* ---- Section label ------------------------------------------------- */
   .section-label {
-    font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
-    color: var(--dim); margin: 36px 0 16px; scroll-margin-top: 72px;
-    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--dim); margin: 38px 0 16px; scroll-margin-top: 72px;
+    display: flex; align-items: center; gap: 10px;
   }
+  .section-label .lucide { width: 15px; height: 15px; color: var(--accent); }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
   /* ---- Project cards ------------------------------------------------- */
@@ -162,13 +194,13 @@
   .card-shot img {
     width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center;
     border-radius: 10px; border: 1px solid var(--line); display: block;
-    background: #f3f5f8; transition: box-shadow .18s;
+    background: var(--sunken); transition: box-shadow .18s;
   }
-  .card-shot:hover img { box-shadow: 0 6px 20px rgba(20,30,50,.16); }
+  .card-shot:hover img { box-shadow: var(--shadow-lg); }
   .card-shot::after {
     content: '⤢'; position: absolute; right: 8px; bottom: 8px;
     width: 26px; height: 26px; display: grid; place-items: center;
-    font-size: 14px; color: #fff; background: rgba(20,30,50,.62);
+    font-size: 14px; color: #fff; background: rgba(28,23,18,.62);
     border-radius: 7px; opacity: 0; transition: opacity .18s; pointer-events: none;
   }
   .card-shot:hover::after { opacity: 1; }
@@ -177,7 +209,7 @@
   .lightbox {
     position: fixed; inset: 0; z-index: 50; display: none;
     align-items: center; justify-content: center; padding: 4vmin;
-    background: rgba(15,20,32,.82); cursor: zoom-out;
+    background: rgba(28,23,18,.82); cursor: zoom-out;
   }
   .lightbox.open { display: flex; animation: lbfade .15s ease; }
   @keyframes lbfade { from { opacity: 0; } to { opacity: 1; } }
@@ -192,54 +224,64 @@
   .lightbox-close:hover { opacity: 1; }
   a.project-card:hover {
     transform: translateX(3px);
-    box-shadow: 0 2px 4px rgba(20,30,50,.07), 0 10px 28px rgba(20,30,50,.10);
+    box-shadow: var(--shadow-lg);
   }
-  .project-card.c-accent { border-left-color: var(--accent); }
-  .project-card.c-purple { border-left-color: var(--phase-2); }
-  a.project-card.c-purple:hover { border-color: var(--phase-2-bd); }
-  .project-card.c-warm   { border-left-color: var(--warm); }
-  a.project-card.c-warm:hover { border-color: #e3d7a5; }
-  .project-card.c-green  { border-left-color: var(--good); }
-  a.project-card.c-green:hover { border-color: #bfe5ca; }
+  .project-card.c-accent { border-left-color: var(--clay-500); }
+  a.project-card.c-accent:hover { border-color: var(--clay-200); }
+  .project-card.c-purple { border-left-color: var(--teal-500); }
+  a.project-card.c-purple:hover { border-color: #a6cdcd; }
+  .project-card.c-warm   { border-left-color: var(--amber-500); }
+  a.project-card.c-warm:hover { border-color: var(--amber-200, #F3C877); }
+  .project-card.c-green  { border-left-color: var(--leaf-500); }
+  a.project-card.c-green:hover { border-color: #cfe0b6; }
 
   .project-card.featured {
-    background: linear-gradient(135deg, var(--panel) 0%, #f5f9ff 100%);
-    border-color: #cfdffa;
+    background: linear-gradient(135deg, var(--panel) 0%, var(--clay-50) 100%);
+    border-color: var(--clay-200);
   }
   .start-badge {
-    display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .12em;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 10.5px; font-weight: 500; letter-spacing: .10em;
     text-transform: uppercase; color: var(--accent-d);
-    background: #eef4ff; border: 1px solid #d4e1ff;
-    padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+    background: var(--clay-50); border: 1px solid var(--clay-100);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 9px;
   }
+  .start-badge .lucide { width: 11px; height: 11px; }
   .card-top {
     display: flex; align-items: flex-start; justify-content: space-between;
     gap: 16px; margin-bottom: 8px;
   }
-  .card-name { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
-  .card-count { font-size: 12px; color: var(--accent-d); font-weight: 600; flex-shrink: 0; margin-top: 4px; }
-  .card-arrow { color: #9aa4b2; font-size: 18px; flex-shrink: 0; transition: color .18s, transform .18s; }
+  .card-name { font-size: 18px; font-weight: 700; color: var(--ink); }
+  .card-count {
+    font-family: var(--font-mono);
+    font-size: 12px; color: var(--accent-d); font-weight: 500; flex-shrink: 0; margin-top: 4px;
+  }
+  .card-arrow { color: var(--stone-400); flex-shrink: 0; transition: color .18s, transform .18s; display: inline-flex; }
+  .card-arrow .lucide { width: 18px; height: 18px; }
   a.project-card:hover .card-arrow { color: var(--accent); transform: translate(2px,-2px); }
-  .card-desc { font-size: 14px; color: var(--dim); line-height: 1.6; margin-bottom: 14px; }
+  .card-desc { font-size: 14px; color: var(--dim); line-height: 1.65; margin-bottom: 14px; }
+  .card-desc strong { color: var(--ink); }
 
   /* Prep-kit sub-links — syllabus item pattern */
   .syl-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 14px 0; }
   .syl-item {
     display: flex; align-items: center; justify-content: space-between; gap: 10px;
     font-size: 13px; padding: 9px 12px; border-radius: 8px;
-    background: #ffffff; border: 1px solid var(--line); color: var(--ink);
+    background: var(--panel); border: 1px solid var(--line); color: var(--ink);
     text-decoration: none; cursor: pointer;
     transition: background .12s, border-color .12s;
   }
-  .syl-item:hover { background: #eef4ff; border-color: #b6c8ee; }
+  .syl-item:hover { background: var(--accent-soft); border-color: var(--clay-200); }
   .syl-item .syl-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
-  .syl-item .syl-icon { color: var(--good); }
-  .syl-item .syl-meta { font-size: 11.5px; color: var(--dim); font-family: "Consolas", ui-monospace, monospace; text-align: right; }
+  .syl-item .syl-icon { color: var(--good); display: inline-flex; }
+  .syl-item .syl-icon .lucide { width: 15px; height: 15px; }
+  .syl-item .syl-meta { font-size: 11.5px; color: var(--dim); font-family: var(--font-mono); text-align: right; }
 
   .card-tags { display: flex; flex-wrap: wrap; gap: 7px; }
   .tag {
-    font-size: 11px; font-weight: 600; letter-spacing: .03em; color: var(--dim);
-    background: #f3f5f8; border: 1px solid var(--line);
+    font-size: 11px; font-weight: 500; letter-spacing: .02em; color: var(--dim);
+    background: var(--sunken); border: 1px solid var(--line);
     padding: 3px 9px; border-radius: 999px;
   }
 
@@ -251,8 +293,9 @@
     flex-wrap: wrap; gap: 12px;
     font-size: 12.5px; color: var(--dim);
   }
+  .footer-inner .mono { font-family: var(--font-mono); }
   .footer-inner a { color: var(--dim); text-decoration: none; }
-  .footer-inner a:hover { color: var(--accent-d); }
+  .footer-inner a:hover { color: var(--accent); }
 
   /* ---- Responsive ---------------------------------------------------- */
   @media (max-width: 720px) {
@@ -272,14 +315,14 @@
 <!-- ---- Top orientation bar ---- -->
 <header class="topbar">
   <a class="brand" href="#">
-    <span class="logo">▦</span>
+    <span class="logo">MN</span>
     <span class="brand-text">
       <strong>Michael Nocito</strong>
       <span class="sub">Data Analyst</span>
     </span>
   </a>
   <div class="orient">
-    <span class="phase-chip">Open to Work</span>
+    <span class="phase-chip"><i data-lucide="circle-dot"></i> Open to Work</span>
     <nav class="nav-links">
       <a href="#real-analysis">Analysis</a>
       <a href="#learning-tools">Learning</a>
@@ -310,12 +353,12 @@
           Everything is live and linked.</p>
         </div>
         <div class="welcome-cta">
-          <a class="primary" href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub →</a>
-          <a class="ghost-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="primary" href="https://github.com/michaelnocito" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+          <a class="ghost-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener"><i data-lucide="linkedin"></i> LinkedIn</a>
           <span class="cta-sep" aria-hidden="true"></span>
-          <a class="jump-btn" href="#real-analysis"><span class="ji">↓</span> Real Analysis</a>
-          <a class="jump-btn" href="#learning-tools"><span class="ji">↓</span> Learning Tools</a>
-          <a class="jump-btn" href="#tools-i-built"><span class="ji">↓</span> Tools I Built</a>
+          <a class="jump-btn" href="#real-analysis"><i data-lucide="arrow-down"></i> Real Analysis</a>
+          <a class="jump-btn" href="#learning-tools"><i data-lucide="arrow-down"></i> Learning Tools</a>
+          <a class="jump-btn" href="#tools-i-built"><i data-lucide="arrow-down"></i> Tools I Built</a>
         </div>
       </div>
     </section>
@@ -324,7 +367,7 @@
     <section id="projects">
 
       <!-- ============ Section A — Real Analysis ============ -->
-      <div class="section-label" id="real-analysis">Real Analysis</div>
+      <div class="section-label" id="real-analysis"><i data-lucide="bar-chart-3"></i> Real Analysis</div>
       <div class="projects">
 
         <!-- Telco Churn Analysis -->
@@ -332,10 +375,10 @@
           <div class="card-main">
           <div class="card-top">
             <div>
-              <div class="start-badge">★ Real Data</div>
+              <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
               <span class="card-name">Telco Churn Analysis</span>
             </div>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             End-to-end churn analysis on a real telecom customer dataset: cleaning, exploratory
@@ -358,7 +401,7 @@
       </div>
 
       <!-- ============ Section B — Learning Tools & Games ============ -->
-      <div class="section-label" id="learning-tools">Learning Tools &amp; Games</div>
+      <div class="section-label" id="learning-tools"><i data-lucide="graduation-cap"></i> Learning Tools &amp; Games</div>
       <div class="projects">
 
         <!-- ★ FEATURED — Analyst Prep Kit -->
@@ -366,7 +409,7 @@
           <div class="card-main">
           <div class="card-top">
             <div>
-              <div class="start-badge">★ Start Here</div>
+              <div class="start-badge"><i data-lucide="star"></i> Start Here</div>
               <span class="card-name">Analyst Prep Kit</span>
             </div>
             <span class="card-count">11 modules</span>
@@ -380,37 +423,37 @@
           </p>
           <ul class="syl-list">
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/excel/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Excel Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Excel Kit</span>
               <span class="syl-meta">Pivot Lab drag-and-drop · 12 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/sql/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>SQL Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>SQL Kit</span>
               <span class="syl-meta">Live SQLite in-browser · 12 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/python/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Python Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Python Kit</span>
               <span class="syl-meta">Live Pyodide terminal · 12 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/tableau/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Tableau Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Tableau Kit</span>
               <span class="syl-meta">Drag-and-drop Viz Builder · 12 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/chart-literacy/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Chart Literacy Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Chart Literacy Kit</span>
               <span class="syl-meta">Read, choose & explain charts · 13 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/forecasting/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Forecasting & Trend Modeling Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Forecasting & Trend Modeling Kit</span>
               <span class="syl-meta">Smoothing · seasonality · accuracy · 13 lessons ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/stats/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Stats Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Stats Kit</span>
               <span class="syl-meta">Distribution Lab · mean → A/B testing ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/powerbi/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Power BI Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Power BI Kit</span>
               <span class="syl-meta">DAX · Power Query · star schema ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/interview/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Interview Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Interview Kit</span>
               <span class="syl-meta">STAR · Answer Builder · behavioral drills ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/simulator/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Associate Data Analyst Simulator</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Associate Data Analyst Simulator</span>
               <span class="syl-meta">Week-1 sim · AI manager review ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/final/" target="_blank" rel="noopener">
-              <span class="syl-name"><span class="syl-icon">✅</span>Final Exam Kit</span>
+              <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Final Exam Kit</span>
               <span class="syl-meta">Study guide + 28-question test ↗</span></a></li>
           </ul>
           <div class="card-tags">
@@ -431,7 +474,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">Analyst Sprint</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             Ten-minute warm-up games for the prep kits. Coach Srbina, a sales rep finding her
@@ -455,7 +498,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">NEXUS</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             Learn SQL by catching a CFO embezzling $1.87M. You write real queries against a live
@@ -480,7 +523,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">Analyst Job Simulator</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             “Getting it wrong gets you there faster.” A day-in-the-life data-analyst job sim with
@@ -506,7 +549,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">SQL Quest</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             A roguelike SQL tower-defense game running real SQLite in the browser. You hold off
@@ -528,7 +571,7 @@
       </div>
 
       <!-- ============ Section C — Tools I Built ============ -->
-      <div class="section-label" id="tools-i-built">Tools I Built</div>
+      <div class="section-label" id="tools-i-built"><i data-lucide="wrench"></i> Tools I Built</div>
       <div class="projects">
 
         <!-- RecordForge -->
@@ -536,7 +579,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">RecordForge</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             Generate realistic fictional test documents and data — PDF, Word, HTML, Excel — for
@@ -561,7 +604,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">Spreadsheet Cleaner</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             A beginner-friendly Python project that profiles a messy spreadsheet and flags
@@ -587,7 +630,7 @@
           <div class="card-main">
           <div class="card-top">
             <span class="card-name">Keygarden</span>
-            <span class="card-arrow">↗</span>
+            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
             A calm typing trainer for the symbols data work actually runs on — brackets, braces,
@@ -643,6 +686,22 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeShot(); });
+</script>
+
+<!-- Lucide line icons (matches the Analyst Prep Kit suite) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  (function(){
+    function go(){
+      if(!window.lucide) return;
+      lucide.createIcons();
+      document.querySelectorAll('svg[data-lucide]').forEach(function(s){ s.removeAttribute('data-lucide'); });
+    }
+    go();
+    if(typeof window.lucide==='undefined'){
+      var n=0, t=setInterval(function(){ if(window.lucide||++n>60){ clearInterval(t); go(); } },50);
+    }
+  })();
 </script>
 
 </body>
