@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="czfO_UVQFJNdbuvFbaaU6XjLZdOiAIjvhZYsgB4O38w" />
 <title>Michael Nocito — Data Analyst</title>
-<meta name="description" content="Michael Nocito — data analyst working in Python, SQL, pandas, and Tableau. A working portfolio: a real-dataset churn analysis, browser-based tools that teach data skills, and desktop utilities I built to do the work.">
+<meta name="description" content="Michael Nocito — data analyst working in Python, SQL, pandas, and Tableau. A working portfolio: a real-dataset SQL analysis of 125,000 Steam games, browser-based tools that teach data skills, and desktop utilities I built to do the work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -379,31 +379,31 @@
       <div class="section-label" id="real-analysis"><i data-lucide="bar-chart-3"></i> Real Analysis</div>
       <div class="projects">
 
-        <!-- Telco Churn Analysis -->
-        <a class="project-card c-accent" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener">
+        <!-- Steam Hidden Gems -->
+        <a class="project-card c-accent" href="https://michaelnocito.github.io/steam-hidden-gems-list/" target="_blank" rel="noopener">
           <div class="card-main">
           <div class="card-top">
             <div>
               <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
-              <span class="card-name">Telco Churn Analysis</span>
+              <span class="card-name">Steam Hidden Gems ↗</span>
             </div>
             <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
           </div>
           <p class="card-desc">
-            End-to-end churn analysis on a real telecom customer dataset: cleaning, exploratory
-            analysis, and the segments most likely to leave — done in Python and pandas, with the
-            reasoning written out so the findings are easy to act on.
+            SQL analysis of a real ~125,000-game Steam dataset to surface 175 highly rated games
+            almost nobody has played. Includes catching and fixing a broken source file before the
+            numbers could be trusted, plus a live front-end where real players vote on the picks.
           </p>
           <div class="card-tags">
-            <span class="tag">Python</span>
-            <span class="tag">pandas</span>
-            <span class="tag">EDA</span>
+            <span class="tag">SQL</span>
+            <span class="tag">SQLite</span>
             <span class="tag">Data Cleaning</span>
-            <span class="tag">Jupyter</span>
+            <span class="tag">Validation</span>
+            <span class="tag">125k rows</span>
           </div>
           </div>
-          <button type="button" class="card-shot" aria-label="Enlarge chart" onclick="openShot(event,'assets/shots/telco-churn-analysis.webp','Telco churn analysis — churn rate by contract type')">
-            <img loading="lazy" decoding="async" src="assets/shots/telco-churn-analysis.webp" alt="Bar chart: churn rate by contract type, month-to-month highest">
+          <button type="button" class="card-shot" aria-label="Enlarge preview" onclick="openShot(event,'assets/shots/steam-hidden-gems.webp','Steam Hidden Gems — a browsable list of highly rated, low-audience games found with SQL')">
+            <img loading="lazy" decoding="async" src="assets/shots/steam-hidden-gems.webp" alt="Steam Hidden Gems: a grid of acclaimed indie game covers found with SQL">
           </button>
         </a>
 
