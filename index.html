@@ -19,24 +19,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
-     GRAIN design system — clay/terracotta primary, honey amber
-     accent, warm stone neutrals on cream. Space Grotesk (display)
-     + IBM Plex (body/mono). Matches the Analyst Prep Kit suite.
+     GRAIN design system — Zinc & Sky palette: deep cyan primary
+     on cool zinc neutrals. Space Grotesk (display) + IBM Plex
+     (body/mono). Matches the Analyst Prep Kit suite.
      ============================================================ */
   :root {
-    /* Stone (warm neutral) */
-    --stone-50:#FAF6EF; --stone-100:#F1E9DC; --stone-200:#E4D7C4; --stone-300:#CDBA9F;
-    --stone-400:#A8927A; --stone-500:#80705E; --stone-600:#5F5244; --stone-700:#463C31;
-    --stone-800:#2E2720; --stone-900:#1C1712;
-    /* Clay (primary) */
-    --clay-50:#FCEFE8; --clay-100:#F8D8C6; --clay-200:#F0B196; --clay-300:#E68A66;
-    --clay-400:#DA6A42; --clay-500:#C5511F; --clay-600:#A5411A; --clay-700:#813218;
-    /* Amber (accent) */
-    --amber-50:#FDF3E0; --amber-300:#EAAE3F; --amber-400:#DC9617; --amber-500:#BE7E0E; --amber-600:#97640C;
-    /* Leaf / Teal / Rust */
-    --leaf-50:#ECF2E2; --leaf-400:#6E9A45; --leaf-500:#557A30;
-    --teal-50:#DFEDEC; --teal-400:#3C8B8F; --teal-500:#2A6E72;
-    --rust-500:#BE3B22;
+    /* Stone (zinc neutral) */
+    --stone-50:#FBFCFD; --stone-100:#F5F7F8; --stone-200:#E4E7EA; --stone-300:#C3C7CE;
+    --stone-400:#8A8F98; --stone-500:#71717A; --stone-600:#52525B; --stone-700:#27272A;
+    --stone-800:#18181B; --stone-900:#09090B;
+    /* Clay (primary → deep cyan) */
+    --clay-50:#E0F5F9; --clay-100:#C7EDF4; --clay-200:#A5E1ED; --clay-300:#7DD3FC;
+    --clay-400:#38BDF8; --clay-500:#0E7490; --clay-600:#155E6E; --clay-700:#134E5C;
+    /* Amber (warning) */
+    --amber-50:#FFFBEB; --amber-300:#FBBF24; --amber-400:#F59E0B; --amber-500:#D97706; --amber-600:#B45309;
+    /* Leaf / Teal / Rust (emerald / indigo info / red) */
+    --leaf-50:#ECFDF5; --leaf-400:#34D399; --leaf-500:#10B981;
+    --teal-50:#EEF2FF; --teal-400:#818CF8; --teal-500:#4F46E5;
+    --rust-500:#DC2626;
 
     /* Fonts */
     --font-display:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif;
@@ -45,12 +45,12 @@
 
     /* Page semantic roles */
     --bg:        var(--stone-50);
-    --panel:     #FFFDFA;
+    --panel:     #FFFFFF;
     --sunken:    var(--stone-100);
     --line:      var(--stone-200);
     --line-bd:   var(--stone-300);
-    --shadow:    0 1px 2px rgba(70,40,20,.05), 0 8px 24px rgba(70,40,20,.07);
-    --shadow-lg: 0 4px 10px rgba(70,40,20,.10), 0 18px 44px rgba(70,40,20,.13);
+    --shadow:    0 1px 2px rgba(9,9,11,.05), 0 8px 24px rgba(9,9,11,.07);
+    --shadow-lg: 0 4px 10px rgba(9,9,11,.10), 0 18px 44px rgba(9,9,11,.13);
 
     --ink:       var(--stone-900);
     --dim:       var(--stone-600);
@@ -102,7 +102,7 @@
   .phase-chip {
     font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
     padding: 5px 11px; border-radius: 999px; white-space: nowrap;
-    background: var(--leaf-50); color: var(--leaf-500); border: 1px solid #cfe0b6;
+    background: var(--leaf-50); color: var(--leaf-500); border: 1px solid #A7F3D0;
     display: inline-flex; align-items: center; gap: 6px;
   }
   .phase-chip .lucide { width: 11px; height: 11px; }
@@ -144,13 +144,13 @@
   .welcome-cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
   .primary {
-    background: var(--accent); color: #FFF8F2; border: 0; border-radius: 10px;
+    background: var(--accent); color: #FFFFFF; border: 0; border-radius: 10px;
     padding: 11px 22px; font-size: 14.5px; font-weight: 600; font-family: var(--font-sans); cursor: pointer;
     text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    box-shadow: 0 2px 10px rgba(197,81,31,.30);
+    box-shadow: 0 2px 10px rgba(14,116,144,.30);
     transition: background .15s, transform .05s, box-shadow .15s;
   }
-  .primary:hover { background: var(--accent-d); box-shadow: 0 4px 14px rgba(197,81,31,.38); }
+  .primary:hover { background: var(--accent-d); box-shadow: 0 4px 14px rgba(14,116,144,.38); }
   .primary:active { transform: translateY(1px); }
   .primary .lucide, .ghost-btn .lucide { width: 16px; height: 16px; }
   .ghost-btn {
@@ -209,7 +209,7 @@
   .card-shot::after {
     content: '⤢'; position: absolute; right: 8px; bottom: 8px;
     width: 26px; height: 26px; display: grid; place-items: center;
-    font-size: 14px; color: #fff; background: rgba(28,23,18,.62);
+    font-size: 14px; color: #fff; background: rgba(9,9,11,.62);
     border-radius: 7px; opacity: 0; transition: opacity .18s; pointer-events: none;
   }
   .card-shot:hover::after { opacity: 1; }
@@ -218,7 +218,7 @@
   .lightbox {
     position: fixed; inset: 0; z-index: 50; display: none;
     align-items: center; justify-content: center; padding: 4vmin;
-    background: rgba(28,23,18,.82); cursor: zoom-out;
+    background: rgba(9,9,11,.82); cursor: zoom-out;
   }
   .lightbox.open { display: flex; animation: lbfade .15s ease; }
   @keyframes lbfade { from { opacity: 0; } to { opacity: 1; } }
@@ -238,11 +238,11 @@
   .project-card.c-accent { border-left-color: var(--clay-500); }
   a.project-card.c-accent:hover { border-color: var(--clay-200); }
   .project-card.c-purple { border-left-color: var(--teal-500); }
-  a.project-card.c-purple:hover { border-color: #a6cdcd; }
+  a.project-card.c-purple:hover { border-color: #C7D2FE; }
   .project-card.c-warm   { border-left-color: var(--amber-500); }
-  a.project-card.c-warm:hover { border-color: var(--amber-200, #F3C877); }
+  a.project-card.c-warm:hover { border-color: var(--amber-200, #FCD34D); }
   .project-card.c-green  { border-left-color: var(--leaf-500); }
-  a.project-card.c-green:hover { border-color: #cfe0b6; }
+  a.project-card.c-green:hover { border-color: #A7F3D0; }
 
   .project-card.featured {
     background: linear-gradient(135deg, var(--panel) 0%, var(--clay-50) 100%);
