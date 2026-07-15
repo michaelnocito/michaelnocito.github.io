@@ -99,13 +99,6 @@
   .brand-text .sub { font-size: 12px; color: var(--dim); }
 
   .orient { display: flex; align-items: center; gap: 16px; }
-  .phase-chip {
-    font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-    padding: 5px 11px; border-radius: 999px; white-space: nowrap;
-    background: var(--leaf-50); color: var(--leaf-500); border: 1px solid #A7F3D0;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .phase-chip .lucide { width: 11px; height: 11px; }
   .nav-links { display: flex; gap: 20px; }
   .nav-links a {
     font-size: 13.5px; font-weight: 600; color: var(--dim);
@@ -331,7 +324,6 @@
     </span>
   </a>
   <div class="orient">
-    <span class="phase-chip"><i data-lucide="circle-dot"></i> Open to Work</span>
     <nav class="nav-links">
       <a href="#real-analysis">Analysis</a>
       <a href="#learning-tools">Learning</a>
@@ -389,7 +381,7 @@
             </div>
           </div>
           <p class="card-desc">
-            SQL analysis of a real ~125,000-game Steam dataset to surface 175 highly rated games
+            SQL analysis of a real ~125,000-game Steam dataset to surface 166 highly rated games
             almost nobody has played, including catching and fixing a broken source file before the
             numbers could be trusted. A Part 2 expansion joins ~41 million player reviews to see
             which of those gems people actually keep playing.
@@ -463,34 +455,35 @@
               <div class="start-badge"><i data-lucide="star"></i> Start Here</div>
               <a class="card-name" href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">Analyst Prep Kit ↗</a>
             </div>
-            <span class="card-count">11 modules</span>
+            <span class="card-count">14 modules</span>
           </div>
           <p class="card-desc">
             A complete browser-based prep suite for breaking into data analytics, sequenced
             in the order an analyst actually learns: Excel → SQL → Python → Tableau → Stats →
             Power BI → Interview, plus tool-agnostic Chart Literacy and Forecasting kits, a
-            week-1 job simulator, and a cross-subject final exam. Read-it-aloud code breakdowns
+            week-1 job simulator, a cross-subject final exam, and certification prep for
+            Tableau, Excel, and Power BI. Read-it-aloud code breakdowns
             and live in-browser practice environments. No install, no login, no telemetry.
           </p>
           <ul class="syl-list">
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/excel/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Excel Kit</span>
-              <span class="syl-meta">Pivot Lab drag-and-drop · 12 lessons ↗</span></a></li>
+              <span class="syl-meta">Pivot Lab drag-and-drop ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/sql/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>SQL Kit</span>
-              <span class="syl-meta">Live SQLite in-browser · 12 lessons ↗</span></a></li>
+              <span class="syl-meta">Live SQLite in-browser ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/python/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Python Kit</span>
-              <span class="syl-meta">Live Pyodide terminal · 12 lessons ↗</span></a></li>
+              <span class="syl-meta">Live Pyodide terminal ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/tableau/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Tableau Kit</span>
-              <span class="syl-meta">Drag-and-drop Viz Builder · 12 lessons ↗</span></a></li>
+              <span class="syl-meta">Drag-and-drop Viz Builder ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/chart-literacy/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Chart Literacy Kit</span>
-              <span class="syl-meta">Read, choose & explain charts · 13 lessons ↗</span></a></li>
+              <span class="syl-meta">Read, choose & explain charts ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/forecasting/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Forecasting & Trend Modeling Kit</span>
-              <span class="syl-meta">Smoothing · seasonality · accuracy · 13 lessons ↗</span></a></li>
+              <span class="syl-meta">Smoothing · seasonality · accuracy ↗</span></a></li>
             <li><a class="syl-item" href="https://michaelnocito.github.io/analyst-prep-kit/stats/" target="_blank" rel="noopener">
               <span class="syl-name"><span class="syl-icon"><i data-lucide="check"></i></span>Stats Kit</span>
               <span class="syl-meta">Distribution Lab · mean → A/B testing ↗</span></a></li>
@@ -542,31 +535,6 @@
             <span class="tag">Open Source</span>
           </div>
           </div>
-        </a>
-
-        <!-- NEXUS -->
-        <a class="project-card c-purple" href="https://michaelnocito.github.io/nexus-sql-mystery/" target="_blank" rel="noopener">
-          <div class="card-main">
-          <div class="card-top">
-            <span class="card-name">NEXUS</span>
-            <span class="card-arrow"><i data-lucide="arrow-up-right"></i></span>
-          </div>
-          <p class="card-desc">
-            Learn SQL by catching a CFO embezzling $1.87M. You write real queries against a live
-            database — no slides, no exercises, every query is evidence. Two full seasons of SQL
-            objectives and concept cards that unlock as you investigate.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">PySide6</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">Open Source</span>
-          </div>
-          </div>
-          <button type="button" class="card-shot" aria-label="Enlarge screenshot" onclick="openShot(event,'assets/shots/nexus-sql-mystery.webp','NEXUS — a SQL query returning case evidence in the terminal')">
-            <img loading="lazy" decoding="async" src="assets/shots/nexus-sql-mystery.webp" alt="NEXUS terminal: a SQL query, a result table, and a clue found">
-          </button>
         </a>
 
         <!-- Spreadsheet Archaeology -->
