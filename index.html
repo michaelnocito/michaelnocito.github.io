@@ -194,9 +194,19 @@
   .tile.c-green:hover { border-color: #A7F3D0; }
   .tile.featured { background: linear-gradient(135deg, var(--panel) 0%, var(--clay-50) 100%); border-color: var(--clay-200); grid-column: 1 / -1; }
 
-  .tile-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .tile-name { font-size: 15px; font-weight: 700; color: var(--ink); }
-  .tile-arrow { color: var(--stone-400); flex-shrink: 0; transition: color .18s, transform .18s; display: inline-flex; }
+  .tile-top { display: flex; align-items: center; gap: 10px; }
+  .tile-icon {
+    width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;
+    display: grid; place-items: center; font-size: 15px;
+    background: var(--accent-soft); color: var(--accent-d); border: 1px solid var(--accent-bd);
+  }
+  .tile-icon .lucide { width: 16px; height: 16px; }
+  .tile.c-green .tile-icon { background: var(--leaf-50); color: #059669; border-color: #A7F3D0; }
+  .tile.c-warm .tile-icon { background: var(--amber-50); color: var(--amber-600); border-color: #FCD34D; }
+  .tile.c-purple .tile-icon { background: var(--teal-50); color: var(--teal-500); border-color: #C7D2FE; }
+  .tile.featured .tile-icon { background: var(--clay-100); color: var(--clay-600); }
+  .tile-name { font-size: 16.5px; font-weight: 700; color: var(--ink); flex: 1 1 auto; min-width: 0; line-height: 1.25; }
+  .tile-arrow { color: var(--stone-400); flex-shrink: 0; transition: color .18s, transform .18s; display: inline-flex; margin-left: auto; }
   .tile-arrow .lucide { width: 16px; height: 16px; }
   .tile:hover .tile-arrow { color: var(--accent); transform: translate(2px,-2px); }
   .tile-desc {
@@ -344,8 +354,7 @@
       <div class="tiles">
 
         <div class="tile c-accent">
-          <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
-          <div class="tile-top"><span class="tile-name">Steam Hidden Gems</span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="gamepad-2"></i></span><span class="tile-name">Steam Hidden Gems</span></div>
           <p class="tile-desc">SQL analysis of ~125,000 Steam games to surface 166 highly rated games almost nobody has played.</p>
           <div class="tile-actions">
             <a class="tile-action" href="https://github.com/michaelnocito/steam-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
@@ -354,8 +363,7 @@
         </div>
 
         <div class="tile c-accent">
-          <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
-          <div class="tile-top"><span class="tile-name">Hidden Gem Movies</span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="film"></i></span><span class="tile-name">Hidden Gem Movies</span></div>
           <p class="tile-desc">SQL analysis of IMDb's 12.6M titles to surface 581 movies rated 8.0+ that almost nobody has watched.</p>
           <div class="tile-actions">
             <a class="tile-action" href="https://github.com/michaelnocito/streaming-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
@@ -364,8 +372,7 @@
         </div>
 
         <div class="tile c-accent">
-          <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
-          <div class="tile-top"><span class="tile-name">Music Hidden Gems</span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="music"></i></span><span class="tile-name">Music Hidden Gems</span></div>
           <p class="tile-desc">SQL + Python joining Billboard history to Last.fm data to surface 500 songs listeners love but radio skipped.</p>
           <div class="tile-actions">
             <a class="tile-action" href="https://github.com/michaelnocito/music-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
@@ -374,8 +381,7 @@
         </div>
 
         <div class="tile c-accent">
-          <div class="start-badge"><i data-lucide="star"></i> Real Data</div>
-          <div class="tile-top"><span class="tile-name">Telco Churn: Risk Personas</span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="trending-down"></i></span><span class="tile-name">Telco Churn: Risk Personas</span></div>
           <p class="tile-desc">Python/pandas analysis of 7,043 customers: four tenure personas show who's actually leaving, and why.</p>
           <div class="tile-actions">
             <a class="tile-action" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
@@ -392,7 +398,7 @@
         <!-- ★ FEATURED — Analyst Prep Kit (full width) -->
         <a class="tile c-accent featured" href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener">
           <div class="start-badge"><i data-lucide="star"></i> Start Here</div>
-          <div class="tile-top"><span class="tile-name">Analyst Prep Kit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="rocket"></i></span><span class="tile-name">Analyst Prep Kit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">A complete browser-based prep suite for breaking into data analytics — 14 modules, sequenced in the order an analyst actually learns.</p>
           <div class="kit-chips">
             <span class="kit-chip"><i data-lucide="check"></i>Excel</span>
@@ -410,17 +416,17 @@
         </a>
 
         <a class="tile c-green" href="https://michaelnocito.github.io/prep-companion-apps/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Analyst Sprint</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="zap"></i></span><span class="tile-name">Analyst Sprint</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">Ten-minute warm-up games for the prep kits — real Excel formulas and SQL queries against the clock.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/spreadsheet-archaeology/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Analyst Job Simulator</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="briefcase"></i></span><span class="tile-name">Analyst Job Simulator</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">A day-in-the-life job sim with Excel and Tableau tracks — de-curse the messy files inherited from the last person.</p>
         </a>
 
         <a class="tile c-purple" href="https://michaelnocito.github.io/sql-quest/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">SQL Quest</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="castle"></i></span><span class="tile-name">SQL Quest</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">A roguelike SQL tower-defense game running real SQLite in the browser.</p>
         </a>
 
@@ -431,17 +437,17 @@
       <div class="tiles cols-3">
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">RecordForge</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-stack"></i></span><span class="tile-name">RecordForge</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">Generates realistic fictional test documents — PDF, Word, Excel — for QA and data-engineering testing.</p>
         </a>
 
         <a class="tile c-green" href="https://michaelnocito.github.io/spreadsheet-cleaner/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Spreadsheet Cleaner</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="sparkles"></i></span><span class="tile-name">Spreadsheet Cleaner</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">Profiles a messy spreadsheet and flags data-quality issues in a plain audit report.</p>
         </a>
 
         <a class="tile c-green" href="https://michaelnocito.github.io/keygarden/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Keygarden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="keyboard"></i></span><span class="tile-name">Keygarden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">A calm typing trainer for the symbols data work runs on — brackets, braces, operators.</p>
         </a>
 
@@ -453,32 +459,32 @@
       <div class="tiles cols-3">
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/sql-teaching-comments/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">How to Comment SQL So It Teaches</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-code-2"></i></span><span class="tile-name">How to Comment SQL So It Teaches</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">The documentation format used across every SQL project here — boxed WHY header, clause-by-clause read-out-loud.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/set-up-a-sql-database/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">How to Set Up a SQL Database</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="database"></i></span><span class="tile-name">How to Set Up a SQL Database</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">Turn a CSV into a real SQL database with free tools, no server. Written for complete beginners.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/handle-large-datasets/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">How to Handle Large Datasets</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="hard-drive"></i></span><span class="tile-name">How to Handle Large Datasets</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">What "large" really means, why you move it into a database, and the quirks that trip everyone up.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/git-for-analysts/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Git and GitHub for Analysts</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="git-branch"></i></span><span class="tile-name">Git and GitHub for Analysts</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">The repeatable core of Git an analyst actually needs — add-commit-push, and publishing with GitHub Pages.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/build-a-tableau-dashboard/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Build a Tableau Dashboard and Story</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="bar-chart-3"></i></span><span class="tile-name">Build a Tableau Dashboard and Story</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">Click by click, from a CSV to a published link — four sheets, a dashboard, and a three-point story.</p>
         </a>
 
         <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Browse all guides</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="book-open"></i></span><span class="tile-name">Browse all guides</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">The full, growing library — how-tos plus concept guides on the ideas that trip up beginners.</p>
         </a>
 
@@ -494,7 +500,7 @@
             <img loading="lazy" decoding="async" src="art/01_oscar_2023.jpg" alt="Charcoal portrait of a dog, Oscar (2023)">
           </button>
           <div class="tile-main">
-            <div class="tile-top"><span class="tile-name">Charcoal Portraits</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+            <div class="tile-top"><span class="tile-icon"><i data-lucide="palette"></i></span><span class="tile-name">Charcoal Portraits</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
             <p class="tile-desc">Slow, observed, made by hand — charcoal animal portraits, mostly dogs, drawn from life and reference. <strong>Draw what's actually there, not what you assume.</strong></p>
           </div>
         </a>
