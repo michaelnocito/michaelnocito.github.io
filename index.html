@@ -151,24 +151,29 @@
   .section-label .lucide { width: 15px; height: 15px; color: var(--accent); }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
-  /* Collapsible section (secondary content — reference/how-tos) */
-  .section-collapse { margin: 26px 0 0; scroll-margin-top: 72px; }
-  .section-collapse > summary {
-    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-mono); font-size: 11.5px; font-weight: 500;
-    letter-spacing: .08em; text-transform: uppercase; color: var(--dim);
-    padding: 4px 0; margin-bottom: 12px;
+  /* Guide panel — always visible. One button in, titles underneath as
+     orientation only, so the section states what is there without
+     spending six tiles' worth of the page on it. */
+  .guide-panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px;
   }
-  .section-collapse > summary::-webkit-details-marker { display: none; }
-  .section-collapse > summary .lucide.chevron { width: 13px; height: 13px; color: var(--accent); transition: transform .15s; flex-shrink: 0; }
-  .section-collapse[open] > summary .lucide.chevron { transform: rotate(90deg); }
-  .section-collapse > summary::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-  .section-collapse > summary .section-count {
-    font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--dim);
-    background: var(--sunken); border: 1px solid var(--line); border-radius: 999px;
-    padding: 1px 9px; font-size: 11px;
+  .guide-cta {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    font-family: var(--font-mono); font-size: 12.5px; font-weight: 500;
+    color: var(--accent-d); background: var(--accent-soft);
+    border: 1px solid var(--clay-200); border-radius: 8px; padding: 7px 13px;
   }
-  .section-collapse:hover > summary { color: var(--ink); }
+  .guide-cta:hover { background: var(--panel); border-color: var(--accent); }
+  .guide-cta .lucide { width: 14px; height: 14px; }
+  .guide-cta .guide-count {
+    font-size: 11px; color: var(--dim); background: var(--panel);
+    border: 1px solid var(--line); border-radius: 999px; padding: 0 7px;
+  }
+  .guide-names {
+    margin: 11px 0 0; font-size: 12.5px; line-height: 1.75; color: var(--dim);
+  }
+  .guide-names .sep { color: var(--line-bd); padding: 0 2px; }
 
   /* ---- Tile grid ------------------------------------------------------ */
   .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -453,43 +458,12 @@
 
       </div>
 
-      <!-- ============ Section D — Reference & How-Tos (collapsed, 3 wide) ============ -->
-      <details class="section-collapse" id="reference">
-      <summary><i data-lucide="chevron-right" class="lucide chevron"></i><i data-lucide="book-open"></i> Reference &amp; How-Tos <span class="section-count">6</span></summary>
-      <div class="tiles cols-3">
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/sql-teaching-comments/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-code-2"></i></span><span class="tile-name">How to Comment SQL So It Teaches</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">The documentation format used across every SQL project here — boxed WHY header, clause-by-clause read-out-loud.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/set-up-a-sql-database/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="database"></i></span><span class="tile-name">How to Set Up a SQL Database</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Turn a CSV into a real SQL database with free tools, no server. Written for complete beginners.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/handle-large-datasets/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="hard-drive"></i></span><span class="tile-name">How to Handle Large Datasets</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">What "large" really means, why you move it into a database, and the quirks that trip everyone up.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/git-for-analysts/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="git-branch"></i></span><span class="tile-name">Git and GitHub for Analysts</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">The repeatable core of Git an analyst actually needs — add-commit-push, and publishing with GitHub Pages.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/build-a-tableau-dashboard/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="bar-chart-3"></i></span><span class="tile-name">Build a Tableau Dashboard and Story</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Click by click, from a CSV to a published link — four sheets, a dashboard, and a three-point story.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="book-open"></i></span><span class="tile-name">Browse all guides</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">The full, growing library — how-tos plus concept guides on the ideas that trip up beginners.</p>
-        </a>
-
+      <!-- ============ Section D — Reference & How-Tos ============ -->
+      <div class="section-label" id="reference"><i data-lucide="book-open"></i> Reference &amp; How-Tos</div>
+      <div class="guide-panel">
+        <a class="guide-cta" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener"><i data-lucide="book-open"></i> All guides <span class="guide-count">17</span><i data-lucide="arrow-up-right"></i></a>
+        <p class="guide-names">Step-by-step how-tos and concept guides, written for beginners: What Is Data Analysis? <span class="sep">&middot;</span> SQL JOINs <span class="sep">&middot;</span> COUNT in SQL <span class="sep">&middot;</span> The CASE Expression <span class="sep">&middot;</span> Comment SQL So It Teaches <span class="sep">&middot;</span> Set Up a SQL Database <span class="sep">&middot;</span> Handle Large Datasets <span class="sep">&middot;</span> SQL and Python Together <span class="sep">&middot;</span> Exploratory Data Analysis <span class="sep">&middot;</span> Defining Metrics <span class="sep">&middot;</span> Data-Driven Thresholds <span class="sep">&middot;</span> Documenting Data Limitations <span class="sep">&middot;</span> Entity Resolution <span class="sep">&middot;</span> Git and GitHub for Analysts <span class="sep">&middot;</span> Build a Tableau Dashboard <span class="sep">&middot;</span> Technical Tenacity <span class="sep">&middot;</span> Verify AI Agent Work.</p>
       </div>
-      </details>
 
       <!-- ============ Section E — Beyond the Data ============ -->
       <div class="section-label" id="beyond-data"><i data-lucide="palette"></i> Beyond the Data</div>
