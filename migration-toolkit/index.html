@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6C09BL3WH1');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Data Migration Toolkit — Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/migration-toolkit/">
+<meta name="description" content="The working paperwork for a data migration, designed once: eight stage gates, a field map, an exception sheet, and a reconciliation that catches a silent multiply before the client does.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-50:#FBFCFD; --stone-100:#F5F7F8; --stone-200:#E4E7EA; --stone-300:#C3C7CE;
+    --stone-400:#8A8F98; --stone-500:#71717A; --stone-600:#52525B; --stone-700:#27272A;
+    --stone-800:#18181B; --stone-900:#09090B;
+    --clay-300:#7DD3FC; --clay-400:#38BDF8; --clay-500:#0E7490; --clay-600:#155E6E;
+    --leaf-500:#10B981;
+
+    --font-display:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif;
+    --font-sans:'IBM Plex Sans',system-ui,-apple-system,Roboto,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+
+    --bg:var(--stone-50); --panel:#FFFFFF; --sunken:var(--stone-100);
+    --line:var(--stone-200); --line-bd:var(--stone-300);
+    --ink:var(--stone-900); --dim:var(--stone-600);
+    --accent:var(--clay-500); --accent-d:var(--clay-600);
+    --shadow:0 1px 2px rgba(9,9,11,.05), 0 8px 24px rgba(9,9,11,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:var(--stone-900); --panel:var(--stone-800); --sunken:var(--stone-700);
+      --line:var(--stone-700); --line-bd:var(--stone-600);
+      --ink:var(--stone-50); --dim:var(--stone-300);
+      --accent:var(--clay-400); --accent-d:var(--clay-300);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+    }
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--font-sans); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:48px 24px 96px}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:hover{color:var(--accent-d)}
+
+  .back{
+    font-family:var(--font-mono); font-size:13px; letter-spacing:.02em;
+    text-decoration:none; color:var(--dim);
+  }
+  .back:hover{color:var(--accent)}
+
+  h1{
+    font-family:var(--font-display); font-weight:700; font-size:clamp(30px,5vw,42px);
+    line-height:1.15; letter-spacing:-.02em; margin:28px 0 0;
+  }
+  .lede{font-size:19px; color:var(--dim); margin:14px 0 0; max-width:60ch}
+
+  h2{
+    font-family:var(--font-display); font-weight:600; font-size:23px;
+    letter-spacing:-.01em; margin:44px 0 12px;
+  }
+
+  .cta{
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+    margin:32px 0 0;
+  }
+  .btn{
+    display:inline-block; background:var(--accent); color:#fff;
+    font-weight:600; font-size:16px; text-decoration:none;
+    padding:13px 22px; border-radius:8px; box-shadow:var(--shadow);
+  }
+  .btn:hover{background:var(--accent-d); color:#fff}
+  .btn-note{font-size:14px; color:var(--dim); font-family:var(--font-mono)}
+
+  .panel{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:12px; padding:22px 24px; margin:20px 0 0;
+    box-shadow:var(--shadow);
+  }
+
+  table{border-collapse:collapse; width:100%; font-size:15px; margin:16px 0 0}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{
+    font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--dim); font-weight:600;
+  }
+  td:first-child{font-weight:600; white-space:nowrap}
+  .scroller{overflow-x:auto; -webkit-overflow-scrolling:touch}
+
+  ol.gates{counter-reset:g; list-style:none; padding:0; margin:16px 0 0}
+  ol.gates li{
+    counter-increment:g; position:relative; padding:0 0 0 44px; margin:0 0 14px;
+  }
+  ol.gates li::before{
+    content:counter(g); position:absolute; left:0; top:1px;
+    width:28px; height:28px; border-radius:50%;
+    background:var(--sunken); border:1px solid var(--line-bd);
+    font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+  }
+  ol.gates b{font-weight:600}
+  ol.gates span{color:var(--dim)}
+
+  .fine{font-size:14px; color:var(--dim); margin-top:10px}
+  footer{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
+    font-size:14px; color:var(--dim);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="/">← michaelnocito.github.io</a>
+
+  <h1>The Data Migration Toolkit</h1>
+  <p class="lede">
+    You start the migration with the paperwork already designed, and the
+    reconciliation catches a silent multiply before the client finds it.
+  </p>
+
+  <div class="cta">
+    <a class="btn" href="Data-Migration-Toolkit.pdf">Read the toolkit (PDF)</a>
+    <span class="btn-note">9 pages · built from a worked engagement</span>
+  </div>
+
+  <h2>The idea it is built on</h2>
+  <p>
+    Every argument late in a migration is about something agreed early. Someone
+    says the exclusion list never covered those records. Someone else remembers
+    the field map differently. Nobody can produce the moment it was decided.
+  </p>
+  <p>
+    So the work is split into eight stages, and each one ends at a
+    <b>gate</b>: a short written sign-off naming what was agreed, who agreed it,
+    and where the evidence sits. A stage does not open until the one before it
+    is signed. That single rule is what turns a dispute in month five into a
+    lookup instead of an argument.
+  </p>
+
+  <ol class="gates">
+    <li><b>Kickoff and scope.</b> <span>Gate: the scope is signed. Nothing else starts until it exists.</span></li>
+    <li><b>Profile the source.</b> <span>Gate: the profiling report is accepted, so you both agree what the data really looks like.</span></li>
+    <li><b>Map the fields.</b> <span>Gate: the mapping is signed off and the version is frozen.</span></li>
+    <li><b>Clean and de-dupe.</b> <span>Gate: the exception list is closed, or formally accepted as is.</span></li>
+    <li><b>The dry run.</b> <span>Gate: a clean reconciliation in the sandbox, on real volume.</span></li>
+    <li><b>User acceptance testing.</b> <span>Gate: the client signs off. The people who use the data confirm it is right.</span></li>
+    <li><b>Freeze, cutover and bridge.</b> <span>Gate: go-live accepted, and the work created mid-migration is accounted for.</span></li>
+    <li><b>Hypercare and close.</b> <span>Gate: the project is closed and the handoff is accepted.</span></li>
+  </ol>
+
+  <h2>What is in the workbook</h2>
+  <div class="scroller">
+  <table>
+    <thead>
+      <tr><th>Tab</th><th>What it does</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Migration Plan</td><td>56 tasks across the eight stages, with predecessors and real dates.</td></tr>
+      <tr><td>Overview</td><td>Percent complete per stage, rolled up from the plan.</td></tr>
+      <tr><td>Action Log</td><td>Open items, owner, due date, and how each was closed.</td></tr>
+      <tr><td>Change Requests</td><td>Scope changes with the decision and its date.</td></tr>
+      <tr><td>Field Mapping</td><td>Source field, target field, transform rule, and who approved it.</td></tr>
+      <tr><td>Exception Sheet</td><td>Records that did not load, why, and what was done about them.</td></tr>
+      <tr><td>Reconciliation</td><td>Row counts and control totals, source against target.</td></tr>
+      <tr><td>Linkage Check</td><td>Whether parent and child records still point at each other.</td></tr>
+      <tr><td>Gate Sign-off</td><td>The eight gates: what was signed, by whom, when, and the evidence.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="fine">
+    Owners are roles, not names, so a team swaps in its own people. The plan tab
+    imports into Smartsheet: header on row 1, no merged cells, real dates.
+  </p>
+
+  <div class="panel">
+    <h2 style="margin-top:0">Everything in it is invented</h2>
+    <p style="margin-bottom:0">
+      The worked example follows a fictional provider, Northwind Care Services,
+      moving off a fictional platform mid-cutover. Every client, system,
+      identifier and number is made up. No real engagement is described here.
+    </p>
+  </div>
+
+  <h2>Who made it</h2>
+  <p>
+    I am Michael Nocito. I spent about ten years as an implementation and data
+    migration analyst, most recently as a Senior Implementation Analyst at
+    RLDatix, moving client data onto contract and compliance platforms. This is
+    the set of sheets I kept rebuilding from scratch on every engagement, built
+    once and properly.
+  </p>
+  <p>
+    More of my work is at
+    <a href="https://michaelnocito.github.io/">michaelnocito.github.io</a>,
+    and the eight stages are each written up in full in the
+    <a href="https://michaelnocito.github.io/analyst-prep-kit/">Analyst Prep Kit</a>.
+  </p>
+
+  <footer>
+    Michael Nocito · <a href="mailto:hello.michaelnocito@gmail.com">hello.michaelnocito@gmail.com</a>
+    · <a href="https://www.linkedin.com/in/michaelnocito">LinkedIn</a>
+  </footer>
+
+</div>
+</body>
+</html>
