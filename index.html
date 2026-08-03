@@ -323,9 +323,10 @@
   </a>
   <div class="orient">
     <nav class="nav-links">
-      <a href="#real-analysis">Analysis</a>
-      <a href="#learning-tools">Learning</a>
+      <a href="#real-analysis">Work</a>
+      <a href="#reference">Writing</a>
       <a href="#tools-i-built">Tools</a>
+      <a href="#learning-tools">Teaching</a>
       <a href="#beyond-data">Art</a>
     </nav>
   </div>
@@ -337,16 +338,18 @@
     <!-- Hero / welcome card -->
     <section class="welcome">
       <div class="welcome-card">
-        <div class="welcome-eyebrow">Data Analyst · Python · SQL · Tableau · pandas</div>
+        <div class="welcome-eyebrow">Data Cleaning · Excel · SQL · Tableau</div>
         <h1>Michael <span>Nocito.</span></h1>
         <p class="welcome-sub">
-          I find the signal in messy data and explain it clearly, then build the tools to do it again, faster.
-          <strong>10+ years</strong> migrating data across enterprise systems, now focused on Python, SQL, pandas,
-          and Tableau. Below: real analysis, learning tools, and utilities I built — all live and linked.
+          A 26.5% churn rate hid a 5x gap: first-year customers were leaving four times faster than loyal ones,
+          and month-to-month contracts were the mechanism. That is the kind of answer I am after.
+          <strong>10+ years</strong> cleaning, validating and migrating data across enterprise systems, in Excel
+          and SQL every day. Below: the analysis, the writing behind it, and the tools the work needed.
         </p>
         <div class="welcome-cta">
           <a class="social-btn" href="https://github.com/michaelnocito" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
           <a class="social-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener"><i data-lucide="linkedin"></i> LinkedIn</a>
+          <a class="social-btn" href="mailto:hello.michaelnocito@gmail.com"><i data-lucide="mail"></i> Email</a>
         </div>
       </div>
     </section>
@@ -355,15 +358,23 @@
     <section id="projects">
 
       <!-- ============ Section A — Real Analysis (2 tiles wide) ============ -->
-      <div class="section-label" id="real-analysis"><i data-lucide="bar-chart-3"></i> Real Analysis</div>
+      <div class="section-label" id="real-analysis"><i data-lucide="bar-chart-3"></i> The Work</div>
       <div class="tiles">
+        <div class="tile c-accent">
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="trending-down"></i></span><span class="tile-name">Telco Churn: Risk Personas</span></div>
+          <p class="tile-desc">Python/pandas analysis of 7,043 customers: four tenure personas show who's actually leaving, and why.</p>
+          <div class="tile-actions">
+            <a class="tile-action" href="https://public.tableau.com/app/profile/michael.nocito8651/viz/TelcoCustomerChurnRiskPersonas/Story1" target="_blank" rel="noopener"><i data-lucide="presentation"></i>Tableau story</a>
+            <a class="tile-action" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Python &amp; method</a>
+          </div>
+
 
         <div class="tile c-accent">
           <div class="tile-top"><span class="tile-icon"><i data-lucide="gamepad-2"></i></span><span class="tile-name">Steam Hidden Gems</span></div>
           <p class="tile-desc">SQL analysis of ~125,000 Steam games to surface 166 highly rated games almost nobody has played.</p>
           <div class="tile-actions">
-            <a class="tile-action" href="https://github.com/michaelnocito/steam-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
             <a class="tile-action" href="https://michaelnocito.github.io/steam-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
+            <a class="tile-action" href="https://github.com/michaelnocito/steam-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
           </div>
         </div>
 
@@ -371,8 +382,8 @@
           <div class="tile-top"><span class="tile-icon"><i data-lucide="film"></i></span><span class="tile-name">Hidden Gem Movies</span></div>
           <p class="tile-desc">SQL analysis of IMDb's 12.6M titles to surface 581 movies rated 8.0+ that almost nobody has watched.</p>
           <div class="tile-actions">
-            <a class="tile-action" href="https://github.com/michaelnocito/streaming-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
             <a class="tile-action" href="https://michaelnocito.github.io/streaming-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
+            <a class="tile-action" href="https://github.com/michaelnocito/streaming-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
           </div>
         </div>
 
@@ -380,29 +391,54 @@
           <div class="tile-top"><span class="tile-icon"><i data-lucide="music"></i></span><span class="tile-name">Music Hidden Gems</span></div>
           <p class="tile-desc">SQL + Python joining Billboard history to Last.fm data to surface 500 songs listeners love but radio skipped.</p>
           <div class="tile-actions">
-            <a class="tile-action" href="https://github.com/michaelnocito/music-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
             <a class="tile-action" href="https://michaelnocito.github.io/music-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
+            <a class="tile-action" href="https://github.com/michaelnocito/music-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
           </div>
         </div>
-
-        <div class="tile c-accent">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="trending-down"></i></span><span class="tile-name">Telco Churn: Risk Personas</span></div>
-          <p class="tile-desc">Python/pandas analysis of 7,043 customers: four tenure personas show who's actually leaving, and why.</p>
-          <div class="tile-actions">
-            <a class="tile-action" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Read analysis</a>
-            <a class="tile-action" href="https://public.tableau.com/app/profile/michael.nocito8651/viz/TelcoCustomerChurnRiskPersonas/Story1" target="_blank" rel="noopener"><i data-lucide="presentation"></i>Tableau story</a>
-          </div>
         </div>
 
       </div>
 
+      <!-- ============ Section D — Reference & How-Tos ============ -->
+      <div class="section-label" id="reference"><i data-lucide="book-open"></i> How I Explain the Work</div>
+      <div class="guide-panel">
+        <a class="guide-cta" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener"><i data-lucide="book-open"></i> All guides <span class="guide-count">18</span><i data-lucide="arrow-up-right"></i></a>
+        <p class="guide-names">Step-by-step how-tos and concept guides, written for beginners: What Is Data Analysis? <span class="sep">&middot;</span> SQL JOINs <span class="sep">&middot;</span> COUNT in SQL <span class="sep">&middot;</span> The CASE Expression <span class="sep">&middot;</span> Comment SQL So It Teaches <span class="sep">&middot;</span> Set Up a SQL Database <span class="sep">&middot;</span> Handle Large Datasets <span class="sep">&middot;</span> SQL and Python Together <span class="sep">&middot;</span> Exploratory Data Analysis <span class="sep">&middot;</span> Defining Metrics <span class="sep">&middot;</span> Data-Driven Thresholds <span class="sep">&middot;</span> Documenting Data Limitations <span class="sep">&middot;</span> Entity Resolution <span class="sep">&middot;</span> Git and GitHub for Analysts <span class="sep">&middot;</span> Build a Tableau Dashboard <span class="sep">&middot;</span> Build a Risk Index That Colours Itself <span class="sep">&middot;</span> Technical Tenacity <span class="sep">&middot;</span> Verify AI Agent Work.</p>
+      </div>
+
+      <!-- ============ Section C — Tools I Built (3 tiles wide) ============ -->
+      <div class="section-label" id="tools-i-built"><i data-lucide="wrench"></i> Tools I Built for the Job</div>
+      <div class="tiles cols-3">
+
+        <a class="tile c-accent" href="https://michaelnocito.github.io/migration-toolkit/">
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="arrow-right-left"></i></span><span class="tile-name">Data Migration Toolkit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <p class="tile-desc">How I walk a client migration through: eight stages, eight written sign-offs, and the workbook that runs them.</p>
+        </a>
+
+        <a class="tile c-warm" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-stack"></i></span><span class="tile-name">RecordForge</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <p class="tile-desc">Generates realistic fictional test documents — PDF, Word, Excel — for QA and data-engineering testing.</p>
+        </a>
+
+        <a class="tile c-green" href="https://michaelnocito.github.io/spreadsheet-cleaner/" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="sparkles"></i></span><span class="tile-name">Spreadsheet Cleaner</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <p class="tile-desc">Profiles a messy spreadsheet and flags data-quality issues in a plain audit report.</p>
+        </a>
+
+        <a class="tile c-green" href="https://michaelnocito.github.io/keygarden/" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-icon"><i data-lucide="keyboard"></i></span><span class="tile-name">Keygarden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
+          <p class="tile-desc">A calm typing trainer for the symbols data work runs on — brackets, braces, operators.</p>
+        </a>
+
+      </div>
+
       <!-- ============ Section B — Learning Tools & Games ============ -->
-      <div class="section-label" id="learning-tools"><i data-lucide="graduation-cap"></i> Learning Tools &amp; Games</div>
+      <div class="section-label" id="learning-tools"><i data-lucide="graduation-cap"></i> Side Project: Teaching Analytics</div>
       <div class="tiles">
 
         <!-- ★ FEATURED — Analyst Prep Kit (full width) -->
         <a class="tile c-accent featured" href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener">
-          <div class="start-badge"><i data-lucide="star"></i> Start Here</div>
+          <div class="start-badge"><i data-lucide="star"></i> For learners</div>
           <div class="tile-top"><span class="tile-icon"><i data-lucide="rocket"></i></span><span class="tile-name">Analyst Prep Kit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
           <p class="tile-desc">A complete browser-based prep suite for breaking into data analytics — 14 modules, sequenced in the order an analyst actually learns.</p>
           <div class="kit-chips">
@@ -442,42 +478,9 @@
 
         <a class="tile c-purple" href="https://michaelnocito.github.io/sql-quest/" target="_blank" rel="noopener">
           <div class="tile-top"><span class="tile-icon"><i data-lucide="castle"></i></span><span class="tile-name">SQL Quest</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A roguelike SQL tower-defense game running real SQLite in the browser.</p>
+          <p class="tile-desc">A game that teaches SQL by running real queries against a real database in the browser.</p>
         </a>
 
-      </div>
-
-      <!-- ============ Section C — Tools I Built (3 tiles wide) ============ -->
-      <div class="section-label" id="tools-i-built"><i data-lucide="wrench"></i> Tools I Built</div>
-      <div class="tiles cols-3">
-
-        <a class="tile c-accent" href="https://michaelnocito.github.io/migration-toolkit/">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="arrow-right-left"></i></span><span class="tile-name">Data Migration Toolkit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">How I walk a client migration through: eight stages, eight written sign-offs, and the workbook that runs them.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-stack"></i></span><span class="tile-name">RecordForge</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Generates realistic fictional test documents — PDF, Word, Excel — for QA and data-engineering testing.</p>
-        </a>
-
-        <a class="tile c-green" href="https://michaelnocito.github.io/spreadsheet-cleaner/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="sparkles"></i></span><span class="tile-name">Spreadsheet Cleaner</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Profiles a messy spreadsheet and flags data-quality issues in a plain audit report.</p>
-        </a>
-
-        <a class="tile c-green" href="https://michaelnocito.github.io/keygarden/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="keyboard"></i></span><span class="tile-name">Keygarden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A calm typing trainer for the symbols data work runs on — brackets, braces, operators.</p>
-        </a>
-
-      </div>
-
-      <!-- ============ Section D — Reference & How-Tos ============ -->
-      <div class="section-label" id="reference"><i data-lucide="book-open"></i> Reference &amp; How-Tos</div>
-      <div class="guide-panel">
-        <a class="guide-cta" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener"><i data-lucide="book-open"></i> All guides <span class="guide-count">18</span><i data-lucide="arrow-up-right"></i></a>
-        <p class="guide-names">Step-by-step how-tos and concept guides, written for beginners: What Is Data Analysis? <span class="sep">&middot;</span> SQL JOINs <span class="sep">&middot;</span> COUNT in SQL <span class="sep">&middot;</span> The CASE Expression <span class="sep">&middot;</span> Comment SQL So It Teaches <span class="sep">&middot;</span> Set Up a SQL Database <span class="sep">&middot;</span> Handle Large Datasets <span class="sep">&middot;</span> SQL and Python Together <span class="sep">&middot;</span> Exploratory Data Analysis <span class="sep">&middot;</span> Defining Metrics <span class="sep">&middot;</span> Data-Driven Thresholds <span class="sep">&middot;</span> Documenting Data Limitations <span class="sep">&middot;</span> Entity Resolution <span class="sep">&middot;</span> Git and GitHub for Analysts <span class="sep">&middot;</span> Build a Tableau Dashboard <span class="sep">&middot;</span> Build a Risk Index That Colours Itself <span class="sep">&middot;</span> Technical Tenacity <span class="sep">&middot;</span> Verify AI Agent Work.</p>
       </div>
 
       <!-- ============ Section E — Beyond the Data ============ -->
