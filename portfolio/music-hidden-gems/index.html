@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Hidden Gems — Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/portfolio/music-hidden-gems/">
+<meta name="description" content="Listening data collected from the Last.fm API and joined in SQL to 68 years of Billboard chart history, to find 7,574 songs by charting artists that never charted themselves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/portfolio/">Michael Nocito <span>/ Analyst Portfolio</span></a>
+    <nav class="nav">
+      <a href="/portfolio/">All projects</a>
+      <a href="/">Personal site</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="/portfolio/">Portfolio</a> / Music Hidden Gems</div>
+
+  <h1>Music Hidden Gems</h1>
+
+  <div class="meta">
+    <div><b>Tools</b> &nbsp; Python (API collection), SQL, SQLite</div>
+    <div><b>Data</b> &nbsp; Last.fm listening data joined to 68 years of Billboard charts</div>
+    <div><b>What it is</b> &nbsp; Building a dataset that did not exist, then querying it</div>
+  </div>
+
+  <div class="claim">
+    Every artist here had a Top 40 hit. The songs surfaced never charted at all,
+    yet the listeners who found them replay them 6, 10, sometimes 40 times each.
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">1,570</div><div class="l">Charting artists</div></div>
+    <div class="kpi"><div class="n">78,335</div><div class="l">Tracks analysed</div></div>
+    <div class="kpi"><div class="n">7,574</div><div class="l">Hidden gems</div></div>
+    <div class="kpi"><div class="n">68</div><div class="l">Years of chart history</div></div>
+  </div>
+
+  <h2>Why this one is different from the others</h2>
+  <p>
+    The Steam and IMDb projects started with a dataset. This one did not. The
+    data had to be built before any question could be asked of it.
+  </p>
+  <p>
+    Billboard chart history gives you which artists mattered and when. It says
+    nothing about what people actually play. Last.fm gives you play counts and
+    listener counts, but has no idea which artists ever charted.
+  </p>
+  <p>
+    The project is the join. Python collects the listening data one artist at a
+    time from the Last.fm API, and SQL joins it to the chart history. Neither
+    source can answer the question alone.
+  </p>
+
+  <h2>The measure</h2>
+  <p>
+    A hidden gem here is a track by a charting artist that never charted itself,
+    and that the people who found it play repeatedly.
+  </p>
+  <p>
+    The second half is the part that took thought. Raw play count just finds
+    popular songs again. What separates a gem is <b>plays per listener</b>, which
+    is devotion rather than reach. A song with 190,000 listeners averaging 23
+    plays each is being lived with, not sampled.
+  </p>
+
+  <h2>What I checked</h2>
+  <p>
+    <b>Last.fm listeners are not the general public.</b> The platform's users skew
+    younger, more online, and toward certain genres. Recent artists are
+    over-represented against their chart-era peers. The measure describes the
+    people who scrobble their listening, not everyone.
+  </p>
+  <p>
+    <b>"Never charted" means never on the Hot 100.</b> A song can be a well-known
+    album track, or a hit in another country, and still qualify here. The claim
+    is about the American singles chart specifically.
+  </p>
+  <p>
+    <b>Artist name matching is the weak point of any join like this.</b> Names
+    differ between sources in punctuation, features and spelling. Every join on
+    text has some loss, and this one is no exception.
+  </p>
+
+  <div class="links">
+    <a class="btn primary" href="https://michaelnocito.github.io/music-hidden-gems-list/" target="_blank" rel="noopener">Browse the top 500</a>
+    <a class="btn" href="https://github.com/michaelnocito/music-hidden-gems" target="_blank" rel="noopener">SQL, Python and method</a>
+    <a class="btn" href="/portfolio/">All projects</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Michael Nocito &middot; Data Analyst</div>
+    <div class="foot-links">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/">Personal site</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello.michaelnocito@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

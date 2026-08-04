@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Gem Movies — Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/portfolio/hidden-gem-movies/">
+<meta name="description" content="A SQL analysis of IMDb's full 12.6 million title catalogue, narrowed to 581 films rated 8.0 or better with enough votes to trust and few enough to be unknown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/portfolio/">Michael Nocito <span>/ Analyst Portfolio</span></a>
+    <nav class="nav">
+      <a href="/portfolio/">All projects</a>
+      <a href="/">Personal site</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="/portfolio/">Portfolio</a> / Hidden Gem Movies</div>
+
+  <h1>Hidden Gem Movies</h1>
+
+  <div class="meta">
+    <div><b>Tools</b> &nbsp; SQL, SQLite, DB Browser</div>
+    <div><b>Data</b> &nbsp; IMDb's full catalogue, 12.6 million titles</div>
+    <div><b>What it is</b> &nbsp; Filtering at scale, and defending every threshold</div>
+  </div>
+
+  <div class="claim">
+    Out of 751,802 movies, only 347,689 have ever been rated by anyone. Exactly
+    581 clear every bar.
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">12.6M</div><div class="l">Titles in the catalogue</div></div>
+    <div class="kpi"><div class="n">751,802</div><div class="l">Are movies</div></div>
+    <div class="kpi"><div class="n">347,689</div><div class="l">Have any rating</div></div>
+    <div class="kpi"><div class="n">581</div><div class="l">Hidden gems</div></div>
+  </div>
+
+  <h2>The definition, and why each part of it is there</h2>
+  <p>
+    A hidden gem here is a film rated 8.0 or higher, with between 5,000 and
+    50,000 votes, a runtime of 60 minutes or more, and no adult classification.
+    Every one of those numbers is a decision I have to be able to defend.
+  </p>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Rule</th><th>Why</th></tr>
+    <tr><td>Rated 8.0 or higher</td><td>The average movie scores 6.13, so 8.0 is genuinely well above the middle rather than just above average</td></tr>
+    <tr><td>At least 5,000 votes</td><td>Below this a score is a handful of opinions and moves with a single review</td></tr>
+    <tr><td>At most 50,000 votes</td><td>Above this a film is not hidden. This is the line that defines the whole project</td></tr>
+    <tr><td>60 minutes or more</td><td>Keeps shorts and TV segments out of a list about films</td></tr>
+    <tr><td>No adult titles</td><td>Different audience, different rating behaviour</td></tr>
+  </table>
+  </div>
+  <p>
+    The upper vote cap is the one worth arguing about. Move it to 100,000 and the
+    list roughly doubles while getting less hidden. Move it to 20,000 and it
+    shrinks to films almost nobody can find. 50,000 is my call, and the reason it
+    is defensible is that I can say what changes on either side of it.
+  </p>
+
+  <h2>What the shape of the data does to the question</h2>
+  <p>
+    More than half of IMDb has never been rated at all. That single fact reframes
+    the project. The question is not which films are underrated. It is which
+    films got just enough attention to be judged, and no more.
+  </p>
+
+  <h2>What I checked</h2>
+  <p>
+    <b>Vote count is a proxy for fame, not a measure of it.</b> A film can be
+    widely watched and rarely rated. IMDb voting skews toward certain audiences
+    and certain eras. The list is honest about what it is, which is films with
+    high scores and low vote counts.
+  </p>
+  <p>
+    <b>The list skews toward non-English cinema.</b> That is a real finding rather
+    than a fault. Films outside the English-language market clear the "loved but
+    not widely rated" bar far more often, because the rating population is
+    smaller.
+  </p>
+
+  <div class="links">
+    <a class="btn primary" href="https://michaelnocito.github.io/streaming-hidden-gems-list/" target="_blank" rel="noopener">Browse the list</a>
+    <a class="btn" href="https://github.com/michaelnocito/streaming-hidden-gems" target="_blank" rel="noopener">SQL and method</a>
+    <a class="btn" href="/portfolio/">All projects</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Michael Nocito &middot; Data Analyst</div>
+    <div class="foot-links">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/">Personal site</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello.michaelnocito@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

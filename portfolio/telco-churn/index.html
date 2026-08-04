@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telco Customer Churn — Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/portfolio/telco-churn/">
+<meta name="description" content="A churn analysis of 7,043 telecom customers. The 26.5% headline rate hides a 47% first-year rate. Four personas, the contract mechanism behind them, and three retention plays. Built in Python and Tableau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/portfolio/">Michael Nocito <span>/ Analyst Portfolio</span></a>
+    <nav class="nav">
+      <a href="/portfolio/">All projects</a>
+      <a href="/">Personal site</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="/portfolio/">Portfolio</a> / Telco Customer Churn</div>
+
+  <h1>Telco Customer Churn: risk personas</h1>
+
+  <div class="meta">
+    <div><b>Tools</b> &nbsp; Python, pandas, matplotlib, Tableau</div>
+    <div><b>Data</b> &nbsp; 7,043 customers, 21 attributes</div>
+    <div><b>What it is</b> &nbsp; Segmentation, and the retention plays that follow from it</div>
+  </div>
+
+  <div class="claim">
+    Overall churn is 26.5%. New customers churn at 47% and loyal ones at 10%.
+    Nearly half of everyone the company acquires is gone within a year.
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">26.5%</div><div class="l">Overall churn</div></div>
+    <div class="kpi"><div class="n">47%</div><div class="l">First-year churn</div></div>
+    <div class="kpi"><div class="n">43%</div><div class="l">Month-to-month churn</div></div>
+    <div class="kpi"><div class="n">5x</div><div class="l">New vs loyal</div></div>
+  </div>
+
+  <figure>
+    <img src="../img/telco-kpi.png" alt="Four headline figures: 26.5% overall churn, 47% churn in year one, 43% month-to-month churn, and a five times gap between new and loyal customers">
+    <figcaption>The four numbers the rest of the analysis explains.</figcaption>
+  </figure>
+
+  <h2>The problem behind the average</h2>
+  <p>
+    A single 26.5% churn rate tells you the company has a retention problem. It
+    does not tell you where to spend a dollar fixing it.
+  </p>
+  <p>
+    Splitting the base by how long each customer has been there changes the
+    picture completely. Churn is not spread across the customer lifetime. It is
+    concentrated at the start.
+  </p>
+
+  <figure>
+    <img src="../img/telco-persona.png" alt="Bar chart of customer count and churn rate by tenure segment, showing new customers churning at five times the rate of loyal ones">
+    <figcaption>Churn falls steadily the longer a customer stays. The retention problem is really a first-year problem.</figcaption>
+  </figure>
+
+  <h2>The four personas</h2>
+  <div class="table-scroll">
+  <table>
+    <tr>
+      <th>Persona</th><th>Tenure</th><th class="num">Customers</th>
+      <th class="num">Churn</th><th class="num">Services</th><th class="num">Month-to-month</th>
+    </tr>
+    <tr><td><b>New &amp; At-Risk</b></td><td>0 to 12 mo</td><td class="num">2,186</td><td class="num">47%</td><td class="num">1.0</td><td class="num">91%</td></tr>
+    <tr><td><b>Settling In</b></td><td>12 to 24 mo</td><td class="num">1,024</td><td class="num">29%</td><td class="num">1.6</td><td class="num">72%</td></tr>
+    <tr><td><b>Established</b></td><td>24 to 48 mo</td><td class="num">1,594</td><td class="num">20%</td><td class="num">2.2</td><td class="num">50%</td></tr>
+    <tr><td><b>Loyal Core</b></td><td>48 to 72 mo</td><td class="num">2,239</td><td class="num">10%</td><td class="num">3.2</td><td class="num">15%</td></tr>
+  </table>
+  </div>
+
+  <h2>The mechanism</h2>
+  <p>
+    Tenure tells you when people leave. It does not tell you why. Contract type
+    does.
+  </p>
+  <p>
+    Month-to-month customers churn at 43%. Two-year contract customers churn at
+    3%. And 91% of the at-risk segment is on month-to-month, against 15% of the
+    loyal core.
+  </p>
+  <p>
+    At-risk customers also carry 1.0 add-on services against 3.2 for loyal ones.
+    They never accumulate a reason to stay.
+  </p>
+
+  <figure>
+    <img src="../img/telco-contract.png" alt="Churn rate by contract type: month-to-month at 43 percent against two-year contracts at 3 percent">
+    <figcaption>Contract type is the lever. Tenure is where the damage shows up.</figcaption>
+  </figure>
+
+  <h2>The obvious objection</h2>
+  <p>
+    Someone will say the contract finding is circular. People who commit to two
+    years are people who were going to stay anyway, so of course they churn less.
+  </p>
+  <p>
+    That is a fair challenge and it is partly true. What it does not explain is
+    the service count. At-risk customers hold a third of the add-ons that loyal
+    ones do, and add-ons are a choice made after signing, not at signup. The
+    stickiness is being built or not built during the first year, whichever
+    contract someone is on.
+  </p>
+
+  <h2>What I checked before publishing</h2>
+  <p>
+    <b>The dataset is a public teaching set, not a live business.</b> It is a
+    well-known Kaggle set of 7,043 customers. The method transfers. The specific
+    numbers describe this file, not any real company.
+  </p>
+  <p>
+    <b>Tenure and contract are correlated, so they are not independent
+    explanations.</b> The personas describe the shape of the problem. They are
+    not a causal model and I have not claimed one.
+  </p>
+  <p>
+    <b>The persona boundaries are my choice.</b> 12, 24 and 48 months are round
+    numbers that match how a business plans, not breakpoints the data forced. A
+    different cut would move the percentages. The pattern holds either way,
+    which is the part worth trusting.
+  </p>
+
+  <h2>Why it looks like this</h2>
+  <p>
+    <b>Four figures across the top, not the full table.</b> A recruiter or a
+    manager reads the top strip and stops. Those four have to carry the whole
+    story on their own, so they are the overall rate, the first-year rate, the
+    mechanism, and the multiple.
+  </p>
+  <p>
+    <b>The persona chart shows counts and rates together.</b> A rate on its own
+    invites the question of how many people it covers. Showing both stops the
+    reader having to ask.
+  </p>
+  <p>
+    <b>Tenure comes before contract, and that order is deliberate.</b> Contract
+    type is the more useful finding, but it lands harder once you already know
+    the loss is concentrated in year one. Leading with the mechanism would have
+    made it a fact rather than an answer.
+  </p>
+  <p>
+    <b>It is a Tableau story, not a single dashboard.</b> Three findings in
+    sequence, each one setting up the next. A single screen would have shown all
+    three at once and let the reader assemble the argument themselves, or not.
+  </p>
+
+  <h2>What follows from it</h2>
+  <p>
+    Every recommendation targets the 0 to 12 month window, because that is where
+    the loss concentrates. Move customers off month-to-month early, get add-on
+    services attached in the first quarter, and treat the first year as
+    onboarding rather than as billing.
+  </p>
+
+  <div class="links">
+    <a class="btn primary" href="https://public.tableau.com/app/profile/michael.nocito8651/viz/TelcoCustomerChurnRiskPersonas/Story1" target="_blank" rel="noopener">Open the Tableau story</a>
+    <a class="btn" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener">Python and method</a>
+    <a class="btn" href="/portfolio/">All projects</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Michael Nocito &middot; Data Analyst</div>
+    <div class="foot-links">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/">Personal site</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello.michaelnocito@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

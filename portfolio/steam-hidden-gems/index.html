@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steam Hidden Gems — Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/portfolio/steam-hidden-gems/">
+<meta name="description" content="An Excel dashboard over 82,956 Steam games. 175 games are rated as highly as the famous ones, cost the same, and reach one twenty-first of the players. Includes a cut that was run, disproved and discarded.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/portfolio/">Michael Nocito <span>/ Analyst Portfolio</span></a>
+    <nav class="nav">
+      <a href="/portfolio/">All projects</a>
+      <a href="/">Personal site</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="/portfolio/">Portfolio</a> / Steam Hidden Gems</div>
+
+  <h1>Steam Hidden Gems: an Excel dashboard</h1>
+
+  <div class="meta">
+    <div><b>Tools</b> &nbsp; Excel (PivotTables, PivotCharts, COUNTIF, AVERAGEIF), SQL</div>
+    <div><b>Data</b> &nbsp; 82,956 Steam games</div>
+    <div><b>What it is</b> &nbsp; A comparison, and the two cuts that tested it</div>
+  </div>
+
+  <div class="claim">
+    175 games on Steam are rated as highly as the famous ones. They cost the
+    same. They reach one twenty-first of the players.
+  </div>
+
+  <figure>
+    <img src="../img/steam-dashboard.png" alt="The Excel dashboard: four headline numbers, a chart comparing audience size between found and hidden games, a chart of hidden rates by genre, and a table of the top 15 games by rating">
+    <figcaption>The finished page. Four numbers, two charts, and the list.</figcaption>
+  </figure>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">82,956</div><div class="l">Games analysed</div></div>
+    <div class="kpi"><div class="n">765</div><div class="l">Genuinely loved</div></div>
+    <div class="kpi"><div class="n">175</div><div class="l">Stayed hidden</div></div>
+    <div class="kpi"><div class="n">21.2x</div><div class="l">Audience gap</div></div>
+  </div>
+
+  <p>
+    "Genuinely loved" means 2,000 or more reviews and 95% or better positive.
+    The review count matters. A game with nine reviews and a perfect score tells
+    you nothing.
+  </p>
+  <p>
+    Of those 765 loved games, 175 never found an audience. That is 22.9%.
+    Roughly one in four games that people love stays unknown.
+  </p>
+
+  <h2>The question</h2>
+  <p>
+    A list of good cheap games is not analysis. Anyone can sort a spreadsheet.
+  </p>
+  <p>
+    The question worth asking is why some loved games get found and others do
+    not. There are two possible answers.
+  </p>
+  <p>
+    The first: hidden games are worse. Cheaper, shorter, lower rated. If that is
+    true, staying unknown makes sense and there is nothing to explain.
+  </p>
+  <p>
+    The second: they are the same. If that is true, quality does not explain
+    anything, and being found is mostly luck.
+  </p>
+
+  <h2>What I found</h2>
+  <div class="table-scroll">
+  <table>
+    <tr><th></th><th class="num">Price</th><th class="num">Rating</th><th class="num">Hours played</th><th class="num">Audience</th></tr>
+    <tr><td><b>Loved and found</b></td><td class="num">$7.67</td><td class="num">96.6%</td><td class="num">10.8</td><td class="num">2,458,263</td></tr>
+    <tr><td><b>Loved and hidden</b></td><td class="num">$7.11</td><td class="num">97.0%</td><td class="num">7.9</td><td class="num">116,000</td></tr>
+  </table>
+  </div>
+  <p>
+    The hidden games cost 56 cents less. They are rated slightly higher. They run
+    about three quarters as long. Then the audience column falls off a cliff.
+  </p>
+
+  <h2>The obvious objection</h2>
+  <p>
+    The first thing anyone says to this is that hidden games must be niche
+    genres. So I checked. Each genre is measured against its own loved games,
+    not against the other genres.
+  </p>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Genre</th><th class="num">Share that stayed hidden</th></tr>
+    <tr><td>Adventure</td><td class="num">32.2%</td></tr>
+    <tr><td>Casual</td><td class="num">25.5%</td></tr>
+    <tr><td>Indie</td><td class="num">20.3%</td></tr>
+    <tr><td>Action</td><td class="num">16.9%</td></tr>
+  </table>
+  </div>
+  <p>
+    Genre matters some. Adventure games hide almost twice the share that action
+    games do. It does not explain the finding away. The lowest is action at
+    16.9%, and that is still one in six.
+  </p>
+  <p>
+    Eight other genres exist in this data, each with between 1 and 18 loved
+    games. I left them out. Below about 20 games a percentage is noise, and I
+    would rather show four numbers I trust than twelve I do not.
+  </p>
+
+  <h2>What I threw away</h2>
+  <p>
+    I also cut the data by price band. Games over $20 showed a 0% hidden rate. A
+    clean result, and a chartable one. It is worthless.
+  </p>
+  <p>
+    "Hidden gem" is defined in this data as costing $20 or less. A game over $20
+    cannot be one. The chart would have been my own filter reflected back at me,
+    dressed up as a discovery.
+  </p>
+  <div class="callout">
+    <p>
+      The tell was how clean it was. Real findings are messy. 32% against 17% is
+      messy. 0% against 21% is too tidy to be true, and tidiness is the warning.
+    </p>
+  </div>
+  <p>
+    So there is no price chart on the dashboard. The check that produced nothing
+    was still worth running.
+  </p>
+
+  <h2>What I checked before publishing</h2>
+  <p>
+    <b>The averages are pulled up by a few huge hits.</b> Average audience for
+    found games is 2.46 million, but the middle game sits at 750,000. On middle
+    values the gap is 5x rather than 21x. Both are real. The 21x is the average
+    gap and the 5x is the typical gap. I lead with the average and say this here
+    so nobody has to catch me at it.
+  </p>
+  <p>
+    <b>The segment counts were checked against the source before anything was
+    built.</b> 175 hidden, 590 found, 82,191 outside the loved group. They add to
+    82,956.
+  </p>
+  <p>
+    <b>One column was corrupt and I nearly shipped it.</b> Excel opened the file
+    assuming the wrong alphabet, so 4,685 of the 82,956 game names came in as
+    symbols. Nothing errored. Two of them reached the top 15 list before I
+    noticed. The names were re-exported with the correct setting and pasted back.
+  </p>
+
+  <h2>Why it looks like this</h2>
+  <p>
+    <b>Four numbers across the top, not eight.</b> A number earns a spot only if
+    it changes what you do next. Four fit on one line and get read. Eight become
+    a wall and get skipped. The gap reads 21.2x rather than 2,458,263 against
+    116,000, because a ratio survives being glanced at and two seven-digit
+    numbers do not.
+  </p>
+  <p>
+    <b>The hero chart is two bars.</b> I considered a scatter of every loved game
+    with audience against rating, which would have been prettier and shown the
+    spread. I turned it down because the finding is a comparison of two groups. A
+    scatter makes the reader find the pattern. Two bars hand it over.
+  </p>
+  <p>
+    <b>The tall bar is grey and the tiny one is coloured.</b> That looks backwards
+    until you ask what the chart is about. The story is not that famous games are
+    big. It is that the hidden ones are almost nothing next to them. Colour goes
+    on the subject, not the biggest shape.
+  </p>
+  <p>
+    <b>The genre chart is percentages, not counts.</b> Action has 302 loved games
+    and Indie has 69. Counted, Action wins everything and the chart just shows
+    which genres are popular. As a share of each genre's own loved games, every
+    row asks the same question of itself.
+  </p>
+  <p>
+    <b>The table is sorted by rating, not by review count.</b> The claim is about
+    quality, not popularity. Sorting by reviews would quietly re-introduce the
+    fame the whole project is about removing.
+  </p>
+  <p>
+    <b>The vertical axis is gone and the numbers sit on the bars.</b> An axis lets
+    you estimate a value. A label tells you it. Keeping both asks the reader to
+    do the same job twice.
+  </p>
+  <div class="callout">
+    <p>
+      Seven things came off the page: the price chart, an axis, a legend, the
+      labels on the grey bars, grand total rows, field buttons, and the
+      gridlines. Everything on a page competes for the same attention. Anything
+      not carrying meaning is taking attention from something that is.
+    </p>
+  </div>
+
+  <div class="links">
+    <a class="btn primary" href="https://github.com/michaelnocito/steam-hidden-gems/tree/main/excel" target="_blank" rel="noopener">The dashboard and full write-up</a>
+    <a class="btn" href="https://github.com/michaelnocito/steam-hidden-gems" target="_blank" rel="noopener">SQL and method</a>
+    <a class="btn" href="https://michaelnocito.github.io/steam-hidden-gems-list/" target="_blank" rel="noopener">Browse the list</a>
+    <a class="btn" href="/portfolio/">All projects</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Michael Nocito &middot; Data Analyst</div>
+    <div class="foot-links">
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/">Personal site</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello.michaelnocito@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
