@@ -1,12 +1,20 @@
 # Garden photo shot list
 
-Drop a JPG into this folder using the exact filename below and it replaces the
-dashed placeholder box on the page. No code edit. No commit to the HTML.
+Drop a JPG into this folder using the exact filename below and that photo appears
+on the page. No code edit. No commit to the HTML.
 
-28 shots total. 14 have to happen in the garden while the plants are still up.
+**An empty slot shows nothing at all.** As of 2026-08-11 there are no visible
+placeholder boxes. Every photo slot is a `<figure class="shot">` that is
+`display:none` until its image actually loads, so a missing photo renders no box,
+no broken icon and no "under construction" look. A reader sees a finished page
+with however many photos exist that day. The filename each slot is waiting for is
+recorded in an HTML comment right above its `<img>` in the page source, and in the
+tables below.
+
+30 shots total. 16 have to happen in the garden while the plants are still up.
 14 can be shot on a table any time after.
 
-**Filled so far: 2 of 28.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
+**Filled so far: 2 of 30.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
 landed 2026-08-11, both from the same too-early head.
 
 **File rules**
@@ -17,9 +25,9 @@ landed 2026-08-11, both from the same too-early head.
 
 ---
 
-## Sunflowers (17)
+## Sunflowers (19)
 
-### Shoot in the garden, before you cut (8)
+### Shoot in the garden, before you cut (10)
 
 | File | What to shoot | Why it earns its place |
 | --- | --- | --- |
@@ -27,7 +35,9 @@ landed 2026-08-11, both from the same too-early head.
 | ~~`sun-02-not-ready.jpg`~~ **DONE** | Back of a head that is not ready. Creamy lemon disc, thick green fleshy bracts, live leaf behind it. | Pairs beside 01. The contrast is what teaches it. Shoot 01 at the same angle, distance and light. |
 | `sun-03-face.jpg` | Face of a ripe head. Shriveled florets, striped hulls showing. | Confirms the call from the front. |
 | ~~`sun-03b-face-not-ready.jpg`~~ **DONE** | Face of a head that is not ready. Yellow florets still standing, no hulls showing. | Pairs beside 03. Shoot 03 at the same angle, distance and light. |
-| `sun-04-covered.jpg` | A head with a paper sack or cheesecloth tied over it. | Proves the bird-proofing step is real and not fussy. |
+| `sun-04-covered.jpg` | A head bagged in tulle, cheesecloth or paper, tied on the **stem below the head**. | Proves the bird-proofing step is real and not fussy. Show the tie point, that's the bit people get wrong. |
+| `sun-17-cage.jpg` | A half-inch hardware cloth cylinder around a head, seam zip-tied, air space all round. | The only squirrel defense on the page that actually holds. Needs to look buildable, not engineered. |
+| `sun-18-baffle.jpg` | A baffle or stovepipe collar on a stalk, about four feet up. | Shows the geometry, and shows how much clear space the stalk needs around it. |
 | `sun-05-cut.jpg` | The cut itself. Pruners on the stem about 12 inches down. | Shows the stem length without having to describe it. |
 | `sun-10-mammoth.jpg` | A Mammoth head with your hand or a ruler beside it. | Scale. A Mammoth means nothing without something next to it. |
 | `sun-12-dwarf-plant.jpg` | A whole dwarf branching plant, heads at different stages. | The entire reason dwarfs are a different job. |
