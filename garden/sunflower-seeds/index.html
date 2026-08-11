@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA owner opt-out: load any page with ?ga=off to stop being counted, ?ga=on to undo. -->
+  <script>
+    (function () {
+      var localHost = location.protocol === 'file:' ||
+        /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+        /^(192\.168\.|10\.)/.test(location.hostname);
+      var optedOut = false;
+      try {
+        var p = new URLSearchParams(location.search).get('ga');
+        if (p === 'off') localStorage.setItem('gaOptOut', '1');
+        else if (p === 'on') localStorage.removeItem('gaOptOut');
+        optedOut = localStorage.getItem('gaOptOut') === '1';
+      } catch (e) {}
+      if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6C09BL3WH1');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>How to Harvest Sunflower Seeds · The Garden</title>
+<link rel="canonical" href="https://michaelnocito.github.io/garden/sunflower-seeds/">
+<meta name="description" content="Harvest sunflower seeds by reading the back of the head, not the petals. The general method, plus what changes for Mammoth heads and for dwarf branching plants.">
+<meta property="og:title" content="How to Harvest Sunflower Seeds">
+<meta property="og:description" content="Wait for the back of the head, not the petals. General method, Mammoth, and dwarf branching.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://michaelnocito.github.io/garden/sunflower-seeds/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../garden.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mn" href="../../">MN</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="nav">
+      <a href="#signal">The signal</a>
+      <a href="#steps">The steps</a>
+      <a href="#mammoth">Mammoth</a>
+      <a href="#dwarf">Dwarf branching</a>
+      <a href="../">The Garden</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="mono-label reveal">Seed saving · Sunflowers · Helianthus annuus</p>
+    <h1 class="reveal">How to harvest<br>sunflower seeds<span class="dot">.</span></h1>
+    <p class="lede reveal">A sunflower looks finished weeks before it is. The petals drop early and mean nothing. The signal you want is on the back of the head, and once you know it you can call it from ten feet away.</p>
+    <div class="meta-row reveal">
+      <span>Glassboro, NJ · Zone 7a</span>
+      <span>Covers: general method, Mammoth, dwarf branching</span>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE SIGNAL ===================== -->
+<section id="signal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Step zero</p>
+      <h2>Turn the head over</h2>
+      <p>Everything about timing happens on the back. Grab the head, tip it toward you, and look at the disc of green behind the petals.</p>
+    </div>
+
+    <div class="directive reveal">
+      <span class="k">The one thing to do</span>
+      <p>Ignore the petals. Turn the head over and look at the back. Green means wait. Yellow-brown with dry brown bracts means go.</p>
+    </div>
+
+    <div class="checks reveal">
+      <div class="check go">
+        <h4>Ready to cut</h4>
+        <ul>
+          <li>The back of the head has gone from green to lemon yellow, then to yellow-brown.</li>
+          <li>The bracts, those pointed leaves ringing the back, are brown and papery.</li>
+          <li>The petals have withered and mostly fallen off.</li>
+          <li>The tiny florets on the face have shriveled up and gone crusty.</li>
+          <li>The head is bowed over and heavy.</li>
+          <li>Seeds are plump, hard, and striped. A few come loose when you rub a thumb across them.</li>
+        </ul>
+      </div>
+      <div class="check wait">
+        <h4>Not yet</h4>
+        <ul>
+          <li>The back is still green, even pale green.</li>
+          <li>Bracts are still soft and green at the base.</li>
+          <li>Seeds are flat, soft, or pale gray with no stripe.</li>
+          <li>Seeds sit tight and nothing comes loose under your thumb.</li>
+          <li>The face still has yellow florets standing up on it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <img src="../img/sun-01-ready.jpg" alt="Back of a ripe sunflower head, yellow-brown with dry brown bracts" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🌻</span><span class="ph-lbl">Back of a ready head: yellow-brown, bracts dry and brown</span><code>img/sun-01-ready.jpg</code></div>
+        <figcaption>Ready. This is the color you are waiting for.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <img src="../img/sun-02-not-ready.jpg" alt="Back of an unripe sunflower head, still green" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🌱</span><span class="ph-lbl">Back of a head that is still green</span><code>img/sun-02-not-ready.jpg</code></div>
+        <figcaption>Not ready, even though the petals are gone. Give it two more weeks.</figcaption>
+      </figure>
+    </div>
+
+    <div class="prose reveal">
+      <p>Roughly, this lands 30 to 45 days after the flower opens. Use that as a rough calendar, never as the decision. Weather moves it by a week in either direction.</p>
+    </div>
+
+    <figure class="shot reveal">
+      <img src="../img/sun-03-face.jpg" alt="Face of a sunflower head with shriveled florets and visible striped seeds" onload="this.closest('.shot').classList.add('has-img')">
+      <div class="ph"><span class="ph-ico">🌻</span><span class="ph-lbl">Face of a ripe head: shriveled florets, striped seeds showing</span><code>img/sun-03-face.jpg</code></div>
+      <figcaption>The front confirms what the back already told you. Crusty florets, striped hulls.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE FORK ===================== -->
+<section id="fork">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The decision</p>
+      <h2>Finish on the plant, or cut early?</h2>
+      <p>You have to pick one before you touch anything, and the birds are the reason.</p>
+    </div>
+    <div class="prose reveal">
+      <p>Seed that ripens fully on the plant tastes better and stores better. That's the whole case for waiting. The case against waiting is that goldfinches, house sparrows and squirrels can strip a head in two days.</p>
+      <p>So there are two honest answers.</p>
+      <ul>
+        <li><b>Finish on the plant, protected.</b> Best flavor, best seed. Requires covering the head. Do this if you want the seed for eating or for planting next year.</li>
+        <li><b>Cut early and finish indoors.</b> Do this if birds are already working the head, if rain is coming, or if frost is close. The seed still fills out. The flavor is a step down.</li>
+      </ul>
+      <p>Cover the heads once the petals start turning brown. A brown paper sack or a piece of cheesecloth over the head, tied at the stem with a rubber band, does it. That also catches any seeds that drop while you are not looking.</p>
+    </div>
+
+    <div class="callout reveal">
+      <b>Never use plastic.</b> A plastic bag traps moisture against the head and you get mold instead of seed. Paper or cheesecloth only, and only over a dry head.
+    </div>
+
+    <figure class="shot reveal">
+      <img src="../img/sun-04-covered.jpg" alt="Sunflower head covered with a paper bag tied at the stem" onload="this.closest('.shot').classList.add('has-img')">
+      <div class="ph"><span class="ph-ico">🛍️</span><span class="ph-lbl">Head covered with a paper sack, tied at the stem</span><code>img/sun-04-covered.jpg</code></div>
+      <figcaption>Bird-proofing. Ugly for two weeks, worth it.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE STEPS ===================== -->
+<section id="steps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The job</p>
+      <h2>Cut, dry, thresh, clean</h2>
+      <p>Four moves. The only one people get wrong is the drying, and they get it wrong by rushing it.</p>
+    </div>
+
+    <ol class="steps reveal">
+
+      <li>
+        <h3>Cut with a foot of stem</h3>
+        <p>Sharp pruners, about 12 inches below the head. That stem is your handle and your hanging hook. Cut on a dry morning after the dew has burned off.</p>
+        <p>Hold a bucket or a bag under the head while you cut. Ripe heads shed.</p>
+        <figure class="shot">
+          <img src="../img/sun-05-cut.jpg" alt="Cutting a sunflower head with about a foot of stem attached" onload="this.closest('.shot').classList.add('has-img')">
+          <div class="ph"><span class="ph-ico">✂️</span><span class="ph-lbl">Cutting the head with about 12 inches of stem</span><code>img/sun-05-cut.jpg</code></div>
+        </figure>
+      </li>
+
+      <li>
+        <h3>Hang it upside down for two to three weeks</h3>
+        <p>Somewhere dry, warm and moving with air. A garage, a shed, a covered porch, a spare room with a fan. Out of direct sun.</p>
+        <p>Give each head space. Heads touching each other is how you get mold on both.</p>
+        <p>Slip a paper bag over each head and tie it at the stem. It catches everything that falls and keeps the mice off.</p>
+        <p><b>Done when:</b> the back is dark brown and hard, and seeds come away with almost no pressure.</p>
+        <figure class="shot">
+          <img src="../img/sun-06-hanging.jpg" alt="Sunflower heads hanging upside down to dry in a garage" onload="this.closest('.shot').classList.add('has-img')">
+          <div class="ph"><span class="ph-ico">🪝</span><span class="ph-lbl">Heads hanging upside down, spaced apart, bagged</span><code>img/sun-06-hanging.jpg</code></div>
+        </figure>
+      </li>
+
+      <li>
+        <h3>Thresh the seeds out</h3>
+        <p>Over a big tub or a bin liner, do one of these:</p>
+        <ul>
+          <li>Rub two dry heads face to face. Fastest method, and oddly satisfying.</li>
+          <li>Rub the face with a gloved hand, working in circles from the edge inward.</li>
+          <li>Work a stiff brush across it for anything stubborn.</li>
+        </ul>
+        <p>Wear gloves. Dry heads are scratchy and the bracts have a bite to them.</p>
+        <figure class="shot">
+          <img src="../img/sun-07-rubbing.jpg" alt="Hands rubbing seeds off a dried sunflower head over a tub" onload="this.closest('.shot').classList.add('has-img')">
+          <div class="ph"><span class="ph-ico">🧤</span><span class="ph-lbl">Rubbing seeds off the head over a tub</span><code>img/sun-07-rubbing.jpg</code></div>
+        </figure>
+      </li>
+
+      <li>
+        <h3>Winnow out the chaff</h3>
+        <p>You now have seed mixed with dry petal bits and floret husks. Set a box fan on low. Pour the mix slowly from one bowl into another in front of it, outside.</p>
+        <p>Seed is heavy and drops straight down. Chaff is light and blows sideways. Two or three passes gets it clean.</p>
+        <p>No fan? A breezy afternoon and two bowls does the same job.</p>
+        <figure class="shot">
+          <img src="../img/sun-08-winnowing.jpg" alt="Pouring sunflower seed between two bowls in front of a fan to blow off chaff" onload="this.closest('.shot').classList.add('has-img')">
+          <div class="ph"><span class="ph-ico">💨</span><span class="ph-lbl">Winnowing: pouring between bowls in front of a fan</span><code>img/sun-08-winnowing.jpg</code></div>
+        </figure>
+      </li>
+
+    </ol>
+
+    <figure class="shot reveal">
+      <img src="../img/sun-09-clean.jpg" alt="A bowl of cleaned striped sunflower seeds" onload="this.closest('.shot').classList.add('has-img')">
+      <div class="ph"><span class="ph-ico">🥣</span><span class="ph-lbl">Clean seed in a bowl, chaff removed</span><code>img/sun-09-clean.jpg</code></div>
+      <figcaption>What you are after. Striped, hard, and dry enough to rattle.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== MAMMOTH ===================== -->
+<section id="mammoth">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Variety notes</p>
+      <h2>Mammoth</h2>
+      <p>Mammoth Russian, Mammoth Grey Stripe, and the giant types sold as Russian Giant. Nine to twelve feet tall, one head, up to a foot across.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>Mammoth is the easy one and the best one. Everything above applies, with four differences.</p>
+
+      <h3>1. It is one harvest, not many</h3>
+      <p>A Mammoth puts everything into a single head. All of that seed ripens together. You watch one back, you make one call, you cut once. Compare that to the dwarf section below and you'll see why people find dwarfs fiddly.</p>
+
+      <h3>2. The head is heavy and it will snap</h3>
+      <p>A big Mammoth head can run several pounds wet. Support it with one hand underneath while you cut with the other. Cut through the stem cleanly rather than letting the head tear its own way off.</p>
+      <p>If the stalk is taller than you, cut the whole stalk down first, then take the head off it on the ground.</p>
+
+      <h3>3. It holds moisture, so it needs real airflow</h3>
+      <p>A twelve inch head is a thick, damp disc. It's the most likely head in your garden to mold while drying. Hang it alone with air on all sides, and give it the full three weeks. A fan in the room is not overkill.</p>
+      <p>Check it at two weeks. If the center still feels cool and slightly damp to the back of your hand, it is not done.</p>
+
+      <h3>4. This is the seed you save and the seed you eat</h3>
+      <p>Mammoth types are open-pollinated heirlooms. Save seed from them and you get Mammoths again next year. That is not true of most other sunflowers, and it's covered in the section below.</p>
+      <p>The seed is also big, gray striped, and thin-hulled, which is exactly what you want for roasting.</p>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <img src="../img/sun-10-mammoth.jpg" alt="A Mammoth sunflower head with a hand beside it for scale" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🌻</span><span class="ph-lbl">Mammoth head with a hand or ruler beside it for scale</span><code>img/sun-10-mammoth.jpg</code></div>
+        <figcaption>Scale matters here. Put a hand in the shot.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <img src="../img/sun-11-mammoth-seeds.jpg" alt="Close-up of large gray striped Mammoth sunflower seeds" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🌰</span><span class="ph-lbl">Close-up of the big gray striped Mammoth seeds</span><code>img/sun-11-mammoth-seeds.jpg</code></div>
+        <figcaption>Big, gray striped, thin hulled. The eating seed.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== DWARF BRANCHING ===================== -->
+<section id="dwarf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Variety notes</p>
+      <h2>Dwarf and branching types</h2>
+      <p>Teddy Bear, Music Box, Sunspot, Autumn Beauty and the multi-head cut-flower sunflowers. Many small heads instead of one big one.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>These are a different job, not a smaller version of the same job. Three things change.</p>
+
+      <h3>1. Nothing ripens at the same time</h3>
+      <p>A branching plant opens blooms across five or six weeks. So the seed ripens across five or six weeks too. There is no single harvest day.</p>
+      <p>Walk the patch every three days. Check each head's back on its own. Cut the ones that are ready and leave the rest. You'll go back six or seven times before the plant is finished.</p>
+      <p>Label as you go if you care which plant a seed came from. Six small heads in one bag become anonymous fast.</p>
+
+      <h3>2. Small heads dry fast</h3>
+      <p>One to two weeks, not three. They're thin and they have far less flesh to give up. Check at one week rather than assuming.</p>
+      <p>Because they're small, a paper lunch bag per head works well. Fold the top, write the variety on it, stand them in a box.</p>
+
+      <h3>3. Check whether there's anything in there at all</h3>
+      <p>This is the part nobody warns you about. Many dwarf and branching sunflowers sold today are F1 hybrids, and many of the cut-flower branching types are bred pollenless so they don't drop pollen on a tablecloth.</p>
+      <p>Pollenless varieties are made using cytoplasmic male sterility. The plant produces no working pollen of its own. If nothing else pollinated it, the head fills with empty hulls.</p>
+      <p><b>The test takes ten seconds.</b> Pull five seeds off a dry head and crack them with your thumbnail. A full kernel means you have seed. Flat, papery, empty hulls mean the head is decorative and that's all.</p>
+    </div>
+
+    <div class="callout reveal">
+      <b>If your pollenless plants did set seed,</b> something else pollinated them, usually a pollen-bearing sunflower nearby. That seed is viable but crossed. It will grow, and it will not look like the parent.
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <img src="../img/sun-12-dwarf-plant.jpg" alt="A dwarf branching sunflower plant carrying many heads at different stages" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🌿</span><span class="ph-lbl">Whole dwarf branching plant, many heads at once</span><code>img/sun-12-dwarf-plant.jpg</code></div>
+        <figcaption>One plant, many heads, no two at the same stage.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <img src="../img/sun-13-dwarf-stages.jpg" alt="Three sunflower heads laid side by side showing green, turning, and ready backs" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">📋</span><span class="ph-lbl">Three heads side by side: green, turning, ready</span><code>img/sun-13-dwarf-stages.jpg</code></div>
+        <figcaption>The whole guide in one photo. Backs up, left to right.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="shot reveal">
+      <img src="../img/sun-14-empty-hull.jpg" alt="A cracked empty sunflower hull next to one with a full kernel" onload="this.closest('.shot').classList.add('has-img')">
+      <div class="ph"><span class="ph-ico">🔍</span><span class="ph-lbl">Cracked hulls: one empty, one with a full kernel</span><code>img/sun-14-empty-hull.jpg</code></div>
+      <figcaption>Left is a dud from a pollenless head. Right is what you want.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== EAT OR PLANT ===================== -->
+<section id="use">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">After the harvest</p>
+      <h2>Eating seed and planting seed part ways here</h2>
+      <p>Same harvest, two different endings. Decide before you turn the oven on, because heat is a one-way door.</p>
+    </div>
+
+    <div class="tbl-scroll reveal">
+      <table>
+        <thead>
+          <tr><th>Step</th><th>Seed for eating</th><th>Seed for planting next year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rinse</td><td>Yes, cold water, then pat dry</td><td>No. Skip it. Water works against you here</td></tr>
+          <tr><td>Salt soak</td><td>Optional. Overnight in brine, then drain</td><td>Never</td></tr>
+          <tr><td>Heat</td><td>Roast at 300&deg;F for 30 to 40 minutes, stirring</td><td>Never. Heat kills the embryo</td></tr>
+          <tr><td>Drying</td><td>Just until surface dry before roasting</td><td>One to two weeks, single layer, out of sun, under 95&deg;F</td></tr>
+          <tr><td>Container</td><td>Airtight jar or bag</td><td>Paper envelope inside a sealed glass jar</td></tr>
+          <tr><td>Where</td><td>Pantry, eat within a few months</td><td>Cool, dark, dry. Fridge is ideal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose reveal">
+      <h3>Drying seed you intend to plant</h3>
+      <p>Spread it one layer deep on a sheet pan, a screen, or coffee filters. Keep it out of direct sunlight. Stir it with your hand once a day.</p>
+      <p>Stay under 95&deg;F. Do not use a food dehydrator and do not put it in the oven on low. Both cook the embryo while the seed still looks fine.</p>
+      <p>Give it one to two weeks. A properly dry seed snaps rather than bends.</p>
+
+      <h3>Storing it</h3>
+      <p>Put the seed in a labeled paper envelope. Put a second envelope of silica gel in beside it. Seal both inside a clean glass jar.</p>
+      <p>After one to two weeks in the jar, the silica gel has pulled the last of the moisture out and the seed is stable. Keep the jar somewhere cool, dark and dry. A fridge is the best spot in most houses.</p>
+      <p>Label the envelope with the variety, the color, the date, and where it came from. You will not remember in March. Nobody does.</p>
+
+      <h3>How long it stays good</h3>
+      <p>Plan on three years for properly dried and stored sunflower seed. Germination drops off gradually rather than falling off a cliff.</p>
+      <p>Test it before you commit a bed. Roll ten seeds into a damp paper towel, seal it in a sandwich bag, leave it somewhere warm. Count the sprouts at seven to ten days. Seven out of ten is a good packet. Three out of ten means sow three times as thick, or start over.</p>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <img src="../img/sun-15-drying.jpg" alt="Sunflower seeds spread in a single layer on a sheet pan to dry" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🍳</span><span class="ph-lbl">Seeds spread one layer deep on a tray to dry</span><code>img/sun-15-drying.jpg</code></div>
+      </figure>
+      <figure class="shot reveal">
+        <img src="../img/sun-16-stored.jpg" alt="A labeled envelope of sunflower seed inside a sealed glass jar" onload="this.closest('.shot').classList.add('has-img')">
+        <div class="ph"><span class="ph-ico">🫙</span><span class="ph-lbl">Labeled envelope inside a sealed glass jar</span><code>img/sun-16-stored.jpg</code></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== WILL IT COME BACK TRUE ===================== -->
+<section id="true">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The catch</p>
+      <h2>Whether it grows back the same</h2>
+      <p>Harvesting seed is easy. Getting the same flower again is a separate question with a real answer.</p>
+    </div>
+    <div class="prose reveal">
+      <p>Two things decide it.</p>
+      <p><b>Open-pollinated or hybrid.</b> Open-pollinated varieties, which includes all the heirloom Mammoths, come back true as long as they were pollinated by their own kind. F1 hybrids do not. Seed from an F1 gives you a scattered mix, most of it weaker than the parent. Check the seed packet you planted from. It will say.</p>
+      <p><b>What else was flowering nearby.</b> Sunflowers are pollinated by bees, and bees do not respect your variety plan. If you grew a Mammoth twenty feet from a red branching type, expect crosses. Commercial growers isolate by half a mile. In a home garden you either grow one variety that year, or you accept a surprise.</p>
+      <p>Neither of those is a reason not to save. A crossed sunflower is still a sunflower and it's usually a good one. Just know which of the two you have before you promise anyone a Mammoth.</p>
+    </div>
+
+    <div class="tbl-scroll reveal">
+      <table>
+        <thead>
+          <tr><th>Type</th><th>Comes back true?</th><th>Worth saving?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mammoth Russian / Mammoth Grey Stripe</td><td>Yes, if isolated from other varieties</td><td>Yes. The reliable one</td></tr>
+          <tr><td>Named open-pollinated types (Teddy Bear, Autumn Beauty)</td><td>Mostly, with some drift from crossing</td><td>Yes</td></tr>
+          <tr><td>F1 hybrid varieties</td><td>No</td><td>Only if you want the surprise</td></tr>
+          <tr><td>Pollenless cut-flower types</td><td>No, and often no viable seed at all</td><td>Crack five hulls and find out first</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== SOURCES ===================== -->
+<section id="sources">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Sources</p>
+      <h2>Where the numbers come from</h2>
+    </div>
+    <div class="prose reveal">
+      <ul>
+        <li><a class="inline-link" href="https://enewsletters.k-state.edu/postrockdistrictfcs/2017/08/30/harvesting-and-roasting-sunflower-seeds/" target="_blank" rel="noopener">K-State Research and Extension</a> on ripeness signals, covering heads, and drying.</li>
+        <li><a class="inline-link" href="https://yardandgarden.extension.iastate.edu/how-to/how-harvest-and-store-seeds" target="_blank" rel="noopener">Iowa State University Extension</a> on drying temperature, winnowing, and storage with silica gel.</li>
+        <li><a class="inline-link" href="https://yardandgarden.extension.iastate.edu/how-to/how-store-seeds-and-test-germination-rates" target="_blank" rel="noopener">Iowa State University Extension</a> on storage life and germination testing.</li>
+        <li><a class="inline-link" href="https://extension.oregonstate.edu/catalog/em-9866-grow-your-own-sunflowers" target="_blank" rel="noopener">Oregon State University Extension</a> on hybrid versus open-pollinated seed saving.</li>
+        <li><a class="inline-link" href="https://www.canr.msu.edu/news/sunflower_seeds_are_for_the_birds_and_people" target="_blank" rel="noopener">Michigan State University Extension</a> on harvesting for birds and for people.</li>
+      </ul>
+    </div>
+    <a class="backlink" href="../">&larr; All garden guides</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>Michael Nocito · The Garden</span>
+    <span class="foot-links">
+      <a href="../">The Garden</a>
+      <a href="../zinnia-seeds/">Zinnia seeds</a>
+      <a href="../../">Main site</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

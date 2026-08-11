@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA owner opt-out: load any page with ?ga=off to stop being counted, ?ga=on to undo. -->
+  <script>
+    (function () {
+      var localHost = location.protocol === 'file:' ||
+        /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+        /^(192\.168\.|10\.)/.test(location.hostname);
+      var optedOut = false;
+      try {
+        var p = new URLSearchParams(location.search).get('ga');
+        if (p === 'off') localStorage.setItem('gaOptOut', '1');
+        else if (p === 'on') localStorage.removeItem('gaOptOut');
+        optedOut = localStorage.getItem('gaOptOut') === '1';
+      } catch (e) {}
+      if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6C09BL3WH1');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Garden · Michael Nocito</title>
+<link rel="canonical" href="https://michaelnocito.github.io/garden/">
+<meta name="description" content="Growing notes from a South Jersey garden. Step-by-step guides to harvesting and saving seed, written from the row, with photos of the real thing.">
+<meta property="og:title" content="The Garden · Michael Nocito">
+<meta property="og:description" content="Growing notes from a South Jersey garden. Step-by-step guides to harvesting and saving seed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://michaelnocito.github.io/garden/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="garden.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mn" href="../">MN</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="nav">
+      <a href="#guides">Guides</a>
+      <a href="#about">About</a>
+      <a href="../art/">Art</a>
+      <a href="../">Main site</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="mono-label reveal">The Garden · Glassboro, NJ · Zone 7a</p>
+    <h1 class="reveal">Notes from the row<span class="dot">.</span></h1>
+    <p class="lede reveal">Growing guides written while the job is actually happening, not remembered a season later. Every step gets a photo of the real thing, including the ugly parts.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#guides">Read the guides</a>
+      <a class="btn" href="../">Back to the main site</a>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<section id="guides">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Guides</p>
+      <h2>Harvesting and saving seed</h2>
+      <p>Two jobs happening in the garden right now. Both guides tell you the exact signal to wait for, then what to do with your hands.</p>
+    </div>
+
+    <div class="posts">
+
+      <a class="post-card reveal" href="sunflower-seeds/">
+        <span class="kicker">Seed saving · August</span>
+        <h3>How to harvest sunflower seeds</h3>
+        <p>Wait for the back of the head, not the petals. The general method first, then what changes for a Mammoth and what changes for a dwarf branching plant, because those two ripen nothing alike.</p>
+        <div class="tags">
+          <span class="tag">General method</span>
+          <span class="tag">Mammoth</span>
+          <span class="tag">Dwarf branching</span>
+          <span class="tag">Eating and replanting</span>
+        </div>
+      </a>
+
+      <a class="post-card reveal" href="zinnia-seeds/">
+        <span class="kicker">Seed saving · August</span>
+        <h3>How to harvest zinnia seeds</h3>
+        <p>The seed is a small arrowhead hiding at the base of every petal. Pull one petal and you will know in two seconds whether the whole head is ready.</p>
+        <div class="tags">
+          <span class="tag">Ripeness test</span>
+          <span class="tag">Sorting good from chaff</span>
+          <span class="tag">Color and crossing</span>
+          <span class="tag">Storage</span>
+        </div>
+      </a>
+
+    </div>
+
+    <p style="margin-top:26px; font-size:15px; color:var(--ink-3)">More guides get added here as the season turns them up.</p>
+  </div>
+</section>
+
+<hr class="hr">
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">About</p>
+      <h2>Why these are written this way</h2>
+    </div>
+    <div class="prose reveal">
+      <p>Most growing advice tells you what to do and skips the part where you decide whether it is time. That is the only hard part. A head that looks finished from the front can be three weeks out.</p>
+      <p>So every guide here leads with the signal. What you are looking at, what it looks like when it is ready, and what it looks like when it is not. Then the steps.</p>
+      <p>Photos are of my own plants, taken while doing the job. Where a guide gives a number, it comes from a university extension service or a seed-saving organization, and the source is linked at the bottom of the page.</p>
+      <p>Glassboro, New Jersey. USDA zone 7a. Heavy clay that I have been arguing with for years.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>Michael Nocito · The Garden</span>
+    <span class="foot-links">
+      <a href="../">Main site</a>
+      <a href="../art/">Charcoal portraits</a>
+      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
