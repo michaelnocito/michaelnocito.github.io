@@ -3,8 +3,11 @@
 Drop a JPG into this folder using the exact filename below and it replaces the
 dashed placeholder box on the page. No code edit. No commit to the HTML.
 
-27 shots total. 13 have to happen in the garden while the plants are still up.
+28 shots total. 14 have to happen in the garden while the plants are still up.
 14 can be shot on a table any time after.
+
+**Filled so far: 2 of 28.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
+landed 2026-08-11, both from the same too-early head.
 
 **File rules**
 - Exact filename, lowercase, `.jpg`
@@ -14,15 +17,16 @@ dashed placeholder box on the page. No code edit. No commit to the HTML.
 
 ---
 
-## Sunflowers (16)
+## Sunflowers (17)
 
-### Shoot in the garden, before you cut (7)
+### Shoot in the garden, before you cut (8)
 
 | File | What to shoot | Why it earns its place |
 | --- | --- | --- |
 | `sun-01-ready.jpg` | Back of a ripe head. Yellow-brown disc, brown papery bracts. | The single most important photo on the site. This is the go signal. |
-| `sun-02-not-ready.jpg` | Back of a head that is still green. | Pairs beside 01. The contrast is what teaches it. Same angle, same distance, same light. |
+| ~~`sun-02-not-ready.jpg`~~ **DONE** | Back of a head that is not ready. Creamy lemon disc, thick green fleshy bracts, live leaf behind it. | Pairs beside 01. The contrast is what teaches it. Shoot 01 at the same angle, distance and light. |
 | `sun-03-face.jpg` | Face of a ripe head. Shriveled florets, striped hulls showing. | Confirms the call from the front. |
+| ~~`sun-03b-face-not-ready.jpg`~~ **DONE** | Face of a head that is not ready. Yellow florets still standing, no hulls showing. | Pairs beside 03. Shoot 03 at the same angle, distance and light. |
 | `sun-04-covered.jpg` | A head with a paper sack or cheesecloth tied over it. | Proves the bird-proofing step is real and not fussy. |
 | `sun-05-cut.jpg` | The cut itself. Pruners on the stem about 12 inches down. | Shows the stem length without having to describe it. |
 | `sun-10-mammoth.jpg` | A Mammoth head with your hand or a ruler beside it. | Scale. A Mammoth means nothing without something next to it. |
@@ -71,6 +75,6 @@ dashed placeholder box on the page. No code edit. No commit to the HTML.
 
 ## Three shooting notes
 
-1. **Shoot the pairs together.** `sun-01`/`sun-02` and `zin-01`/`zin-02` sit beside each other on the page. Same angle, same distance, same light, back to back. If one is sunny and one is shaded the comparison falls apart.
+1. **Shoot the pairs together.** `sun-01`/`sun-02`, `sun-03`/`sun-03b` and `zin-01`/`zin-02` sit beside each other on the page. Same angle, same distance, same light. If one is sunny and one is shaded the comparison falls apart. Two of those four sunflower halves are already shot, both handheld against a wire panel in open shade. Match that when you find a ready head.
 2. **Put a hand in the frame for anything about size.** Mammoth heads, seed piles, the arrowhead macro. A hand reads as scale instantly.
 3. **Plain background for anything close-up.** A sheet of white paper or a plain cutting board under `sun-14`, `zin-09` and `zin-10`. Grass and soil hide the detail those three exist to show.
