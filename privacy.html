@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- GA owner opt-out: load any page with ?ga=off to stop being counted, ?ga=on to undo. -->
+<script>
+  (function () {
+    var localHost = location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+      /^(192\.168\.|10\.)/.test(location.hostname);
+    var optedOut = false;
+    try {
+      var p = new URLSearchParams(location.search).get('ga');
+      if (p === 'off') localStorage.setItem('gaOptOut', '1');
+      else if (p === 'on') localStorage.removeItem('gaOptOut');
+      optedOut = localStorage.getItem('gaOptOut') === '1';
+    } catch (e) {}
+    if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Michael Nocito</title>
+<meta name="description" content="Site-wide privacy policy for michaelnocito.github.io: what is collected, cookies, advertising, and how to opt out.">
+<link rel="canonical" href="https://michaelnocito.github.io/privacy.html">
+<style>
+  :root{
+    --stone-50:#FBFCFD; --stone-100:#F5F7F8; --stone-200:#E4E7EA;
+    --stone-500:#71717A; --stone-600:#52525B; --stone-900:#09090B;
+    --clay-50:#E0F5F9; --clay-500:#0E7490;
+    --bg:var(--stone-50); --panel:#FFFFFF; --line:var(--stone-200);
+    --ink:var(--stone-900); --dim:var(--stone-600); --accent:var(--clay-500);
+    --font-sans:'IBM Plex Sans',system-ui,-apple-system,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.7 var(--font-sans),sans-serif}
+  main{max-width:760px;margin:0 auto;padding:48px 22px 80px}
+  a{color:var(--accent)}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+  h2{font-size:19px;margin:34px 0 8px}
+  .meta{color:var(--dim);font-size:14px;margin-bottom:8px}
+  .note{background:var(--clay-50);border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;font-size:14px;color:var(--dim);margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding-top:18px;
+    font-size:14px;color:var(--dim)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">michaelnocito.github.io · Last updated August 17, 2026</p>
+  <div class="note">This covers every page on michaelnocito.github.io, including the portfolio, the Analyst Prep Kit, the guides, and the tools. It is written in plain language for transparency and is not legal advice.</div>
+
+  <h2>The short version</h2>
+  <p>This site does not require an account, does not ask you for personal details, and does not sell anything about you. It uses privacy-respecting analytics to count visits, and some pages carry a single advertisement. Everything on the site works whether or not you allow either.</p>
+
+  <h2>What is collected</h2>
+  <p><strong>Anonymous usage analytics.</strong> Google Analytics 4 records aggregate, anonymised information such as which pages were visited, general location at country or region level, and device type. This is used to see which guides are worth writing more of. It is not used to identify you.</p>
+  <p><strong>Nothing else, by default.</strong> No contact form, no newsletter signup, and no account is required to read anything here. If you email me, I have your email address because you sent it, and I use it only to reply.</p>
+  <p><strong>Learning progress, on your own device.</strong> Some interactive tools on this site save your progress in your browser's local storage so you can pick up where you left off. That stays on your device. Clearing your browser data removes it. Some kits offer an optional account for syncing progress across devices; that is covered in the <a href="analyst-prep-kit/privacy.html">Analyst Prep Kit privacy policy</a>.</p>
+
+  <h2>Cookies</h2>
+  <p>Google Analytics sets cookies to measure usage. You can block them in your browser settings or with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out add-on</a>. Advertising cookies are covered next. Every page works fully with all of these blocked.</p>
+
+  <h2>Advertising</h2>
+  <p><strong>Where ads appear.</strong> Advertising appears only on written guide pages. It never appears on the homepage, the art pages, the portfolio, the games, or inside any lesson or interactive tool. Where an ad appears it is labelled, it sits below the article rather than inside the text, and there are no pop-ups or sticky banners.</p>
+  <p><strong>Who serves it.</strong> Ads may be served by Google AdSense. Google and its partners may use cookies to serve and measure those ads. I never receive or have access to that data. You can review or switch off personalised advertising at <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">My Ad Center</a>, which applies everywhere you browse, not only here.</p>
+  <p><strong>Third-party vendors,</strong> including Google, use cookies to serve ads based on your prior visits to this or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to this site and other sites on the internet. You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+  <p><strong>If you are in the EEA, the UK, or Switzerland,</strong> a consent prompt appears before any personalised advertising cookie is set, and you can decline it. Declining restricts nothing on this site.</p>
+
+  <h2>What is never done here</h2>
+  <p>Your data is not sold. No personal profile of you is built by me. Nothing is shared except with the analytics and advertising providers named above, strictly so the site can run.</p>
+
+  <h2>Your choices</h2>
+  <p>Opt out of analytics using the add-on above, or by loading any page on this site with <code>?ga=off</code> added to the address, which also opts you out of advertising cookies on this site. Block cookies in your browser. Use an ad blocker. None of these limit access to any content here.</p>
+
+  <h2>Children</h2>
+  <p>This site is aimed at working adults and students learning data analysis. It is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the date at the top of this page changes with it.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about anything above, or about what is held: email <a href="mailto:hello.michaelnocito@gmail.com">hello.michaelnocito@gmail.com</a>. One person reads that inbox.</p>
+
+  <footer>
+    <a href="./">← Back to michaelnocito.github.io</a> ·
+    <a href="analyst-prep-kit/about.html">About the author</a> ·
+    <a href="analyst-prep-kit/contact.html">Contact</a>
+  </footer>
+</main>
+</body>
+</html>
