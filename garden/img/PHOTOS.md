@@ -11,11 +11,16 @@ with however many photos exist that day. The filename each slot is waiting for i
 recorded in an HTML comment right above its `<img>` in the page source, and in the
 tables below.
 
-43 shots total. 22 have to happen in the garden while the plants are still up.
-21 can be shot on a table any time after.
+57 shots total. 22 have to happen in the garden while the plants are still up.
+35 can be shot on a table or a kitchen counter any time after.
 
-**Filled so far: 2 of 43.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
+**Filled so far: 2 of 57.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
 landed 2026-08-11, both from the same too-early head.
+
+**You do not name these files.** Shoot whatever you get, dump the whole batch in a
+folder, and say which guide it was for. Claude picks the best frame for each slot,
+renames it, drops it into `garden/img/`, and reports back which shot went where and
+which slots are still open. See `garden/GARDEN_BIBLE.md`, section 3.
 
 **File rules**
 - Exact filename, lowercase, `.jpg`
@@ -114,8 +119,43 @@ find them. If you only get one bee balm photo this season, make it `bal-12`.
 
 ---
 
+## Peppers (14)
+
+The only set on the site with no garden shots at all. Every one of these can be shot
+on a kitchen counter with a supermarket pepper, which means this page can be fully
+photographed in one evening plus one two-week wait. Buy one green pepper and one
+already-red pepper on the same trip so the pairs match.
+
+If you only get two pepper photos this season, make them `pep-03` and `pep-04`.
+
+### The pairs, shoot both halves in the same session (4)
+
+| File | What to shoot | Why it earns its place |
+| --- | --- | --- |
+| `pep-01-green-day-one.jpg` | A glossy, hard, fully green bell pepper sitting whole on the counter. | The "not yet" half. Shoot it the day you buy it, before it dulls. |
+| `pep-02-ripe-red.jpg` | A fully red pepper of about the same size and shape, same counter, same light. | Pairs beside 01. The contrast is the entire ripeness lesson. |
+| `pep-03-seed-immature.jpg` | Macro. Pale, soft, slightly see-through seeds on the core inside a green pepper. | The most useful photo on the page. This is the thing nobody can picture. |
+| `pep-04-seed-mature.jpg` | Macro. Firm, flat, straw colored seeds on the core inside a ripe pepper. | Pairs beside 03. Same distance, same light, same background. |
+
+### The rest, kitchen counter, any evening (10)
+
+| File | What to shoot | Why it earns its place |
+| --- | --- | --- |
+| `pep-05-counter-rest.jpg` | The whole green pepper on the counter with a strip of tape beside it, the date written on it and readable. | The whole technique in one frame. Make the date legible or the shot does nothing. |
+| `pep-06-cut-around-stem.jpg` | A paring knife part way through a ring cut around the stem. | Shows the cut people have not seen. Mid-cut, not before and not after. |
+| `pep-07-core-out.jpg` | The white core lifted out whole by the stem, seeds still attached to it. | The payoff of step two, and it explains itself without a caption. |
+| `pep-08-thumbing-off.jpg` | A thumb rubbing seeds off the core onto a white plate, seeds in mid-fall if you can catch it. | The motion is awkward to describe and obvious in a picture. |
+| `pep-09-drying.jpg` | Seeds spread one layer deep on a white plate, no seed touching another. | Shows what "one layer" actually means. Same job as the sunflower drying shot. |
+| `pep-10-snap-test.jpg` | A fingernail snapping one dried seed cleanly in half. Get the break line sharp. | The only test that decides when they go in the jar. Hard shot, worth the retries. |
+| `pep-11-good-vs-dud.jpg` | Two piles on white. Plump straw seeds one side, thin papery pale ones the other. | The sorting shot. Plain white, even light, no shadow. |
+| `pep-12-envelope.jpg` | A labeled envelope beside the sealed glass jar. Writing readable. | Makes the labeling step feel worth doing. |
+| `pep-13-towel-test.jpg` | Exactly ten seeds laid out on damp kitchen towel inside a sandwich bag. | Ten is the point. Lay them so they can be counted in the photo. |
+| `pep-14-sprouted.jpg` | The same towel two weeks on, sprouts and root tips showing, ideally the same ten. | The payoff shot for the whole page, and proof the method works. |
+
+---
+
 ## Three shooting notes
 
-1. **Shoot the pairs together.** `sun-01`/`sun-02`, `sun-03`/`sun-03b`, `zin-01`/`zin-02` and `bal-01`/`bal-02` sit beside each other on the page. Same angle, same distance, same light. If one is sunny and one is shaded the comparison falls apart. Two of those four sunflower halves are already shot, both handheld against a wire panel in open shade. Match that when you find a ready head.
+1. **Shoot the pairs together.** `sun-01`/`sun-02`, `sun-03`/`sun-03b`, `zin-01`/`zin-02`, `bal-01`/`bal-02`, `pep-01`/`pep-02` and `pep-03`/`pep-04` sit beside each other on the page. Same angle, same distance, same light. If one is sunny and one is shaded the comparison falls apart. Two of those four sunflower halves are already shot, both handheld against a wire panel in open shade. Match that when you find a ready head.
 2. **Put a hand in the frame for anything about size.** Mammoth heads, seed piles, the arrowhead macro, the bee balm macro. A hand reads as scale instantly, and with bee balm it is the only thing that makes the size believable.
-3. **Plain background for anything close-up.** A sheet of white paper or a plain cutting board under `sun-14`, `zin-09`, `zin-10`, `bal-11` and `bal-12`. Grass and soil hide the detail those three exist to show.
+3. **Plain background for anything close-up.** A sheet of white paper or a plain cutting board under `sun-14`, `zin-09`, `zin-10`, `bal-11`, `bal-12`, `pep-03`, `pep-04` and `pep-11`. Grass, soil and a patterned counter all hide the detail those shots exist to show.

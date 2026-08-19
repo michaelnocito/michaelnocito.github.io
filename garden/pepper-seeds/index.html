@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA owner opt-out: load any page with ?ga=off to stop being counted, ?ga=on to undo. -->
+  <script>
+    (function () {
+      var localHost = location.protocol === 'file:' ||
+        /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+        /^(192\.168\.|10\.)/.test(location.hostname);
+      var optedOut = false;
+      try {
+        var p = new URLSearchParams(location.search).get('ga');
+        if (p === 'off') localStorage.setItem('gaOptOut', '1');
+        else if (p === 'on') localStorage.removeItem('gaOptOut');
+        optedOut = localStorage.getItem('gaOptOut') === '1';
+      } catch (e) {}
+      if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6C09BL3WH1');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>How to Harvest Pepper Seeds &middot; The Garden</title>
+<link rel="canonical" href="https://michaelnocito.github.io/garden/pepper-seeds/">
+<meta name="description" content="Seeds scraped out of a green pepper barely sprout. Leave the same pepper whole on the counter for two weeks first and most of them will. The ripeness test, the rest, drying, the towel test, and why a supermarket pepper will not come back true.">
+<meta property="og:title" content="How to Harvest Pepper Seeds">
+<meta property="og:description" content="A green pepper is an unfinished pepper. The seeds inside it are unfinished too. Here is the two week fix.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://michaelnocito.github.io/garden/pepper-seeds/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../garden.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mn" href="../../">MN</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <nav class="nav-links" id="nav">
+      <a href="#signal">The test</a>
+      <a href="#wait">The two weeks</a>
+      <a href="#steps">The steps</a>
+      <a href="#alive">Alive or dead</a>
+      <a href="#catch">The catch</a>
+      <a href="../">The Garden</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="mono-label reveal">Seed saving &middot; Peppers &middot; Capsicum annuum</p>
+    <h1 class="reveal">How to harvest<br>pepper seeds<span class="dot">.</span></h1>
+    <p class="lede reveal">A green pepper is an unfinished pepper, and the seeds inside it are unfinished too. Scrape them onto a plate tonight and close to none of them will come up. Leave that same pepper whole on the counter for two weeks and most of them will. The waiting is the whole job.</p>
+    <div class="meta-row reveal">
+      <span>Glassboro, NJ &middot; Zone 7a</span>
+      <span>Covers: the ripeness test, the counter rest, scraping, drying, the towel test, hybrids</span>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE TEST ===================== -->
+<section id="signal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Step zero</p>
+      <h2>Green is a picking stage, not a finished pepper</h2>
+      <p>You are not looking at the pepper to decide whether it is good to eat. You are looking at it to decide whether the seed inside has finished forming.</p>
+    </div>
+
+    <div class="directive reveal">
+      <span class="k">The one thing to do</span>
+      <p>Do not cut it yet. Take the pepper out of the fridge, sit it whole on the counter out of direct sun, and write today's date on a scrap of tape beside it. Come back in two weeks.</p>
+    </div>
+
+    <div class="checks reveal">
+      <div class="check go">
+        <h4>Open it now</h4>
+        <ul>
+          <li>The skin has turned red, orange, yellow or brown, whichever is the finished color for that variety.</li>
+          <li>The color covers most of the fruit, not one shoulder.</li>
+          <li>The gloss has dulled and the wall gives a little when you press it.</li>
+          <li>It has sat at room temperature for at least a week since you brought it home.</li>
+          <li>Press one seed with a fingernail. It is firm, flat and straw or tan colored.</li>
+        </ul>
+      </div>
+      <div class="check wait">
+        <h4>Leave it whole</h4>
+        <ul>
+          <li>It is still fully green with no blush anywhere.</li>
+          <li>It is glossy, hard and heavy, the way a supermarket pepper is on day one.</li>
+          <li>It came out of the fridge this morning.</li>
+          <li>You bought it today.</li>
+          <li>The seeds are white or pale and slightly soft, and they bend under a fingernail instead of splitting.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-01-green-day-one.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-01-green-day-one.jpg" alt="A glossy green bell pepper sitting whole on a kitchen counter" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Not ready. Glossy, hard, fully green.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-02-ripe-red.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-02-ripe-red.jpg" alt="A fully red ripe bell pepper of the same size and shape on the same counter" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Ready. The same pepper, several weeks further on.</figcaption>
+      </figure>
+    </div>
+
+    <div class="prose reveal">
+      <p>The seed itself is the better test, and it costs you one pepper to learn it. A finished pepper seed is flat, hard and the color of straw. It splits cleanly under a fingernail. An unfinished one is paler, softer and a little see-through, and it dents rather than splits.</p>
+      <p>Once you have seen the two side by side you can call it in a second for the rest of your life.</p>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-03-seed-immature.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-03-seed-immature.jpg" alt="Close-up of pale soft white seeds on the core inside a green pepper" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Unfinished. Pale, soft, slightly see-through.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-04-seed-mature.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-04-seed-mature.jpg" alt="Close-up of firm straw colored seeds on the core inside a ripe red pepper" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Finished. Straw colored, flat, hard.</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout reveal">
+      <b>Almost every green bell pepper is a red one picked early.</b> Same plant, same fruit, taken at a stage that ships better and lets the plant set more fruit. A few varieties really do finish green, but if you bought it in a supermarket it was almost certainly on its way to red.
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE TWO WEEKS ===================== -->
+<section id="wait">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The decision</p>
+      <h2>Why the pepper has to stay whole</h2>
+      <p>Before reading on, take a guess at what happens to seeds cut out of a green pepper and then dried perfectly on a plate. This is the one place where the sensible answer turns out to be wrong.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>Here is the fork. You have a green pepper on the board. Is the seed in it alive?</p>
+      <p><b>Answer one: it is alive.</b> A seed is a seed. Dry it properly and it keeps. If that is true, you can harvest tonight and be finished in ten minutes.</p>
+      <p><b>Answer two: it is not finished yet.</b> The seed is still being filled by the fruit, and cutting it out ends that early. If that is true, then careful drying does not save you, because you dried something that was never going to sprout.</p>
+      <p>What decides it is time, not technique. The answer is two, which is why this guide is mostly about waiting.</p>
+      <p>The clearest test of it was run on four bell pepper varieties at the Louisiana Agricultural Experiment Station. Seed taken straight out of mature green fruit did not germinate at all, no matter how it was stored afterwards. The same seed, left sitting inside the picked green fruit for up to fourteen days before being taken out, germinated significantly better in every variety they tried. Sanchez and colleagues published it in 1993, and the full reference is at the bottom of this page.</p>
+      <p>A later study on immature pepper seed found the same shape of result. Seven days resting inside the picked fruit took germination from 28 percent up to 76 percent in one growing system, and from 54 percent up to 88 percent in the other.</p>
+      <p>The two studies disagree about how bad green-stage seed is to begin with. They agree completely about the fix.</p>
+      <p>Say out loud, before you scroll, why the seeds have to stay inside the pepper rather than dry on a plate. If the sentence you come up with is about the fruit still feeding them, you have it.</p>
+    </div>
+
+    <figure class="shot reveal">
+      <!-- PHOTO SLOT &middot; img/pep-05-counter-rest.jpg &middot; drop this file into garden/img/ and this figure appears -->
+      <img src="../img/pep-05-counter-rest.jpg" alt="A whole green pepper resting on a kitchen counter with a dated strip of tape beside it" onload="this.closest('.shot').classList.add('has-img','in')">
+      <figcaption>The entire technique. A pepper, a counter, and a date you can check.</figcaption>
+    </figure>
+
+    <div class="prose reveal">
+      <h3>What the counter can and cannot do</h3>
+      <p>Be honest with yourself about the ceiling here. A pepper is non-climacteric, which means it does not keep ripening off the plant the way a tomato or a banana does. Some peppers color up beautifully on a windowsill. Plenty just sit there and slowly wrinkle.</p>
+      <p>The seed work carries on either way, and that is the part you care about. You are not waiting for a red pepper. You are waiting for a finished seed, and you can get one without ever getting the color.</p>
+      <p>The fridge is what stops it. Bell peppers keep longest at around 45&deg;F, and below that they take chilling damage, with discoloration of the seed cavity as one of the signs. Green fruit is the more cold sensitive stage. A pepper that has been cold since the truck has not been maturing anything, which is exactly why the counter rest is worth two weeks.</p>
+    </div>
+
+    <div class="vcards reveal">
+      <div class="vcard">
+        <h3>Ripened on the plant</h3>
+        <p class="sub">The benchmark</p>
+        <p>Left on the plant until fully colored and just starting to wrinkle. Highest germination, strongest seedlings, and nothing for you to do. If you grow peppers, give up one fruit on one plant to this and you never need to buy pepper seed again.</p>
+      </div>
+      <div class="vcard">
+        <h3>Picked green, rested two weeks</h3>
+        <p class="sub">The kitchen version</p>
+        <p>Worse than the benchmark and far better than scraping it out tonight. Expect a real germination rate rather than a great one, and sow thicker to cover it. This is the version most people are actually doing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE STEPS ===================== -->
+<section id="steps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The job</p>
+      <h2>Rest, open, scrape, dry</h2>
+      <p>Ten minutes of hands-on work with two long waits built around it. Neither wait can be hurried, and both of them are just leaving something alone.</p>
+    </div>
+
+    <ol class="steps reveal">
+
+      <li>
+        <h3>Rest the whole pepper for two weeks</h3>
+        <p>Out of the fridge, out of direct sun, somewhere around normal room temperature. A kitchen counter or a shelf is right. Sixty five to seventy five degrees is the sweet spot.</p>
+        <p>Leave it whole. No cutting, no piercing, no bag. Write the date beside it, because two weeks is exactly long enough to lose track.</p>
+        <p>If a soft brown patch starts anywhere, open it that day and take what you have. A pepper going over is finished maturing seed anyway.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-06-cut-around-stem.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-06-cut-around-stem.jpg" alt="A paring knife cutting a circle around the stem of a pepper" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+      <li>
+        <h3>Cut a circle around the stem and lift the core out</h3>
+        <p>Run a small knife in a ring around the stem, an inch or so out, then pull the stem straight up. The whole white core comes with it, seeds still attached.</p>
+        <p>This beats halving the pepper. Cut it in half and you slice through seed and scatter the rest into the flesh you wanted for dinner.</p>
+        <p>The pepper is still perfectly good to eat. Saving the seed costs you nothing but the two weeks.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-07-core-out.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-07-core-out.jpg" alt="The white seed core of a pepper lifted out whole by the stem, seeds still attached" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+      <li>
+        <h3>Thumb the seeds off onto a dry plate</h3>
+        <p>Dry hands, dry plate. Rub them off the core with a thumb and let them fall.</p>
+        <p>Do not rinse them and do not soak them. Pepper seed needs neither, unlike tomato seed, and every drop of water you add is water you spend the next two weeks taking back out.</p>
+        <p>Pick out any bits of white core that came along. They hold moisture longer than the seed does.</p>
+        <p>Picture the plate you would actually use for this, and where in the house it can sit undisturbed for two weeks. That is the only planning this job needs.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-08-thumbing-off.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-08-thumbing-off.jpg" alt="A thumb rubbing pepper seeds off the core onto a white plate" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+      <li>
+        <h3>Dry them one layer deep for one to two weeks</h3>
+        <p>Spread them so no seed touches another. A plate, a coffee filter or a fine screen all work. Out of the sun, room temperature, never above ninety five degrees.</p>
+        <p>No oven, no dehydrator, no sunny windowsill. Heat kills the embryo and you will not be able to tell by looking.</p>
+        <p>Stir them with a finger once a day so nothing sits damp underneath.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-09-drying.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-09-drying.jpg" alt="Pepper seeds spread one layer deep on a white plate to dry" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+      <li>
+        <h3>The snap test decides when they go in the jar</h3>
+        <p>Take one seed and bend it. A dry seed snaps in half cleanly. A seed that still holds moisture folds instead.</p>
+        <p>If it bends, give it another three days and test a different one. This is the only check that matters before storage, and skipping it is how a jar of seed turns to mold in November.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-10-snap-test.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-10-snap-test.jpg" alt="A fingernail snapping a dried pepper seed cleanly in half" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+      <li>
+        <h3>Label and store</h3>
+        <p>Paper envelope first, then a sealed glass jar, then somewhere cool, dark and dry. A fridge is the best spot in most houses. A sachet of silica gel in the jar takes out whatever is left.</p>
+        <p>On the envelope: what it was, where it came from, and the date. In March you will not remember, and an unlabeled envelope is a bag of mystery.</p>
+        <p>How long it keeps depends on who you ask. The University of Minnesota Extension says use it within one year. Seed Savers Exchange says up to three years stored cool and dry. Treat the first spring as the good one and test anything older.</p>
+        <figure class="shot">
+          <!-- PHOTO SLOT &middot; img/pep-12-envelope.jpg &middot; drop this file into garden/img/ and this figure appears -->
+          <img src="../img/pep-12-envelope.jpg" alt="A labeled paper envelope of pepper seed beside a sealed glass storage jar" onload="this.closest('.shot').classList.add('has-img','in')">
+        </figure>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== ALIVE OR DEAD ===================== -->
+<section id="alive">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The skill</p>
+      <h2>Finding out whether they are alive</h2>
+      <p>How much of a bed would you be willing to plant on seed you have not tested? For kitchen pepper seed the honest answer is none, and the test costs ten seeds and a paper towel.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p><b>By eye first.</b> Keep the ones that are plump for their size, firm, flat and evenly straw colored. Bin the ones that are papery white, see-through at the edges, shrivelled, or that dent under a fingernail instead of splitting. A dud is obvious next to a good one and invisible on its own, so sort them together on a white plate.</p>
+      <p><b>Then the towel test.</b> Count out exactly ten. Lay them on half a sheet of damp kitchen towel, fold it over, and slide it into a sandwich bag left slightly open. Put it somewhere genuinely warm. Peppers want around eighty to eighty five degrees to germinate, and a cool room is the most common reason people decide their seed is dead.</p>
+      <p><b>Then wait longer than feels right.</b> Peppers are slow. Look at seven days, but do not call it until twenty one. Multiply the sprouts by ten and that is your rough germination rate.</p>
+      <p>Six out of ten is a fine result from a rested green pepper. Sow thicker to cover it and carry on. Zero out of ten is worth knowing in February rather than in May.</p>
+    </div>
+
+    <div class="shot-pair">
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-11-good-vs-dud.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-11-good-vs-dud.jpg" alt="Plump straw colored pepper seeds in one pile and thin papery pale seeds in another on a white plate" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Sort them together. A dud is only obvious beside a good one.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <!-- PHOTO SLOT &middot; img/pep-13-towel-test.jpg &middot; drop this file into garden/img/ and this figure appears -->
+        <img src="../img/pep-13-towel-test.jpg" alt="Ten pepper seeds laid out on a damp paper towel inside an open sandwich bag" onload="this.closest('.shot').classList.add('has-img','in')">
+        <figcaption>Ten seeds, one towel, one bag. Count them out loud.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="shot reveal">
+      <!-- PHOTO SLOT &middot; img/pep-14-sprouted.jpg &middot; drop this file into garden/img/ and this figure appears -->
+      <img src="../img/pep-14-sprouted.jpg" alt="The same paper towel two weeks later with several pepper seeds sprouted and root tips showing" onload="this.closest('.shot').classList.add('has-img','in')">
+      <figcaption>Sprouts out of ten, times ten. That is your germination rate.</figcaption>
+    </figure>
+
+    <div class="sec-head reveal" style="margin-top:40px">
+      <h2>The pepper in front of you, and what to do about it</h2>
+    </div>
+
+    <div class="tbl-scroll reveal">
+      <table>
+        <thead>
+          <tr><th>What you are holding</th><th>Seed odds</th><th>What to do today</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Green, bought today, straight from the fridge</td><td>Very low</td><td>Leave it whole on the counter for two weeks, then open it</td></tr>
+          <tr><td>Green, already cut open for dinner</td><td>Low</td><td>Dry them anyway, then towel-test ten before you plan a bed around them</td></tr>
+          <tr><td>Green, sat out and gone slightly soft or wrinkled</td><td>Fair</td><td>Open it today. That is as far as this one goes</td></tr>
+          <tr><td>Turning, red or orange coming in on the shoulders</td><td>Good</td><td>Give it another week on the counter, then open it</td></tr>
+          <tr><td>Fully red, orange, yellow or brown</td><td>Best</td><td>Open it now and go straight to drying</td></tr>
+          <tr><td>Left on your own plant until colored and wrinkling</td><td>Best</td><td>Nothing. This is the benchmark the others are copying</td></tr>
+          <tr><td>A hot pepper at any of the stages above</td><td>Same as above</td><td>Same steps, wearing gloves, and keep your hands away from your face</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== THE CATCH ===================== -->
+<section id="catch">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">The catch</p>
+      <h2>The plant you grow will not be this pepper</h2>
+      <p>Worth reading before you plan a bed around it, and especially if the pepper came from a shop.</p>
+    </div>
+    <div class="prose reveal">
+      <p>Most supermarket bell peppers are F1 hybrids. That means each one is the first cross of two carefully kept parent lines, and every fruit in the crate is identical because the same cross is made again every year.</p>
+      <p>Seed from an F1 gives you the generation after that, and that one splits. Traits from both grandparents come back in every combination. You will get peppers. You will not get that pepper, and no two of your plants will match.</p>
+      <p>A garden pepper is a different story. Peppers are mostly self-pollinating, so seed from an open-pollinated variety comes back true. California Wonder, Corno di Toro and Habanero are three that the University of Minnesota Extension names as reliable. Save from one of those and you have a variety you can keep forever.</p>
+
+      <h3>Bees will still mix them</h3>
+      <p>Mostly self-pollinating is not entirely self-pollinating. Bees do move pepper pollen, and sweet peppers and hot peppers cross freely.</p>
+      <p>Here is the part that surprises people. If a hot pepper pollinates your sweet one, this year's fruit is still sweet. The seed inside it is the cross. The heat turns up next year, in the seedlings, long after you have forgotten which plants were neighbors.</p>
+      <p>Seed Savers Exchange puts the isolation distance at 300 to 1,600 feet, or bagging individual blossoms by hand. That is not a home garden number. For a home garden the real options are to grow one variety, or keep the sweet and the hot at opposite ends of the yard and accept some drift, or bag a few flowers on the one plant you actually want to save from.</p>
+      <p>Picture next spring's two pepper plants and where in your yard each one would sit. That decision is the whole isolation problem, and you can make it now, before you have bought anything.</p>
+
+      <h3>None of this is a reason not to save</h3>
+      <ul>
+        <li><b>Want that exact pepper again?</b> Buy seed of a named open-pollinated variety once, then save from your own plants every year after.</li>
+        <li><b>Want free seedlings and do not mind a surprise?</b> Save from the shop pepper. It costs a plate and two weeks, and a mystery pepper is still a pepper.</li>
+        <li><b>Want to know before you commit?</b> Towel-test ten in February. Ten seeds and ten minutes buys you the whole answer.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ===================== SOURCES ===================== -->
+<section id="sources">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label">Sources</p>
+      <h2>Where the numbers come from</h2>
+    </div>
+    <div class="prose reveal">
+      <ul>
+        <li>Sanchez, V.M., Sundstrom, F.J., McClure, G.N. and Lang, N.S. (1993). Fruit maturity, storage and postharvest maturation treatments affect bell pepper (<i>Capsicum annuum</i> L.) seed quality. <i>Scientia Horticulturae</i> 54(3), 191 to 201. <a class="inline-link" href="https://doi.org/10.1016/0304-4238(93)90087-7" target="_blank" rel="noopener">doi:10.1016/0304-4238(93)90087-7</a>. Four bell pepper varieties, fruit picked at 30, 40, 50 and 60 days after flowering. Seed taken straight from mature green fruit did not germinate; up to fourteen days of postharvest maturation inside green fruit raised germination significantly in every variety.</li>
+        <li>Yildirim, K. and Demir, I. (2020). The effect of maturation stage and after-ripening on seed quality in organically and conventionally produced pepper (<i>Capsicum annuum</i> L.) seeds. <i>Plant Breeding and Seed Science</i> 81, 39 to 45. <a class="inline-link" href="https://doi.org/10.37317/pbss-2020-0003" target="_blank" rel="noopener">doi:10.37317/pbss-2020-0003</a>. Source of the 28 to 76 percent and 54 to 88 percent after-ripening figures.</li>
+        <li><a class="inline-link" href="https://postharvest.ucdavis.edu/produce-facts-sheets/bell-pepper" target="_blank" rel="noopener">UC Davis Postharvest Research and Extension Center</a> on bell pepper storage temperature, chilling injury and seed cavity discoloration, and on green fruit being more cold sensitive than colored fruit.</li>
+        <li><a class="inline-link" href="https://extension.umn.edu/planting-and-growing-guides/saving-vegetable-seeds" target="_blank" rel="noopener">University of Minnesota Extension</a> on peppers being self-pollinating and easy to save, the named open-pollinated varieties, letting fruit ripen fully and start to wrinkle, and storage in sealed glass at 32 to 41 degrees.</li>
+        <li><a class="inline-link" href="https://seedsavers.org/grow-pepper/" target="_blank" rel="noopener">Seed Savers Exchange</a> on the 300 to 1,600 foot isolation distance, blossom bagging, air drying on newsprint or screens, the snap test, and the three year storage life.</li>
+      </ul>
+      <p>One habit worth keeping out of all of this: when a fruit is not finished, leave it whole. Everything else on this page is bookkeeping.</p>
+      <p>If you try the towel test on shop-bought pepper seed, I would like to know what you got out of ten, and whether that pepper had rested first.</p>
+    </div>
+    <a class="backlink" href="../">&larr; All garden guides</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>Michael Nocito &middot; The Garden</span>
+    <span class="foot-links">
+      <a href="../">The Garden</a>
+      <a href="../bee-balm-seeds/">Bee balm seeds</a>
+      <a href="../zinnia-seeds/">Zinnia seeds</a>
+      <a href="../sunflower-seeds/">Sunflower seeds</a>
+      <a href="../../">Main site</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

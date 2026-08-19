@@ -23,7 +23,7 @@
   <!-- The Garden -->
   <url>
     <loc>https://michaelnocito.github.io/garden/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,6 +36,18 @@
   <url>
     <loc>https://michaelnocito.github.io/garden/zinnia-seeds/</loc>
     <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://michaelnocito.github.io/garden/bee-balm-seeds/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://michaelnocito.github.io/garden/pepper-seeds/</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
