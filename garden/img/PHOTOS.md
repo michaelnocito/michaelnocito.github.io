@@ -11,10 +11,10 @@ with however many photos exist that day. The filename each slot is waiting for i
 recorded in an HTML comment right above its `<img>` in the page source, and in the
 tables below.
 
-30 shots total. 16 have to happen in the garden while the plants are still up.
-14 can be shot on a table any time after.
+43 shots total. 22 have to happen in the garden while the plants are still up.
+21 can be shot on a table any time after.
 
-**Filled so far: 2 of 30.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
+**Filled so far: 2 of 43.** `sun-02-not-ready.jpg` and `sun-03b-face-not-ready.jpg`
 landed 2026-08-11, both from the same too-early head.
 
 **File rules**
@@ -83,8 +83,39 @@ landed 2026-08-11, both from the same too-early head.
 
 ---
 
+## Bee balm (13)
+
+Bee balm seed leaves the plant on its own, so the garden shots have a real deadline.
+Check heads every two or three days once they brown and shoot them the same visit you
+find them. If you only get one bee balm photo this season, make it `bal-12`.
+
+### Shoot in the garden, before you cut (6)
+
+| File | What to shoot | Why it earns its place |
+| --- | --- | --- |
+| `bal-01-ready.jpg` | A ripe head still standing. Bare brown or tan crown of tubes, no petals left. | The go signal. Shoot it at the same angle and light as `bal-02`. |
+| `bal-02-not-ready.jpg` | A head that still has shrivelled petals hanging on and green in the tubes. | Pairs beside 01. The contrast is what teaches it. |
+| `bal-03-palm-test.jpg` | Open palm held under a head, a few dark specks fallen into it. Tap the stem, then shoot. | The test the whole guide is built on. Hold the phone low and get the hand sharp, not the flower. |
+| `bal-04-two-species.jpg` | A red bee balm head and a wild bergamot head laid side by side on a plain surface. | Carries the "same job, different deadline" point. Skip if you only grow one of them. |
+| `bal-05-cut-upright.jpg` | The cut itself. Stem held straight up, pruners four to six inches below the head, paper bag waiting under it. | Shows the not-tipping rule better than any sentence does. Needs a second pair of hands or a propped phone. |
+| `bal-13-patch.jpg` | Wide shot of the patch in full flower, ideally with a bee or hummingbird moth in it. | The best-looking photo on the page, and it carries the crossing point. Shoot this at peak bloom, not at seed time. |
+
+### Shoot on a bench, any time (7)
+
+| File | What to shoot | Why it earns its place |
+| --- | --- | --- |
+| `bal-06-bag-drying.jpg` | Heads standing upright in an open, labeled paper bag on a shelf. | Shows the bag stays open and the label goes on straight away. |
+| `bal-07-shaken-out.jpg` | The bottom of a bowl after shaking. Seed and crumbled husk together. | Shows how little seed comes out of how much rubbish. |
+| `bal-08-sifting.jpg` | Mix going through a fine mesh kitchen strainer onto a white plate. | The step people do not expect. Make the mesh and the falling seed both visible. |
+| `bal-09-drying.jpg` | Seed spread one layer deep on a plate. | Shows what "one layer" actually means. |
+| `bal-10-envelope.jpg` | Labeled envelope beside the sealed glass jar. | Show the writing on the envelope. Make it readable. |
+| `bal-11-seed-macro.jpg` | Macro. A pinch of tiny dark nutlets on a fingertip. | Scale is the whole point. Get as close as the phone allows and let the fingerprint show. |
+| `bal-12-good-vs-chaff.jpg` | Two piles on white. Clean dark seed on one side, pale flaky chaff on the other. | The most useful photo on the page and the hardest one on the site. Plain white, even light, no shadow. |
+
+---
+
 ## Three shooting notes
 
-1. **Shoot the pairs together.** `sun-01`/`sun-02`, `sun-03`/`sun-03b` and `zin-01`/`zin-02` sit beside each other on the page. Same angle, same distance, same light. If one is sunny and one is shaded the comparison falls apart. Two of those four sunflower halves are already shot, both handheld against a wire panel in open shade. Match that when you find a ready head.
-2. **Put a hand in the frame for anything about size.** Mammoth heads, seed piles, the arrowhead macro. A hand reads as scale instantly.
-3. **Plain background for anything close-up.** A sheet of white paper or a plain cutting board under `sun-14`, `zin-09` and `zin-10`. Grass and soil hide the detail those three exist to show.
+1. **Shoot the pairs together.** `sun-01`/`sun-02`, `sun-03`/`sun-03b`, `zin-01`/`zin-02` and `bal-01`/`bal-02` sit beside each other on the page. Same angle, same distance, same light. If one is sunny and one is shaded the comparison falls apart. Two of those four sunflower halves are already shot, both handheld against a wire panel in open shade. Match that when you find a ready head.
+2. **Put a hand in the frame for anything about size.** Mammoth heads, seed piles, the arrowhead macro, the bee balm macro. A hand reads as scale instantly, and with bee balm it is the only thing that makes the size believable.
+3. **Plain background for anything close-up.** A sheet of white paper or a plain cutting board under `sun-14`, `zin-09`, `zin-10`, `bal-11` and `bal-12`. Grass and soil hide the detail those three exist to show.
