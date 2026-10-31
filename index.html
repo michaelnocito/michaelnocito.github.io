@@ -1,602 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- GA owner opt-out: load any page with ?ga=off to stop being counted, ?ga=on to undo. -->
-  <script>
-    (function () {
-      var localHost = location.protocol === 'file:' ||
-        /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
-        /^(192\.168\.|10\.)/.test(location.hostname);
-      var optedOut = false;
-      try {
-        var p = new URLSearchParams(location.search).get('ga');
-        if (p === 'off') localStorage.setItem('gaOptOut', '1');
-        else if (p === 'on') localStorage.removeItem('gaOptOut');
-        optedOut = localStorage.getItem('gaOptOut') === '1';
-      } catch (e) {}
-      if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
-    })();
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-6C09BL3WH1');
-  </script>
+<script>
+  (function () {
+    var localHost = location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(location.hostname) ||
+      /^(192\.168\.|10\.)/.test(location.hostname);
+    var optedOut = false;
+    try {
+      var p = new URLSearchParams(location.search).get('ga');
+      if (p === 'off') localStorage.setItem('gaOptOut', '1');
+      else if (p === 'on') localStorage.removeItem('gaOptOut');
+      optedOut = localStorage.getItem('gaOptOut') === '1';
+    } catch (e) {}
+    if (localHost || optedOut) window['ga-disable-G-6C09BL3WH1'] = true;
+  })();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C09BL3WH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6C09BL3WH1');
+</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google-site-verification" content="czfO_UVQFJNdbuvFbaaU6XjLZdOiAIjvhZYsgB4O38w" />
-<!-- AdSense ownership verification only — this tag serves no ads. -->
 <meta name="google-adsense-account" content="ca-pub-7244244607936879">
-<title>Michael Nocito — Implementation &amp; Migration</title>
+<title>Michael Nocito — Senior Implementation Analyst</title>
 <link rel="canonical" href="https://michaelnocito.github.io/">
-<meta name="description" content="Michael Nocito — senior implementation analyst. Ten years taking healthcare and higher-education clients live on contract and document management software: discovery, configuration, data and document migration, UAT, training and go-live. 8 to 12 client go-lives a year, 60+ migrations, zero rollbacks, with the eight-stage method published in full.">
+<meta name="description" content="Michael Nocito is a senior implementation analyst who takes organizations from kickoff to go-live: requirements, configuration, data migration, testing, training, and support after launch.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ============================================================
-     GRAIN design system — Zinc & Sky palette: deep cyan primary
-     on cool zinc neutrals. Space Grotesk (display) + IBM Plex
-     (body/mono). Matches the Analyst Prep Kit suite.
-     ============================================================ */
   :root {
-    /* Stone (zinc neutral) */
-    --stone-50:#FBFCFD; --stone-100:#F5F7F8; --stone-200:#E4E7EA; --stone-300:#C3C7CE;
-    --stone-400:#8A8F98; --stone-500:#71717A; --stone-600:#52525B; --stone-700:#27272A;
-    --stone-800:#18181B; --stone-900:#09090B;
-    /* Clay (primary → deep cyan) */
-    --clay-50:#E0F5F9; --clay-100:#C7EDF4; --clay-200:#A5E1ED; --clay-300:#7DD3FC;
-    --clay-400:#38BDF8; --clay-500:#0E7490; --clay-600:#155E6E; --clay-700:#134E5C;
-    /* Amber (warning) */
-    --amber-50:#FFFBEB; --amber-300:#FBBF24; --amber-400:#F59E0B; --amber-500:#D97706; --amber-600:#B45309;
-    /* Leaf / Teal / Rust (emerald / indigo info / red) */
-    --leaf-50:#ECFDF5; --leaf-400:#34D399; --leaf-500:#10B981;
-    --teal-50:#EEF2FF; --teal-400:#818CF8; --teal-500:#4F46E5;
-    --rust-500:#DC2626;
-
-    /* Fonts */
+    --bg:#FBFCFD; --panel:#FFFFFF; --sunken:#F5F7F8; --line:#E4E7EA; --line-bd:#C3C7CE;
+    --ink:#09090B; --dim:#52525B; --accent:#0E7490; --accent-d:#155E6E;
+    --accent-soft:#E0F5F9; --accent-bd:#A5E1ED;
+    --shadow:0 1px 2px rgba(9,9,11,.05), 0 8px 24px rgba(9,9,11,.07);
+    --shadow-lg:0 4px 10px rgba(9,9,11,.10), 0 18px 44px rgba(9,9,11,.13);
     --font-display:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif;
     --font-sans:'IBM Plex Sans',system-ui,-apple-system,Roboto,sans-serif;
-    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
-
-    /* Page semantic roles */
-    --bg:        var(--stone-50);
-    --panel:     #FFFFFF;
-    --sunken:    var(--stone-100);
-    --line:      var(--stone-200);
-    --line-bd:   var(--stone-300);
-    --shadow:    0 1px 2px rgba(9,9,11,.05), 0 8px 24px rgba(9,9,11,.07);
-    --shadow-lg: 0 4px 10px rgba(9,9,11,.10), 0 18px 44px rgba(9,9,11,.13);
-
-    --ink:       var(--stone-900);
-    --dim:       var(--stone-600);
-
-    --accent:    var(--clay-500);
-    --accent-d:  var(--clay-600);
-    --accent-soft:var(--clay-50);
-    --accent-bd: var(--clay-200);
-
-    --amber:     var(--amber-600);
-    --good:      var(--leaf-500);
-    --teal:      var(--teal-500);
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0F1114; --panel:#17191D; --sunken:#1E2126; --line:#2A2E34; --line-bd:#3A3F47;
+      --ink:#F4F5F6; --dim:#A1A6AF; --accent:#38BDF8; --accent-d:#7DD3FC;
+      --accent-soft:#0F2A33; --accent-bd:#1E4A5A;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+      --shadow-lg:0 4px 10px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0F1114; --panel:#17191D; --sunken:#1E2126; --line:#2A2E34; --line-bd:#3A3F47;
+    --ink:#F4F5F6; --dim:#A1A6AF; --accent:#38BDF8; --accent-d:#7DD3FC;
+    --accent-soft:#0F2A33; --accent-bd:#1E4A5A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    --shadow-lg:0 4px 10px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.5);
+    color-scheme: dark;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font: 400 15px/1.6 var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
+    background: var(--bg); color: var(--ink);
+    font: 400 16px/1.65 var(--font-sans);
+    -webkit-font-smoothing: antialiased; min-height: 100vh;
   }
-  code, .mono { font-family: var(--font-mono); }
-  h1, h2, h3, .tile-name { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, .tile-name, .logo { font-family: var(--font-display); letter-spacing: -0.02em; }
+  svg.i { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.14em; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
-  /* Lucide icon sizing */
-  .lucide { width: 1em; height: 1em; stroke-width: 2; vertical-align: -0.14em; }
-
-  /* ---- Top orientation bar (sticky) ---------------------------------- */
-  .topbar {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; padding: 10px 18px;
-    background: var(--panel); border-bottom: 1px solid var(--line);
-    position: sticky; top: 0; z-index: 5;
-  }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .topbar { border-bottom: 1px solid var(--line); background: var(--panel); }
+  .topbar .wrap { display: flex; align-items: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
   .logo {
-    font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em;
-    color: var(--accent); background: var(--clay-50); border: 1px solid var(--clay-100);
-    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px;
+    font-weight: 700; font-size: 15px; color: var(--accent); background: var(--accent-soft);
+    border: 1px solid var(--accent-bd); width: 38px; height: 38px;
+    display: grid; place-items: center; border-radius: 10px; flex-shrink: 0;
   }
-  .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-  .brand-text strong { font-family: var(--font-display); font-size: 15px; color: var(--ink); letter-spacing: -0.01em; }
-  .brand-text .sub { font-size: 12px; color: var(--dim); }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+  .brand-text strong { font-family: var(--font-display); font-size: 15px; }
+  .brand-text span { font-size: 12.5px; color: var(--dim); }
 
-  .orient { display: flex; align-items: center; gap: 16px; }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a {
-    font-size: 13.5px; font-weight: 600; color: var(--dim);
-    text-decoration: none; transition: color .15s;
+  .hero { margin: 32px 0 8px; }
+  .hero-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 32px 32px 28px;
   }
-  .nav-links a:hover { color: var(--accent); }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 700; line-height: 1.08; margin-bottom: 16px; }
+  h1 span { color: var(--accent); }
+  .intro { font-size: 18px; line-height: 1.6; color: var(--dim); max-width: 700px; }
+  .intro strong { color: var(--ink); font-weight: 600; }
+  .where { margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--dim); max-width: 700px; }
+  .cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+    padding: 9px 18px; border-radius: 10px; font-size: 14.5px; font-weight: 600;
+    text-decoration: none; color: var(--ink); background: var(--panel);
+    border: 1px solid var(--line-bd); transition: background .15s, border-color .15s, color .15s;
+  }
+  .btn:hover { background: var(--accent-soft); border-color: var(--accent-bd); color: var(--accent-d); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-d); border-color: var(--accent-d); color: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary, :root:not([data-theme="light"]) .btn.primary:hover { color: #06222B; } }
+  :root[data-theme="dark"] .btn.primary, :root[data-theme="dark"] .btn.primary:hover { color: #06222B; }
 
-  /* ---- Layout -------------------------------------------------------- */
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 18px; }
+  .label {
+    font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--dim); margin: 40px 0 14px; display: flex; align-items: center; gap: 12px;
+  }
+  .label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
-  /* ---- Hero / welcome card (compact) ---------------------------------- */
-  .welcome { margin: 20px auto 10px; }
-  .welcome-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
-    box-shadow: var(--shadow); padding: 22px 26px;
-  }
-  .welcome-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 8px;
-  }
-  .welcome-card h1 {
-    font-size: clamp(26px, 4vw, 34px); font-weight: 700; line-height: 1.1;
-    color: var(--ink); margin-bottom: 10px;
-  }
-  .welcome-card h1 span { color: var(--accent); }
-  .welcome-sub {
-    font-size: 14.5px; color: var(--dim); line-height: 1.6; max-width: 640px;
-  }
-  .welcome-sub strong { color: var(--ink); }
-  .welcome-cta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-
-  .social-btn {
-    background: var(--panel); border: 1px solid var(--line-bd); color: var(--ink);
-    padding: 6px 13px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-    transition: background .15s, color .15s, border-color .15s;
-  }
-  .social-btn:hover { background: var(--accent-soft); color: var(--accent-d); border-color: var(--clay-200); }
-  .social-btn .lucide { width: 13px; height: 13px; }
-
-  /* ---- Section label ------------------------------------------------- */
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--dim); margin: 26px 0 12px; scroll-margin-top: 72px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .section-label .lucide { width: 15px; height: 15px; color: var(--accent); }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-
-  /* Guide panel — always visible. One button in, titles underneath as
-     orientation only, so the section states what is there without
-     spending six tiles' worth of the page on it. */
-  .guide-panel {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px 16px;
-  }
-  .guide-cta {
-    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-    font-family: var(--font-mono); font-size: 12.5px; font-weight: 500;
-    color: var(--accent-d); background: var(--accent-soft);
-    border: 1px solid var(--clay-200); border-radius: 8px; padding: 7px 13px;
-  }
-  .guide-cta:hover { background: var(--panel); border-color: var(--accent); }
-  .guide-cta .lucide { width: 14px; height: 14px; }
-  .guide-names {
-    margin: 11px 0 0; font-size: 12.5px; line-height: 1.75; color: var(--dim);
-  }
-  .guide-names .sep { color: var(--line-bd); padding: 0 2px; }
-
-  /* ---- Tile grid ------------------------------------------------------ */
-  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .tiles.cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .tiles.cols-1 { grid-template-columns: 1fr; }
-
+  /* Tiles */
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .tile {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
-    box-shadow: var(--shadow); padding: 14px 16px;
-    border-left: 4px solid var(--accent);
-    text-decoration: none; color: inherit;
-    display: flex; flex-direction: column; gap: 6px;
-    transition: box-shadow .15s, transform .15s, border-color .15s;
+    background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 12px; box-shadow: var(--shadow); padding: 18px 18px 20px;
+    text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;
+    transition: transform .15s, box-shadow .15s;
   }
   .tile:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-  .tile.c-accent { border-left-color: var(--clay-500); }
-  .tile.c-accent:hover { border-color: var(--clay-200); }
-  .tile.c-purple { border-left-color: var(--teal-500); }
-  .tile.c-purple:hover { border-color: #C7D2FE; }
-  .tile.c-warm { border-left-color: var(--amber-500); }
-  .tile.c-warm:hover { border-color: var(--amber-200, #FCD34D); }
-  .tile.c-green { border-left-color: var(--leaf-500); }
-  .tile.c-green:hover { border-color: #A7F3D0; }
-  .tile.featured { background: linear-gradient(135deg, var(--panel) 0%, var(--clay-50) 100%); border-color: var(--clay-200); grid-column: 1 / -1; }
+  .tile-top { display: flex; align-items: center; gap: 8px; }
+  .tile-name { font-size: 18px; font-weight: 700; line-height: 1.25; flex: 1; }
+  .arrow { color: var(--dim); transition: color .15s, transform .15s; }
+  .tile:hover .arrow { color: var(--accent); transform: translate(2px,-2px); }
+  .tile p { font-size: 14.5px; line-height: 1.55; color: var(--dim); }
 
-  .tile-top { display: flex; align-items: center; gap: 10px; }
-  .tile-icon {
-    width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;
-    display: grid; place-items: center; font-size: 15px;
-    background: var(--accent-soft); color: var(--accent-d); border: 1px solid var(--accent-bd);
-  }
-  .tile-icon .lucide { width: 16px; height: 16px; }
-  .tile.c-green .tile-icon { background: var(--leaf-50); color: #059669; border-color: #A7F3D0; }
-  .tile.c-warm .tile-icon { background: var(--amber-50); color: var(--amber-600); border-color: #FCD34D; }
-  .tile.c-purple .tile-icon { background: var(--teal-50); color: var(--teal-500); border-color: #C7D2FE; }
-  .tile.featured .tile-icon { background: var(--clay-100); color: var(--clay-600); }
-  .tile-name { font-size: 16.5px; font-weight: 700; color: var(--ink); flex: 1 1 auto; min-width: 0; line-height: 1.25; }
-  .tile-arrow { color: var(--stone-400); flex-shrink: 0; transition: color .18s, transform .18s; display: inline-flex; margin-left: auto; }
-  .tile-arrow .lucide { width: 16px; height: 16px; }
-  .tile:hover .tile-arrow { color: var(--accent); transform: translate(2px,-2px); }
-  .tile-desc {
-    font-size: 13px; color: var(--dim); line-height: 1.5;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  }
-  .tile-desc strong { color: var(--ink); }
-  .start-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-family: var(--font-mono);
-    font-size: 10px; font-weight: 500; letter-spacing: .10em;
-    text-transform: uppercase; color: var(--accent-d);
-    background: var(--clay-50); border: 1px solid var(--clay-100);
-    padding: 2px 9px; border-radius: 999px; margin-bottom: 2px;
-  }
-  .start-badge .lucide { width: 10px; height: 10px; }
+  .feature { margin-bottom: 14px; padding: 22px 22px 22px 20px; }
+  .feature p { font-size: 15.5px; }
+  .feature .topics { font-size: 13.5px; color: var(--accent-d); font-weight: 500; }
 
-  /* Compact action row — used when a tile has 2-3 destinations instead of one */
-  .tile-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 2px; }
-  .tile-action {
-    font-size: 12px; font-weight: 600; color: var(--ink);
-    background: var(--sunken); border: 1px solid var(--line);
-    padding: 5px 10px; border-radius: 7px; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 5px;
-    transition: background .12s, border-color .12s, color .12s;
-  }
-  .tile-action:hover { background: var(--accent-soft); border-color: var(--clay-200); color: var(--accent-d); }
-  .tile-action .lucide { width: 12px; height: 12px; }
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 22px 0 28px; font-size: 14px; color: var(--dim); }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: center; }
+  .foot a { color: var(--dim); text-decoration: none; }
+  .foot a:hover { color: var(--accent); }
+  .foot nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .kit { margin-top: 14px; font-size: 14px; }
+  .kit a { color: var(--accent-d); font-weight: 500; text-decoration: none; }
+  .kit a:hover { text-decoration: underline; }
+  .kit.sub { margin-top: 6px; }
 
-  /* Compact kit-chip row — Analyst Prep Kit's 11 modules as chips, not rows */
-  .kit-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-  .kit-chip {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-size: 11.5px; font-weight: 600; color: var(--ink);
-    background: var(--panel); border: 1px solid var(--line);
-    padding: 4px 9px; border-radius: 999px; text-decoration: none;
-    transition: background .12s, border-color .12s;
-  }
-  .kit-chip:hover { background: var(--accent-soft); border-color: var(--clay-200); }
-  .kit-chip .lucide { width: 10px; height: 10px; color: var(--good); }
-
-  /* ---- Art tile (keeps its thumbnail — the whole point of the section) - */
-  .art-tile {
-    grid-column: 1 / -1; display: flex; flex-direction: row; gap: 20px; align-items: center;
-    padding: 16px 18px;
-  }
-  .art-tile .tile-main { flex: 1 1 auto; min-width: 0; }
-  .art-tile .tile-shot {
-    flex: 0 0 clamp(150px, 24%, 200px); position: relative; padding: 0; border: 0;
-    background: none; cursor: zoom-in;
-  }
-  .art-tile .tile-shot img {
-    width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center;
-    border-radius: 8px; border: 1px solid var(--line); display: block; background: var(--sunken);
-  }
-  .art-tile .tile-desc { -webkit-line-clamp: 3; }
-
-  /* ---- Lightbox ----------------------------------------------------- */
-  .lightbox {
-    position: fixed; inset: 0; z-index: 50; display: none;
-    align-items: center; justify-content: center; padding: 4vmin;
-    background: rgba(9,9,11,.82); cursor: zoom-out;
-  }
-  .lightbox.open { display: flex; animation: lbfade .15s ease; }
-  @keyframes lbfade { from { opacity: 0; } to { opacity: 1; } }
-  .lightbox img {
-    max-width: 94vw; max-height: 92vh; border-radius: 12px;
-    box-shadow: 0 20px 70px rgba(0,0,0,.5); background: #fff; cursor: default;
-  }
-  .lightbox-close {
-    position: fixed; top: 16px; right: 22px; font-size: 32px; line-height: 1;
-    color: #fff; background: none; border: 0; cursor: pointer; opacity: .85;
-  }
-  .lightbox-close:hover { opacity: 1; }
-
-  /* ---- Footer -------------------------------------------------------- */
-  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 20px 0; }
-  .footer-inner {
-    max-width: 920px; margin: 0 auto; padding: 0 18px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-    font-size: 12.5px; color: var(--dim);
-  }
-  .footer-inner .mono { font-family: var(--font-mono); }
-  .footer-inner a { color: var(--dim); text-decoration: none; }
-  .footer-inner a:hover { color: var(--accent); }
-
-  /* ---- Responsive ---------------------------------------------------- */
   @media (max-width: 720px) {
-    .nav-links { display: none; }
-    .welcome-card { padding: 20px 18px; }
-    .tiles, .tiles.cols-3 { grid-template-columns: 1fr; }
-    .art-tile { flex-direction: column; align-items: stretch; }
-    .art-tile .tile-shot { flex-basis: auto; width: 100%; }
-    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .hero-card { padding: 24px 20px 22px; }
+    .intro { font-size: 17px; }
+    .tiles { grid-template-columns: 1fr; }
+    .btn { flex: 1 1 auto; justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- ---- Top orientation bar ---- -->
 <header class="topbar">
-  <a class="brand" href="#">
+  <div class="wrap">
     <span class="logo">MN</span>
     <span class="brand-text">
       <strong>Michael Nocito</strong>
-      <span class="sub">Implementation &amp; Migration</span>
+      <span>Senior Implementation Analyst</span>
     </span>
-  </a>
-  <div class="orient">
-    <nav class="nav-links">
-      <a href="#tools-i-built">Method</a>
-      <a href="#reference">Writing</a>
-      <a href="#real-analysis">Analysis</a>
-      <a href="#learning-tools">Teaching</a>
-      <a href="#beyond-data">Art</a>
-    </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
 
-    <!-- Hero / welcome card -->
-    <section class="welcome">
-      <div class="welcome-card">
-        <div class="welcome-eyebrow">Kickoff · Configuration · Migration · UAT · Training</div>
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Glassboro, NJ · Open to remote work</div>
         <h1>Michael <span>Nocito.</span></h1>
-        <p class="welcome-sub">
-          I take enterprise clients live on contract and document management software.
-          <strong>Ten years</strong> of it: discovery and configuration, moving a client's legacy contracts and
-          documents into the new system, proving every load reconciles before anyone signs off, then training
-          the people who have to use it. <strong>8 to 12 client go-lives a year</strong>, 60+ data and document
-          migrations, zero rollbacks. Healthcare and higher education. Migrations fail on bad source data, not
-          bad loads, so I profile and reconcile before anything moves.
+        <p class="intro">
+          Senior implementation analyst. I take organizations from kickoff to go-live: requirements, configuration, data migration, testing, training, and support after launch.
         </p>
-        <div class="welcome-cta">
-          <a class="social-btn" href="https://michaelnocito.github.io/migration-toolkit/"><i data-lucide="arrow-right-left"></i> The migration method</a>
-          <a class="social-btn" href="https://github.com/michaelnocito" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
-          <a class="social-btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener"><i data-lucide="linkedin"></i> LinkedIn</a>
-          <a class="social-btn" href="mailto:hello.michaelnocito@gmail.com"><i data-lucide="mail"></i> Email</a>
+        <p class="where">I’ve implemented contract and document management software for large organizations, where many departments and workflows have to fit into one system.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hello.michaelnocito@gmail.com"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> Email me</a>
+          <a class="btn" href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
 
-      <!-- ============ Section A — Real Analysis (2 tiles wide) ============ -->
-      <div class="section-label" id="tools-i-built"><i data-lucide="wrench"></i> How I Run a Migration</div>
-      <div class="tiles cols-3">
 
-        <a class="tile c-accent" href="https://michaelnocito.github.io/migration-toolkit/">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="arrow-right-left"></i></span><span class="tile-name">Data Migration Toolkit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">How I walk a client migration through: eight stages, eight written sign-offs, and the workbook that runs them.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="file-stack"></i></span><span class="tile-name">RecordForge</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Generates realistic fictional test documents — PDF, Word, Excel — for QA and data-engineering testing.</p>
-        </a>
-
-        <a class="tile c-green" href="https://michaelnocito.github.io/spreadsheet-cleaner/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="sparkles"></i></span><span class="tile-name">Spreadsheet Cleaner</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Profiles a messy spreadsheet and flags data-quality issues in a plain audit report.</p>
-        </a>
-
-        <a class="tile c-green" href="https://michaelnocito.github.io/keygarden/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="keyboard"></i></span><span class="tile-name">Keygarden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A calm typing trainer for the symbols data work runs on — brackets, braces, operators.</p>
-        </a>
-
-      </div>
-
-      <!-- ============ Section B — Learning Tools & Games ============ -->
-      <div class="section-label" id="reference"><i data-lucide="book-open"></i> How I Explain the Work</div>
-      <div class="guide-panel">
-        <a class="guide-cta" href="https://michaelnocito.github.io/analyst-prep-kit/guides/" target="_blank" rel="noopener"><i data-lucide="book-open"></i> All guides <i data-lucide="arrow-up-right"></i></a>
-        <p class="guide-names">Step-by-step how-tos and concept guides, written for beginners: SQL <span class="sep">&middot;</span> Excel <span class="sep">&middot;</span> Power BI <span class="sep">&middot;</span> Tableau <span class="sep">&middot;</span> Python and pandas <span class="sep">&middot;</span> statistics and charts <span class="sep">&middot;</span> data migration <span class="sep">&middot;</span> getting your tools set up <span class="sep">&middot;</span> the judgment calls that come with the job.</p>
-        <ul style="margin:14px 0 0;padding:12px 0 0 18px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.7;color:var(--dim);">
-  <li><a href="/analyst-prep-kit/guides/free-datasets-to-practice-with/"><strong>Where to Find Free Datasets to Practice With</strong></a>: where to look, and a five-minute screen for whether a file is worth your week.</li>
-  <li><a href="/analyst-prep-kit/guides/sql-comments/"><strong>SQL Comments</strong></a>: how to comment queries so you and your team can read them later.</li>
-  <li><a href="/analyst-prep-kit/guides/sql-subqueries/"><strong>SQL Subqueries</strong></a>: when to nest a query inside another, with worked examples.</li>
-  <li><a href="/analyst-prep-kit/guides/sql-joins/"><strong>SQL Joins</strong></a>: combining tables without losing or duplicating rows.</li>
-  <li><a href="/analyst-prep-kit/guides/pandas-read-csv/"><strong>pandas read_csv</strong></a>: loading CSVs correctly, including the common import traps.</li>
-  <li><a href="/analyst-prep-kit/guides/pandas-fillna-dropna/"><strong>pandas fillna and dropna</strong></a>: handling missing values and knowing what you're discarding.</li>
-</ul>
-      </div>
-
-      <!-- ============ Section C — Tools I Built (3 tiles wide) ============ -->
-      <div class="section-label" id="real-analysis"><i data-lucide="bar-chart-3"></i> Analysis Work</div>
-      <p style="margin:-6px 0 18px;color:var(--dim);font-size:15px;">
-        Full write-ups for each of these, with the method and the reasoning behind every design choice, are on the
-        <a href="/portfolio/"><strong>analyst portfolio</strong></a>.
-      </p>
+    <section>
+      <div class="label">Training &amp; tools</div>
+      <a class="tile feature" href="https://michaelnocito.github.io/training/">
+        <div class="tile-top"><span class="tile-name">Training &amp; Documentation</span><svg class="i arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+        <p>Interactive lessons, practice labs, and guides I’ve written to help people learn new systems.</p>
+        <p class="topics">Implementation planning · Faster timelines · API troubleshooting · Field mapping</p>
+      </a>
       <div class="tiles">
-        <div class="tile c-accent">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="trending-down"></i></span><span class="tile-name">Telco Churn: Risk Personas</span></div>
-          <p class="tile-desc">Python/pandas analysis of 7,043 customers: four tenure personas show who's actually leaving, and why.</p>
-          <div class="tile-actions">
-            <a class="tile-action" href="https://public.tableau.com/app/profile/michael.nocito8651/viz/TelcoCustomerChurnRiskPersonas/Story1" target="_blank" rel="noopener"><i data-lucide="presentation"></i>Tableau story</a>
-            <a class="tile-action" href="https://github.com/michaelnocito/telco-churn-analysis" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>Python &amp; method</a>
-          </div>
-        </div>
-
-        <div class="tile c-accent">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="gamepad-2"></i></span><span class="tile-name">Steam Hidden Gems</span></div>
-          <p class="tile-desc">SQL analysis of ~125,000 Steam games to surface the highly rated ones almost nobody has played, then an Excel dashboard showing they reach 21x fewer players at the same price and rating.</p>
-          <div class="tile-actions">
-            <a class="tile-action" href="https://michaelnocito.github.io/steam-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
-            <a class="tile-action" href="https://github.com/michaelnocito/steam-hidden-gems/tree/main/excel" target="_blank" rel="noopener"><i data-lucide="table-2"></i>Excel dashboard</a>
-            <a class="tile-action" href="https://github.com/michaelnocito/steam-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
-          </div>
-        </div>
-
-        <div class="tile c-accent">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="film"></i></span><span class="tile-name">Hidden Gem Movies</span></div>
-          <p class="tile-desc">SQL analysis of IMDb's 12.6M titles to surface 581 movies rated 8.0+ that almost nobody has watched.</p>
-          <div class="tile-actions">
-            <a class="tile-action" href="https://michaelnocito.github.io/streaming-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
-            <a class="tile-action" href="https://github.com/michaelnocito/streaming-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
-          </div>
-        </div>
-
-        <div class="tile c-accent">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="music"></i></span><span class="tile-name">Music Hidden Gems</span></div>
-          <p class="tile-desc">SQL + Python joining Billboard history to Last.fm data to surface 500 songs listeners love but radio skipped.</p>
-          <div class="tile-actions">
-            <a class="tile-action" href="https://michaelnocito.github.io/music-hidden-gems-list/" target="_blank" rel="noopener"><i data-lucide="list"></i>Browse list</a>
-            <a class="tile-action" href="https://github.com/michaelnocito/music-hidden-gems" target="_blank" rel="noopener"><i data-lucide="file-code-2"></i>SQL &amp; method</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ============ Section D — Reference & How-Tos ============ -->
-      <div class="section-label" id="learning-tools"><i data-lucide="graduation-cap"></i> Side Project: Teaching Analytics</div>
-      <div class="tiles">
-
-        <!-- ★ FEATURED — Analyst Prep Kit (full width) -->
-        <a class="tile c-accent featured" href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener">
-          <div class="start-badge"><i data-lucide="star"></i> For learners</div>
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="rocket"></i></span><span class="tile-name">Analyst Prep Kit</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A complete browser-based prep suite for breaking into data analytics — 14 modules, sequenced in the order an analyst actually learns.</p>
-          <div class="kit-chips">
-            <span class="kit-chip"><i data-lucide="check"></i>Excel</span>
-            <span class="kit-chip"><i data-lucide="check"></i>SQL</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Python</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Tableau</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Chart Literacy</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Forecasting</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Stats</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Power BI</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Interview</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Job Simulator</span>
-            <span class="kit-chip"><i data-lucide="check"></i>Final Exam</span>
-          </div>
+        <a class="tile" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">RecordForge</span><svg class="i arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          <p>Makes realistic fictional documents for testing without real client data.</p>
         </a>
-
-        <a class="tile c-green" href="https://michaelnocito.github.io/prep-companion-apps/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="zap"></i></span><span class="tile-name">Analyst Sprint</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Ten-minute warm-up games for the prep kits — real Excel formulas and SQL queries against the clock.</p>
+        <a class="tile" href="https://michaelnocito.github.io/spreadsheet-cleaner/" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">Spreadsheet Cleaner</span><svg class="i arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          <p>Checks a messy spreadsheet and explains the problems in plain language.</p>
         </a>
-
-        <a class="tile c-green" href="https://michaelnocito.gumroad.com/" target="_blank" rel="noopener" onclick="if(window.gtag)gtag('event','site_book_click',{page:'home'})">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="book-open"></i></span><span class="tile-name">The Analyst Books</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">The written half of the kits: ten books that read every formula and query line by line, from Excel and SQL through statistics, charts and forecasting.</p>
-        </a>
-
-        <a class="tile c-warm" href="https://michaelnocito.github.io/spreadsheet-archaeology/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="briefcase"></i></span><span class="tile-name">Analyst Job Simulator</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A day-in-the-life job sim with Excel and Tableau tracks — de-curse the messy files inherited from the last person.</p>
-        </a>
-
-        <a class="tile c-accent" href="https://michaelnocito.github.io/analyst-prep-kit/drill/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="keyboard"></i></span><span class="tile-name">SQL Drill</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Type real SQL against a real database, one query at a time. Each drill adds one thing to the query you just typed.</p>
-        </a>
-
-        <a class="tile c-accent" href="https://michaelnocito.github.io/analyst-prep-kit/viz/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="bar-chart-3"></i></span><span class="tile-name">Viz Drill</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">Drag fields onto shelves and build the chart, one new idea per step. Every step names the SQL query it answers.</p>
-        </a>
-
-        <a class="tile c-purple" href="https://michaelnocito.github.io/sql-quest/" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-icon"><i data-lucide="castle"></i></span><span class="tile-name">SQL Quest</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-          <p class="tile-desc">A game that teaches SQL by running real queries against a real database in the browser.</p>
-        </a>
-
-      </div>
-
-      <!-- ============ Section E — Beyond the Data ============ -->
-      <div class="section-label" id="beyond-data"><i data-lucide="palette"></i> Beyond the Work</div>
-      <div class="tiles">
-
-        <a class="tile c-purple art-tile" href="art/">
-          <button type="button" class="tile-shot" aria-label="Enlarge artwork" onclick="openShot(event,'art/01_oscar_2023.jpg','Oscar (2023) — charcoal portrait')">
-            <img loading="lazy" decoding="async" src="art/01_oscar_2023.jpg" alt="Charcoal portrait of a dog, Oscar (2023)">
-          </button>
-          <div class="tile-main">
-            <div class="tile-top"><span class="tile-icon"><i data-lucide="palette"></i></span><span class="tile-name">Charcoal Portraits</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-            <p class="tile-desc">Slow, observed, made by hand — charcoal animal portraits, mostly dogs, drawn from life and reference. <strong>Draw what's actually there, not what you assume.</strong></p>
-          </div>
-        </a>
-
-        <a class="tile c-green" href="garden/">
-          <div class="tile-main">
-            <div class="tile-top"><span class="tile-icon"><i data-lucide="sprout"></i></span><span class="tile-name">The Garden</span><span class="tile-arrow"><i data-lucide="arrow-up-right"></i></span></div>
-            <p class="tile-desc">Growing guides written while the job is happening, not remembered a season later. Harvesting and saving seed, step by step, zone 7a. <strong>Lead with the signal, not the instruction.</strong></p>
-          </div>
-        </a>
-
       </div>
     </section>
+
 
   </div>
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <span class="mono">Michael Nocito — michaelnocito.github.io</span>
-    <span>
-      <a href="analyst-prep-kit/about.html">About</a>
-      &nbsp;·&nbsp;
-      <a href="analyst-prep-kit/contact.html">Contact</a>
-      &nbsp;·&nbsp;
-      <a href="privacy.html">Privacy</a>
-      &nbsp;·&nbsp;
-      <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
-      &nbsp;·&nbsp;
-      <a href="https://linkedin.com/in/michaelnocito" target="_blank" rel="noopener">LinkedIn</a>
-    </span>
+  <div class="wrap">
+    <div class="foot">
+      <span>Michael Nocito</span>
+      <nav>
+        <a href="https://michaelnocito.github.io/analyst-prep-kit/about.html">About</a>
+        <a href="https://michaelnocito.github.io/analyst-prep-kit/contact.html">Contact</a>
+        <a href="https://michaelnocito.github.io/privacy.html">Privacy</a>
+        <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+    <p class="kit">Free learning resources: <a href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener">Analyst Prep Kit →</a></p>
+    <p class="kit sub">Outside of work: <a href="https://michaelnocito.github.io/art/">Charcoal portraits →</a></p>
   </div>
 </footer>
-
-<!-- ---- Lightbox (click the art thumbnail to enlarge) ---- -->
-<div class="lightbox" id="lightbox" onclick="closeShot()" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close" onclick="closeShot()">×</button>
-  <img id="lightbox-img" alt="" onclick="event.stopPropagation()">
-</div>
-<script>
-  function openShot(e, src, alt){
-    e.preventDefault(); e.stopPropagation();
-    var lb = document.getElementById('lightbox'), im = document.getElementById('lightbox-img');
-    im.src = src; im.alt = alt || '';
-    lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeShot(){
-    var lb = document.getElementById('lightbox');
-    lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeShot(); });
-</script>
-
-<!-- Lucide line icons (matches the Analyst Prep Kit suite) -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  (function(){
-    function go(){
-      if(!window.lucide) return;
-      lucide.createIcons();
-      document.querySelectorAll('svg[data-lucide]').forEach(function(s){ s.removeAttribute('data-lucide'); });
-    }
-    go();
-    if(typeof window.lucide==='undefined'){
-      var n=0, t=setInterval(function(){ if(window.lucide||++n>60){ clearInterval(t); go(); } },50);
-    }
-  })();
-</script>
 
 </body>
 </html>
