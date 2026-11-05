@@ -147,6 +147,11 @@
   .kit a:hover { text-decoration: underline; }
   .kit.sub { margin-top: 6px; }
 
+  .about h2 { font-size: 20px; font-weight: 700; margin: 24px 0 8px; }
+  .about h2:first-of-type { margin-top: 0; }
+  .about p { font-size: 17px; line-height: 1.65; color: var(--dim); max-width: 700px; margin-top: 12px; }
+  .about p.lead { color: var(--ink); margin-top: 0; }
+
   @media (max-width: 720px) {
     .hero-card { padding: 24px 20px 22px; }
     .intro { font-size: 17px; }
@@ -188,6 +193,19 @@
 
 
 
+    <section id="about">
+      <div class="label">About</div>
+      <div class="hero-card about">
+        <p class="lead">I find implementation work deeply rewarding, particularly because it draws on both technical and interpersonal skill. I apply both daily in support of clients and the internal teams who work alongside them, and I take personal pride in the results.</p>
+
+        <h2>Background</h2>
+        <p>My technical background includes a computer science education. My first implementation role, around 2015, involved deploying software to multifunction printers, where I developed skills in product demonstration, end-user training, and small-scale project management. I then moved into enterprise SaaS implementations, serving as the primary client contact from kickoff through launch.</p>
+
+        <h2>Goal</h2>
+        <p>My goal on every project is delivery on time and within scope, with progress tracked and reported to the client throughout, and strong user adoption and satisfaction at go-live. I work toward it through clear requirements, accurate data migration, thorough training, and close support after launch.</p>
+      </div>
+    </section>
+
     <section>
       <div class="label">Training &amp; tools</div>
       <a class="tile feature" href="https://michaelnocito.github.io/training/">
@@ -216,7 +234,7 @@
     <div class="foot">
       <span>Michael Nocito</span>
       <nav>
-        <a href="https://michaelnocito.github.io/analyst-prep-kit/about.html">About</a>
+        <a href="#about">About</a>
         <a href="https://michaelnocito.github.io/analyst-prep-kit/contact.html">Contact</a>
         <a href="https://michaelnocito.github.io/privacy.html">Privacy</a>
         <a href="https://github.com/michaelnocito" target="_blank" rel="noopener">GitHub</a>
