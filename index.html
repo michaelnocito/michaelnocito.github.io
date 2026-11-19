@@ -147,6 +147,14 @@
   .kit a:hover { text-decoration: underline; }
   .kit.sub { margin-top: 6px; }
 
+  /* Analyst Prep Kit feature tile: text left, small method preview right */
+  .kit-feature { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 20px; align-items: center; }
+  .kf-demo { background: #0F1720; color: #E6EDF3; border-radius: 10px; padding: 12px 14px; font-size: 12.5px; line-height: 1.5; }
+  .kf-say { border-left: 3px solid #5FD0E0; padding-left: 9px; font-style: italic; color: #B6C2CF; margin-bottom: 8px; }
+  .kf-q { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #fff; font-size: 12px; overflow-wrap: anywhere; }
+  .kf-a { color: #9AA7B4; margin-top: 6px; }
+  .kf-a span { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #5FD0E0; }
+
   .about h2 { font-size: 20px; font-weight: 700; margin: 24px 0 8px; }
   .about h2:first-of-type { margin-top: 0; }
   .about p { font-size: 17px; line-height: 1.65; color: var(--dim); max-width: 700px; margin-top: 12px; }
@@ -156,6 +164,8 @@
     .hero-card { padding: 24px 20px 22px; }
     .intro { font-size: 17px; }
     .tiles { grid-template-columns: 1fr; }
+    .kit-feature { grid-template-columns: 1fr; }
+    .kf-demo { display: none; }
     .btn { flex: 1 1 auto; justify-content: center; }
   }
 </style>
@@ -211,6 +221,17 @@
         <div class="tile-top"><span class="tile-name">Training &amp; Documentation</span><svg class="i arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
         <p>Interactive lessons, practice labs, and guides to help people learn new systems. Everything in this section was designed and tested by me and built with Claude Code.</p>
         <p class="topics">Implementation planning · Faster timelines · API troubleshooting · Field mapping</p>
+      </a>
+      <a class="tile feature kit-feature" href="https://michaelnocito.github.io/analyst-prep-kit/" target="_blank" rel="noopener">
+        <div class="kf-text">
+          <div class="tile-top"><span class="tile-name">Analyst Prep Kit</span><svg class="i arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          <p>Free, hands-on prep for data analyst jobs: SQL, Excel, Python, Tableau, Power BI and more, one skill at a time. No install.</p>
+        </div>
+        <div class="kf-demo" aria-hidden="true">
+          <div class="kf-say">Give me the names of customers whose status is “active”.</div>
+          <div class="kf-q">SELECT name FROM customers WHERE status = 'active';</div>
+          <div class="kf-a"><span>Say it out loud</span> every lesson explains each line in plain English.</div>
+        </div>
       </a>
       <div class="tiles">
         <a class="tile" href="https://michaelnocito.github.io/recordforge/" target="_blank" rel="noopener">
